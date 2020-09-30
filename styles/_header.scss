@@ -1,0 +1,119 @@
+header{
+        width: 100%;
+        position: fixed;
+    .lineaAzul{
+        height: 5px;
+        background-color: $colorAzul;
+    }
+    #barraNavegacion{
+        height: 95px;
+        background-color: $colorBlanco;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        a{            
+            img{
+                width: 49px;
+                margin: 29px 0 0 22px;
+            }
+        }
+        nav{
+            height: 95px;
+            .menu{
+                margin: 47px 26px 0 0;
+                /* img{
+                    width: 15px;
+                    margin: 47px 26px 0 0;
+                }
+                .cruz{
+                    display:none;
+                } */
+                ul{
+                    width: 100%;
+                    position: absolute;
+                    top: 100px;
+                    right: 0;
+                    overflow: hidden;
+                    background-color: rgba($colorAzul, 0.90);
+                    height: 0px;
+                   .linkPrimero{
+                        margin-top: 40px;
+                    }
+                    li{
+                        list-style: none;
+                        height: 60px;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        .link{
+                            font-family: $tipoTitulos;
+                            font-weight: $bold;
+                            color: $colorBlanco;
+                            text-decoration: none;
+                            display: block;
+                            font-size: 15px;
+                            text-align: center;
+                        }
+                        .crearGifos{
+                            display: none;
+                            img{
+                            }                        
+                        }
+                        .lineaFina{
+                            width: 41px;
+                            height: 0.1px;
+                            margin-top: 11px;
+                            background-color: $colorBlanco;
+                            align-self: center;
+                        }
+                    }
+                }
+
+                input[type="checkbox"]:checked ~ ul {
+                    height: 100vh;
+                } 
+
+                /*---------CHECKBOX TRANSPARENTE-----------*/
+                input{
+                    display: block;
+                    width: 95px; 
+                    height: 95px;
+                    opacity: 0;
+                    z-index: 2;
+                    position: absolute;
+                    top: 5px;
+                    right: 0px;           
+                }
+
+                
+                /*---------SPAN MENÚ HAMBURGUESA-----------*/
+                span{
+                    display: block;
+                    width: 15px;
+                    height: 2px;
+                    margin-bottom: 4px;
+                    position: relative;
+                    background: $colorAzul;
+                    z-index: 11;
+                    transform-origin: 1px 1px;
+                }           
+                        
+                /*---------MOVIMIENTO A CRUZ-----------*/
+                input:checked ~ span {
+                    opacity: 1;
+                    transform: rotate(45deg) translate(2px, 1px);
+                }            
+                input:checked ~ span:nth-last-child(3) {
+                    opacity: 0;
+                    transform: rotate(0deg) scale(0.2, 0.2);
+                }
+                input:checked ~ span:nth-last-child(2) {
+                    transform: rotate(-45deg) translate(1px, 0px);
+                }
+            }
+        }
+    }
+}
+
+

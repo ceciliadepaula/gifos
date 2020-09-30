@@ -1,0 +1,180 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #ffffff;
+}
+
+.titulo {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+}
+
+.textosPrincipales {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+}
+
+.textosSecundarios {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+}
+
+header {
+  width: 100%;
+  position: fixed;
+}
+
+header .lineaAzul {
+  height: 5px;
+  background-color: #572EE5;
+}
+
+header #barraNavegacion {
+  height: 95px;
+  background-color: #ffffff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+header #barraNavegacion a img {
+  width: 49px;
+  margin: 29px 0 0 22px;
+}
+
+header #barraNavegacion nav {
+  height: 95px;
+}
+
+header #barraNavegacion nav .menu {
+  margin: 47px 26px 0 0;
+  /* img{
+                    width: 15px;
+                    margin: 47px 26px 0 0;
+                }
+                .cruz{
+                    display:none;
+                } */
+  /*---------CHECKBOX TRANSPARENTE-----------*/
+  /*---------SPAN MENÚ HAMBURGUESA-----------*/
+  /*---------MOVIMIENTO A CRUZ-----------*/
+}
+
+header #barraNavegacion nav .menu ul {
+  width: 100%;
+  position: absolute;
+  top: 100px;
+  right: 0;
+  overflow: hidden;
+  background-color: rgba(87, 46, 229, 0.9);
+  height: 0px;
+}
+
+header #barraNavegacion nav .menu ul .linkPrimero {
+  margin-top: 40px;
+}
+
+header #barraNavegacion nav .menu ul li {
+  list-style: none;
+  height: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header #barraNavegacion nav .menu ul li .link {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  color: #ffffff;
+  text-decoration: none;
+  display: block;
+  font-size: 15px;
+  text-align: center;
+}
+
+header #barraNavegacion nav .menu ul li .crearGifos {
+  display: none;
+}
+
+header #barraNavegacion nav .menu ul li .lineaFina {
+  width: 41px;
+  height: 0.1px;
+  margin-top: 11px;
+  background-color: #ffffff;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+header #barraNavegacion nav .menu input[type="checkbox"]:checked ~ ul {
+  height: 100vh;
+}
+
+header #barraNavegacion nav .menu input {
+  display: block;
+  width: 95px;
+  height: 95px;
+  opacity: 0;
+  z-index: 2;
+  position: absolute;
+  top: 5px;
+  right: 0px;
+}
+
+header #barraNavegacion nav .menu span {
+  display: block;
+  width: 15px;
+  height: 2px;
+  margin-bottom: 4px;
+  position: relative;
+  background: #572EE5;
+  z-index: 11;
+  -webkit-transform-origin: 1px 1px;
+          transform-origin: 1px 1px;
+}
+
+header #barraNavegacion nav .menu input:checked ~ span {
+  opacity: 1;
+  -webkit-transform: rotate(45deg) translate(2px, 1px);
+          transform: rotate(45deg) translate(2px, 1px);
+}
+
+header #barraNavegacion nav .menu input:checked ~ span:nth-last-child(3) {
+  opacity: 0;
+  -webkit-transform: rotate(0deg) scale(0.2, 0.2);
+          transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+header #barraNavegacion nav .menu input:checked ~ span:nth-last-child(2) {
+  -webkit-transform: rotate(-45deg) translate(1px, 0px);
+          transform: rotate(-45deg) translate(1px, 0px);
+}
+/*# sourceMappingURL=style.css.map */

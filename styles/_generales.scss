@@ -1,0 +1,31 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: $colorBlanco;
+}
+
+//-------------TEXTOS---------------//
+
+.titulo{
+    font-family: $tipoTitulos;
+    font-weight: $bold;
+}
+
+.textosPrincipales{
+    font-family: $tipoTitulos;
+    font-weight: $medium;
+}
+
+.textosSecundarios{
+    font-family: $tipoTextos;
+    font-weight: $regular;
+}
