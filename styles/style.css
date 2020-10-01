@@ -121,7 +121,7 @@ header #barraNavegacion nav .menu ul li .crearGifos {
 header #barraNavegacion nav .menu ul li .lineaFina {
   width: 41px;
   height: 0.1px;
-  margin-top: 11px;
+  margin-top: 14px;
   background-color: #ffffff;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
@@ -149,5 +149,87 @@ header #barraNavegacion nav .menu input {
   position: absolute;
   top: 5px;
   right: 0px;
+}
+
+@media screen and (min-width: 768px) {
+  header #barraNavegacion {
+    height: 90px;
+    margin-right: 7%;
+    margin-left: 7%;
+  }
+  header #barraNavegacion a {
+    position: relative;
+    z-index: 12;
+    margin-left: 0px;
+  }
+  header #barraNavegacion a img {
+    margin: 18px 0 0 0;
+    width: 59px;
+  }
+  header #barraNavegacion nav {
+    width: 100%;
+    height: 90px;
+  }
+  header #barraNavegacion nav .menu {
+    height: 90px;
+    margin: 0;
+  }
+  header #barraNavegacion nav .menu .hamburguesa {
+    display: none;
+  }
+  header #barraNavegacion nav .menu .cruz {
+    display: none;
+  }
+  header #barraNavegacion nav .menu ul {
+    height: 90px;
+    position: relative;
+    top: 0;
+    overflow: visible;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    background-color: #ffffff;
+  }
+  header #barraNavegacion nav .menu ul .linkPrimero {
+    margin: 0;
+  }
+  header #barraNavegacion nav .menu ul li {
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+    padding-left: 40px;
+  }
+  header #barraNavegacion nav .menu ul li .link {
+    color: #572EE5;
+    margin: 0;
+  }
+  header #barraNavegacion nav .menu ul li .crearGifos {
+    display: inherit;
+    position: relative;
+    bottom: 10px;
+  }
+  header #barraNavegacion nav .menu ul li .lineaFina {
+    display: none;
+  }
+  header #barraNavegacion nav input#checkbox {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  header #barraNavegacion {
+    margin-right: 10%;
+    margin-left: 10%;
+  }
 }
 /*# sourceMappingURL=style.css.map */

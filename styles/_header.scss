@@ -21,8 +21,6 @@ header{
             height: 95px;
             .menu{
                 margin: 47px 26px 0 0;
-                .hamburguesa{
-                }
                 .cruz{
                     display:none;
                 }
@@ -54,14 +52,12 @@ header{
                             text-align: center;
                         }
                         .crearGifos{
-                            display: none;
-                            img{
-                            }                        
+                            display: none;                   
                         }
                         .lineaFina{
                             width: 41px;
                             height: 0.1px;
-                            margin-top: 11px;
+                            margin-top: 14px;
                             background-color: $colorBlanco;
                             align-self: center;
                         }
