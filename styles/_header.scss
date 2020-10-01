@@ -21,13 +21,11 @@ header{
             height: 95px;
             .menu{
                 margin: 47px 26px 0 0;
-                /* img{
-                    width: 15px;
-                    margin: 47px 26px 0 0;
+                .hamburguesa{
                 }
                 .cruz{
                     display:none;
-                } */
+                }
                 ul{
                     width: 100%;
                     position: absolute;
@@ -74,6 +72,14 @@ header{
                     height: 100vh;
                 } 
 
+                input:checked ~ .hamburguesa {
+                    display: none;
+                }          
+                
+                input:checked ~ .cruz {
+                    display: inherit;
+                }   
+
                 /*---------CHECKBOX TRANSPARENTE-----------*/
                 input{
                     display: block;
@@ -84,32 +90,6 @@ header{
                     position: absolute;
                     top: 5px;
                     right: 0px;           
-                }
-
-                
-                /*---------SPAN MENÚ HAMBURGUESA-----------*/
-                span{
-                    display: block;
-                    width: 15px;
-                    height: 2px;
-                    margin-bottom: 4px;
-                    position: relative;
-                    background: $colorAzul;
-                    z-index: 11;
-                    transform-origin: 1px 1px;
-                }           
-                        
-                /*---------MOVIMIENTO A CRUZ-----------*/
-                input:checked ~ span {
-                    opacity: 1;
-                    transform: rotate(45deg) translate(2px, 1px);
-                }            
-                input:checked ~ span:nth-last-child(3) {
-                    opacity: 0;
-                    transform: rotate(0deg) scale(0.2, 0.2);
-                }
-                input:checked ~ span:nth-last-child(2) {
-                    transform: rotate(-45deg) translate(1px, 0px);
                 }
             }
         }

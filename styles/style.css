@@ -1,4 +1,3 @@
-@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
@@ -66,16 +65,11 @@ header #barraNavegacion nav {
 
 header #barraNavegacion nav .menu {
   margin: 47px 26px 0 0;
-  /* img{
-                    width: 15px;
-                    margin: 47px 26px 0 0;
-                }
-                .cruz{
-                    display:none;
-                } */
   /*---------CHECKBOX TRANSPARENTE-----------*/
-  /*---------SPAN MENÚ HAMBURGUESA-----------*/
-  /*---------MOVIMIENTO A CRUZ-----------*/
+}
+
+header #barraNavegacion nav .menu .cruz {
+  display: none;
 }
 
 header #barraNavegacion nav .menu ul {
@@ -138,6 +132,14 @@ header #barraNavegacion nav .menu input[type="checkbox"]:checked ~ ul {
   height: 100vh;
 }
 
+header #barraNavegacion nav .menu input:checked ~ .hamburguesa {
+  display: none;
+}
+
+header #barraNavegacion nav .menu input:checked ~ .cruz {
+  display: inherit;
+}
+
 header #barraNavegacion nav .menu input {
   display: block;
   width: 95px;
@@ -147,34 +149,5 @@ header #barraNavegacion nav .menu input {
   position: absolute;
   top: 5px;
   right: 0px;
-}
-
-header #barraNavegacion nav .menu span {
-  display: block;
-  width: 15px;
-  height: 2px;
-  margin-bottom: 4px;
-  position: relative;
-  background: #572EE5;
-  z-index: 11;
-  -webkit-transform-origin: 1px 1px;
-          transform-origin: 1px 1px;
-}
-
-header #barraNavegacion nav .menu input:checked ~ span {
-  opacity: 1;
-  -webkit-transform: rotate(45deg) translate(2px, 1px);
-          transform: rotate(45deg) translate(2px, 1px);
-}
-
-header #barraNavegacion nav .menu input:checked ~ span:nth-last-child(3) {
-  opacity: 0;
-  -webkit-transform: rotate(0deg) scale(0.2, 0.2);
-          transform: rotate(0deg) scale(0.2, 0.2);
-}
-
-header #barraNavegacion nav .menu input:checked ~ span:nth-last-child(2) {
-  -webkit-transform: rotate(-45deg) translate(1px, 0px);
-          transform: rotate(-45deg) translate(1px, 0px);
 }
 /*# sourceMappingURL=style.css.map */
