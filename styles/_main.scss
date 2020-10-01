@@ -1,0 +1,58 @@
+main{
+    position: relative;
+    top: 100px;
+    #presentacion{
+        h1.titulo{
+            padding: 10px 45px 30px 45px;
+            font-size: 25px;
+            line-height: 33px;
+        }
+        .barraBusqueda{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 30px;            
+            img{
+                width: 80%;
+                max-width: 400px;
+            }
+            form{
+                margin: 0 5%;
+                width: 90%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                input{
+                    border: $colorAzul solid 1px;
+                    width: 100%;
+                    max-width: 550px;
+                    height: 50px;
+                    border-radius: 50px;
+                    font-family: $tipoTextos;
+                    color: $colorGris;
+                    font-size: 16px;
+                    line-height: 19px;
+                    padding-left: 25px;
+                    padding-right: 25px;
+                    background-image: url("../images/icon-search.svg");
+                    background-repeat: no-repeat;
+                    background-position: right 25px center ;
+                    background-size: 20px;
+                }
+            }
+        }
+        .barraTrending{
+            margin-bottom: 45px;
+            padding: 0 60px;
+            h3.titulo{
+                font-size: 16px;
+                line-height: 25px;
+            }
+            p.textosPrincipales{
+                color: $colorAzul;
+                font-size: 14px;
+                line-height: 25px;
+            }
+        }
+    }
+}

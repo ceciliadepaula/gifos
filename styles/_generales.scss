@@ -18,14 +18,24 @@ body{
 .titulo{
     font-family: $tipoTitulos;
     font-weight: $bold;
+    color: $colorAzul;
+    text-align: center;
 }
 
 .textosPrincipales{
     font-family: $tipoTitulos;
     font-weight: $medium;
+    text-align: center;
 }
 
 .textosSecundarios{
     font-family: $tipoTextos;
     font-weight: $regular;
+    text-align: center;
+}
+
+//-------------TIPOGRAFIA COLORES---------------//
+
+.colorVerde{
+    color: $colorVerde;
 }

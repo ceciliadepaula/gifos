@@ -17,21 +17,30 @@ body {
 .titulo {
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
+  color: #572EE5;
+  text-align: center;
 }
 
 .textosPrincipales {
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
+  text-align: center;
 }
 
 .textosSecundarios {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
+  text-align: center;
+}
+
+.colorVerde {
+  color: #50E3C2;
 }
 
 header {
   width: 100%;
   position: fixed;
+  z-index: 100;
 }
 
 header .lineaAzul {
@@ -149,6 +158,85 @@ header #barraNavegacion nav .menu input {
   position: absolute;
   top: 5px;
   right: 0px;
+}
+
+main {
+  position: relative;
+  top: 100px;
+}
+
+main #presentacion h1.titulo {
+  padding: 10px 45px 30px 45px;
+  font-size: 25px;
+  line-height: 33px;
+}
+
+main #presentacion .barraBusqueda {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 30px;
+}
+
+main #presentacion .barraBusqueda img {
+  width: 80%;
+  max-width: 400px;
+}
+
+main #presentacion .barraBusqueda form {
+  margin: 0 5%;
+  width: 90%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main #presentacion .barraBusqueda form input {
+  border: #572EE5 solid 1px;
+  width: 100%;
+  max-width: 550px;
+  height: 50px;
+  border-radius: 50px;
+  font-family: "Roboto", sans-serif;
+  color: #6B7989;
+  font-size: 16px;
+  line-height: 19px;
+  padding-left: 25px;
+  padding-right: 25px;
+  background-image: url("../images/icon-search.svg");
+  background-repeat: no-repeat;
+  background-position: right 25px center;
+  background-size: 20px;
+}
+
+main #presentacion .barraTrending {
+  margin-bottom: 45px;
+  padding: 0 60px;
+}
+
+main #presentacion .barraTrending h3.titulo {
+  font-size: 16px;
+  line-height: 25px;
+}
+
+main #presentacion .barraTrending p.textosPrincipales {
+  color: #572EE5;
+  font-size: 14px;
+  line-height: 25px;
 }
 
 @media screen and (min-width: 768px) {
