@@ -1,0 +1,23 @@
+footer{
+    position: relative;
+    top: 100px;
+    padding: 47px 0 0 0;
+    .textosSecundarios{
+        font-size: 15px;
+        line-height: 18px;
+    }
+    .iconos{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        margin: 22px auto 47px auto;
+        width: 100px;
+        a{
+            text-align: center;
+        }
+    }
+    .lineaAzul{
+        margin-top: 23px;
+        height: 5px;
+        background-color: $colorAzul;
+    }
+}

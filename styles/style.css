@@ -239,6 +239,67 @@ main #presentacion .barraTrending p.textosPrincipales {
   line-height: 25px;
 }
 
+main #trending {
+  background-color: #F3F5F8;
+  padding-bottom: 82px;
+}
+
+main #trending .informacion {
+  padding-top: 50px;
+}
+
+main #trending .informacion h2 {
+  font-size: 20px;
+  line-height: 30px;
+  padding-bottom: 10px;
+}
+
+main #trending .informacion p {
+  font-size: 16px;
+  line-height: 23px;
+}
+
+main #trending .swipe {
+  margin-top: 40px;
+}
+
+main #trending .swipe .imagenSimulada {
+  height: 187px;
+  width: 243px;
+  background-color: #572EE5;
+  margin: 0 auto;
+}
+
+footer {
+  position: relative;
+  top: 100px;
+  padding: 47px 0 0 0;
+}
+
+footer .textosSecundarios {
+  font-size: 15px;
+  line-height: 18px;
+}
+
+footer .iconos {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  margin: 22px auto 47px auto;
+  width: 100px;
+}
+
+footer .iconos a {
+  text-align: center;
+}
+
+footer .lineaAzul {
+  margin-top: 23px;
+  height: 5px;
+  background-color: #572EE5;
+}
+
 @media screen and (min-width: 768px) {
   header #barraNavegacion {
     height: 90px;

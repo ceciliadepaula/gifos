@@ -55,4 +55,32 @@ main{
             }
         }
     }
+    #trending{
+        background-color: $colorGrisClaro;
+        padding-bottom: 82px;
+        .informacion{
+            padding-top: 50px;
+            h2{
+                font-size: 20px;
+                line-height: 30px;
+                padding-bottom: 10px;
+            }
+            p{
+                font-size: 16px;
+                line-height: 23px;
+            }
+
+        }
+        .swipe{
+            margin-top: 40px;            
+            .imagenSimulada{  // cambiar esto por gifs
+                height: 187px;
+                width: 243px;
+                background-color: $colorAzul;
+                margin: 0 auto;
+            }
+            
+
+        }
+    }
 }
