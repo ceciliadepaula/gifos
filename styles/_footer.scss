@@ -12,12 +12,56 @@ footer{
         margin: 22px auto 47px auto;
         width: 100px;
         a{
-            text-align: center;
-        }
+            .facebook, .twitter, .instagram{ 
+                height: 20px;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+            .facebook{
+                background-image: url(../images/icon_facebook.svg);
+            }
+            .twitter{
+                background-image: url(../images/icon-twitter.svg);
+            }
+            .instagram{
+                background-image: url(../images/icon_instagram.svg);
+            }
+            
+/*             esto para 768 para arriba
+
+            .facebook:hover{
+                background-image: url(../images/icon_facebook_hover.svg);
+            }
+            .twitter:hover{
+                background-image: url(../images/icon-twitter-hover.svg);
+            }
+            .instagram:hover{
+                background-image: url(../images/icon_instagram-hover.svg);
+            } */
+
+            .facebook:active{
+                background-image: url(../images/icon_facebook_hover.svg);
+            }
+            .twitter:active{
+                background-image: url(../images/icon-twitter-hover.svg);
+            }
+            .instagram:active{
+                background-image: url(../images/icon_instagram-hover.svg);
+            }
+        }        
+    }
+    .texto2{
+        margin-bottom: 25px;
     }
     .lineaAzul{
-        margin-top: 23px;
         height: 5px;
         background-color: $colorAzul;
+        width: 100%;
+        position: fixed;
+        bottom: 0px;
     }
+
+    
+
+
 }

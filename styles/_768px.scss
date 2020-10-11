@@ -1,5 +1,6 @@
 @media screen and (min-width: 768px){
     header{
+        background-color: $colorBlanco;
         #barraNavegacion{
             height: 90px;
             margin-right: 7%; 
@@ -64,6 +65,8 @@
             }
         }
     }
+
+/* falta mnain y footer */
 
 }
 

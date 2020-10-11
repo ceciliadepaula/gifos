@@ -291,16 +291,65 @@ footer .iconos {
 }
 
 footer .iconos a {
-  text-align: center;
+  /*             esto para 768 para arriba
+
+            .facebook:hover{
+                background-image: url(../images/icon_facebook_hover.svg);
+            }
+            .twitter:hover{
+                background-image: url(../images/icon-twitter-hover.svg);
+            }
+            .instagram:hover{
+                background-image: url(../images/icon_instagram-hover.svg);
+            } */
+}
+
+footer .iconos a .facebook, footer .iconos a .twitter, footer .iconos a .instagram {
+  height: 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+footer .iconos a .facebook {
+  background-image: url(../images/icon_facebook.svg);
+}
+
+footer .iconos a .twitter {
+  background-image: url(../images/icon-twitter.svg);
+}
+
+footer .iconos a .instagram {
+  background-image: url(../images/icon_instagram.svg);
+}
+
+footer .iconos a .facebook:active {
+  background-image: url(../images/icon_facebook_hover.svg);
+}
+
+footer .iconos a .twitter:active {
+  background-image: url(../images/icon-twitter-hover.svg);
+}
+
+footer .iconos a .instagram:active {
+  background-image: url(../images/icon_instagram-hover.svg);
+}
+
+footer .texto2 {
+  margin-bottom: 25px;
 }
 
 footer .lineaAzul {
-  margin-top: 23px;
   height: 5px;
   background-color: #572EE5;
+  width: 100%;
+  position: fixed;
+  bottom: 0px;
 }
 
 @media screen and (min-width: 768px) {
+  header {
+    background-color: #ffffff;
+  }
   header #barraNavegacion {
     height: 90px;
     margin-right: 7%;
@@ -373,6 +422,7 @@ footer .lineaAzul {
   header #barraNavegacion nav input#checkbox {
     display: none;
   }
+  /* falta mnain y footer */
 }
 
 @media screen and (min-width: 1024px) {
@@ -380,5 +430,6 @@ footer .lineaAzul {
     margin-right: 10%;
     margin-left: 10%;
   }
+  /* falta header mnain y footer */
 }
 /*# sourceMappingURL=style.css.map */
