@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,10 +10,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 
-<!--     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+    <!--     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
     <link rel="icon" type="image/svg" href="images/logo.svg"> -->
 </head>
-<body> 
+
+<body>
     <!-- Agregar links en a. Pasar medidas tipog a Rem -->
     <header>
         <div class="lineaAzul"></div>
@@ -27,31 +29,40 @@
                         <li class="linkPrimero">
                             <a href="#" class="link">Modo nocturno</a>
                             <div class="lineaFina"></div>
+                            <div class="lineaHover"></div>
+
+
                         </li>
                         <li>
                             <a href="#" class="link">Favoritos</a>
                             <div class="lineaFina"></div>
+                            <div class="lineaHover"></div>
                         </li>
                         <li>
                             <a href="#" class="link">Mis GIFOS</a>
                             <div class="lineaFina"></div>
+                            <div class="lineaHover"></div>
                         </li>
-                        <li><a href="#" class="link crearGifos"><img src="images/button-crear-gifo.svg" alt="Crear Gifos Ícono" /></a></li>
+                        <li>
+                            <a href="#" class="link crearGifos">
+                                <img id="crearGifos" alt="Crear Gifos Ícono" />
+                            </a>
+                        </li>
                     </ul>
                 </div>
-            </nav>  
-        </div>  
+            </nav>
+        </div>
     </header>
 
     <main>
-        <section id="presentacion"> 
+        <section id="presentacion">
 
             <h1 class="titulo">Inspírate, busca, guarda, y crea los mejores <span class="colorVerde">GIFOS</span></h1>
 
             <div class="barraBusqueda">
                 <img src="images/ilustra_header.svg" alt="Ilustracion de tres chicos abrazados">
-                <form action=""> 
-<!-- completar accion. hacer que cambie color al tipear algo. falta el link en la lupa-->
+                <form action="">
+                    <!-- completar accion. hacer que cambie color al tipear algo. falta el link en la lupa-->
                     <input type="text" name="buscarGifos" placeholder="Busca GIFOS y más">
                 </form>
             </div>
@@ -63,12 +74,12 @@
 
         </section>
 
-        <section id="trending"> 
+        <section id="trending">
             <div class="informacion">
                 <h2 class="titulo">Trending GIFOS</h2>
                 <p class="textosSecundarios">Mira los últimos GIFOS <br> de nuestra comunidad.</p>
             </div>
-            <div class="swipe"> 
+            <div class="swipe">
                 <!-- Cambiar por swiope gifs -->
                 <div class="imagenSimulada">imagen simulada </div>
             </div>
@@ -80,13 +91,64 @@
         <div class="iconos">
             <!-- Completar links -->
 
-            <a class="" href=""><div class="facebook"> </div></a>
-            <a class="" href=""><div class="twitter"></div></a>
-            <a class="" href=""><div class="instagram"></div></a>
+            <a class="" href="">
+                <div class="facebook"> </div>
+            </a>
+            <a class="" href="">
+                <div class="twitter"></div>
+            </a>
+            <a class="" href="">
+                <div class="instagram"></div>
+            </a>
 
         </div>
         <p class="textosSecundarios texto2">© GIFOS 2020 All Rights Reserved.</p>
         <div class="lineaAzul"></div>
     </footer>
+
+
+
+    <script>
+
+    // Cambiar los estilos de los íconos de la barra navegación
+
+        // Ícono (+) para crear propios Gifos
+
+        crearGifos = document.getElementById("crearGifos");
+
+        function Unhover() {
+            crearGifos.setAttribute('src', 'images/button-crear-gifo.svg');
+        }
+
+        Unhover(crearGifos);
+        crearGifos.addEventListener("mouseleave", Unhover);
+        crearGifos.addEventListener("mouseover", () => {crearGifos.setAttribute('src', 'images/CTA-crear-gifo-hover.svg');});
+        crearGifos.addEventListener("click", () => {crearGifos.setAttribute('src', 'images/CTA-crear-gifo-active.svg');});
+
+        // Nombre de Secciones
+
+        lineaHover = document.getElementsByClassName("lineaHover");
+        linkHover = document.getElementsByClassName("link");
+            
+        linkHover[0].addEventListener("mouseover", () => {lineaHover[0].style.backgroundColor = "#50E3C2"});
+        linkHover[1].addEventListener("mouseover", () => {lineaHover[1].style.backgroundColor = "#50E3C2"});
+        linkHover[2].addEventListener("mouseover", () => {lineaHover[2].style.backgroundColor = "#50E3C2"});
+
+        linkHover[0].addEventListener("mouseleave", () => {lineaHover[0].style.backgroundColor = "#ffffff"});
+        linkHover[1].addEventListener("mouseleave", () => {lineaHover[1].style.backgroundColor = "#ffffff"});
+        linkHover[2].addEventListener("mouseleave", () => {lineaHover[2].style.backgroundColor = "#ffffff"});
+
+        linkHover[0].addEventListener("click", () => {linkHover[0].style.color = "#9CAFC3"; lineaHover[0].style.backgroundColor = "#9CAFC3"});
+        linkHover[1].addEventListener("click", () => {linkHover[1].style.color = "#9CAFC3"; lineaHover[1].style.backgroundColor = "#9CAFC3"});
+        linkHover[2].addEventListener("click", () => {linkHover[2].style.color = "#9CAFC3"; lineaHover[2].style.backgroundColor = "#9CAFC3"});
+
+
+
+
+
+
+
+    </script>
 </body>
+
 </html>

@@ -137,6 +137,10 @@ header #barraNavegacion nav .menu ul li .lineaFina {
       align-self: center;
 }
 
+header #barraNavegacion nav .menu ul li .lineaHover {
+  display: none;
+}
+
 header #barraNavegacion nav .menu input[type="checkbox"]:checked ~ ul {
   height: 100vh;
 }
@@ -418,6 +422,13 @@ footer .lineaAzul {
   }
   header #barraNavegacion nav .menu ul li .lineaFina {
     display: none;
+  }
+  header #barraNavegacion nav .menu ul li .lineaHover {
+    display: inherit;
+    width: 100%;
+    height: 2px;
+    margin-top: 3px;
+    background-color: #ffffff;
   }
   header #barraNavegacion nav input#checkbox {
     display: none;
