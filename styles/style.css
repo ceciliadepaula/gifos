@@ -37,6 +37,93 @@ body {
   color: #50E3C2;
 }
 
+body.nocturno {
+  background-color: #37383C;
+}
+
+body.nocturno .titulo {
+  color: #ffffff;
+}
+
+body.nocturno header .lineaAzul {
+  background-color: #000000;
+}
+
+body.nocturno header #barraNavegacion {
+  background-color: #37383C;
+}
+
+body.nocturno header #barraNavegacion nav .menu ul {
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+body.nocturno main #presentacion .barraBusqueda form input {
+  border: #ffffff solid 1px;
+  color: #9CAFC3;
+  background-color: #37383C;
+  background-image: url("../images/icon-search-modo-noct.svg");
+}
+
+body.nocturno main #presentacion .barraTrending p.textosPrincipales {
+  color: #ffffff;
+}
+
+body.nocturno main #trending {
+  background-color: #222326;
+}
+
+body.nocturno main #trending p.textosSecundarios {
+  color: #ffffff;
+}
+
+body.nocturno footer .grillaFooter div .textosSecundarios {
+  color: #ffffff;
+}
+
+body.nocturno footer .grillaFooter div .iconos a .facebook:active {
+  background-image: url(../images/icon_facebook_noc.svg);
+}
+
+body.nocturno footer .grillaFooter div .iconos a .twitter:active {
+  background-image: url(../images/icon_twitter_noc.svg);
+}
+
+body.nocturno footer .grillaFooter div .iconos a .instagram:active {
+  background-image: url(../images/icon_instagram_noc.svg);
+}
+
+body.nocturno footer .grillaFooter .texto2 {
+  color: #ffffff;
+}
+
+body.nocturno footer .lineaAzul {
+  background-color: #000000;
+}
+
+@media screen and (min-width: 768px) {
+  body.nocturno header {
+    background-color: #37383C;
+  }
+  body.nocturno header #barraNavegacion nav .menu ul {
+    background-color: #37383C;
+  }
+  body.nocturno header #barraNavegacion nav .menu ul li .link {
+    color: #ffffff;
+  }
+  body.nocturno header #barraNavegacion nav .menu ul li .lineaHover {
+    background-color: #37383C;
+  }
+  body.nocturno footer .grillaFooter div .iconos a .facebook:hover {
+    background-image: url(../images/icon_facebook_noc.svg);
+  }
+  body.nocturno footer .grillaFooter div .iconos a .twitter:hover {
+    background-image: url(../images/icon_twitter_noc.svg);
+  }
+  body.nocturno footer .grillaFooter div .iconos a .instagram:hover {
+    background-image: url(../images/icon_instagram_noc.svg);
+  }
+}
+
 header {
   width: 100%;
   position: fixed;
@@ -280,12 +367,12 @@ footer {
   padding: 47px 0 0 0;
 }
 
-footer .textosSecundarios {
+footer .grillaFooter div .textosSecundarios {
   font-size: 15px;
   line-height: 18px;
 }
 
-footer .iconos {
+footer .grillaFooter div .iconos {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr 1fr;
@@ -294,52 +381,39 @@ footer .iconos {
   width: 100px;
 }
 
-footer .iconos a {
-  /*             esto para 768 para arriba
-
-            .facebook:hover{
-                background-image: url(../images/icon_facebook_hover.svg);
-            }
-            .twitter:hover{
-                background-image: url(../images/icon-twitter-hover.svg);
-            }
-            .instagram:hover{
-                background-image: url(../images/icon_instagram-hover.svg);
-            } */
-}
-
-footer .iconos a .facebook, footer .iconos a .twitter, footer .iconos a .instagram {
+footer .grillaFooter div .iconos a .facebook, footer .grillaFooter div .iconos a .twitter, footer .grillaFooter div .iconos a .instagram {
   height: 20px;
   background-repeat: no-repeat;
   background-position: center;
 }
 
-footer .iconos a .facebook {
+footer .grillaFooter div .iconos a .facebook {
   background-image: url(../images/icon_facebook.svg);
 }
 
-footer .iconos a .twitter {
+footer .grillaFooter div .iconos a .twitter {
   background-image: url(../images/icon-twitter.svg);
 }
 
-footer .iconos a .instagram {
+footer .grillaFooter div .iconos a .instagram {
   background-image: url(../images/icon_instagram.svg);
 }
 
-footer .iconos a .facebook:active {
+footer .grillaFooter div .iconos a .facebook:active {
   background-image: url(../images/icon_facebook_hover.svg);
 }
 
-footer .iconos a .twitter:active {
+footer .grillaFooter div .iconos a .twitter:active {
   background-image: url(../images/icon-twitter-hover.svg);
 }
 
-footer .iconos a .instagram:active {
+footer .grillaFooter div .iconos a .instagram:active {
   background-image: url(../images/icon_instagram-hover.svg);
 }
 
-footer .texto2 {
+footer .grillaFooter .texto2 {
   margin-bottom: 25px;
+  font-size: 14px;
 }
 
 footer .lineaAzul {
@@ -433,7 +507,103 @@ footer .lineaAzul {
   header #barraNavegacion nav input#checkbox {
     display: none;
   }
-  /* falta mnain y footer */
+  header #barraNavegacion nav .menu input[type="checkbox"]:checked ~ ul {
+    height: 90px;
+  }
+  header #barraNavegacion nav .menu input:checked ~ .cruz {
+    display: none;
+  }
+  main {
+    position: relative;
+    top: 170px;
+  }
+  main #presentacion h1.titulo {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 35px;
+    line-height: 50px;
+  }
+  main #presentacion .barraTrending h3.titulo {
+    margin-top: 73px;
+  }
+  main #presentacion .barraTrending p.textosPrincipales {
+    margin-bottom: 95px;
+  }
+  main #trending {
+    padding-bottom: 182px;
+  }
+  main #trending .informacion {
+    padding-top: 63px;
+  }
+  main #trending .informacion h2 {
+    font-size: 25px;
+    padding-bottom: 12px;
+  }
+  main #trending .informacion p {
+    font-size: 18px;
+  }
+  main #trending .informacion p br {
+    display: none;
+  }
+  main #trending .swipe {
+    margin-top: 53px;
+  }
+  main #trending .swipe .imagenSimulada {
+    height: 275px;
+    width: 357px;
+    margin: 0 auto;
+  }
+  footer {
+    position: relative;
+    top: 120px;
+  }
+  footer .grillaFooter {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    margin: 0 10%;
+    height: 116px;
+  }
+  footer .grillaFooter div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  footer .grillaFooter div .textosSecundarios {
+    font-size: 13px;
+    line-height: 15px;
+  }
+  footer .grillaFooter div .iconos {
+    margin: 0 0 0 20px;
+  }
+  footer .grillaFooter div .iconos a .facebook:hover {
+    background-image: url(../images/icon_facebook_hover.svg);
+  }
+  footer .grillaFooter div .iconos a .twitter:hover {
+    background-image: url(../images/icon-twitter-hover.svg);
+  }
+  footer .grillaFooter div .iconos a .instagram:hover {
+    background-image: url(../images/icon_instagram-hover.svg);
+  }
+  footer .grillaFooter .texto2 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    font-size: 13px;
+    line-height: 15px;
+    margin-bottom: 0;
+  }
 }
 
 @media screen and (min-width: 1024px) {

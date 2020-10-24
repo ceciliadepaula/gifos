@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GIFOS</title>
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="icon" type="image/svg" href="images/logo-mobile.svg">
     <!-- Fuentes tipográficas -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 
-    <!--     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
-    <link rel="icon" type="image/svg" href="images/logo.svg"> -->
+
+    <!--Si uso iconos de FontAwesome
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">-->
+     
 </head>
 
 <body>
@@ -25,26 +27,24 @@
                     <input type="checkbox" id="checkbox" />
                     <img class="hamburguesa" src="images/burger.svg" alt="Menú Hamburguesa" />
                     <img class="cruz" src="images/close.svg" alt="Cerrar menú Hamburguesa" />
-                    <ul>
-                        <li class="linkPrimero">
+                    <ul id="ulHeader">
+                        <li class="linkPrimero" id="nocturno">
                             <a href="#" class="link">Modo nocturno</a>
                             <div class="lineaFina"></div>
                             <div class="lineaHover"></div>
-
-
                         </li>
                         <li>
-                            <a href="#" class="link">Favoritos</a>
+                            <a href="index.html" class="link">Favoritos</a>
                             <div class="lineaFina"></div>
                             <div class="lineaHover"></div>
                         </li>
                         <li>
-                            <a href="#" class="link">Mis GIFOS</a>
+                            <a href="index.html" class="link">Mis GIFOS</a>
                             <div class="lineaFina"></div>
                             <div class="lineaHover"></div>
                         </li>
                         <li>
-                            <a href="#" class="link crearGifos">
+                            <a href="index.html" class="link crearGifos">
                                 <img id="crearGifos" alt="Crear Gifos Ícono" />
                             </a>
                         </li>
@@ -56,9 +56,7 @@
 
     <main>
         <section id="presentacion">
-
             <h1 class="titulo">Inspírate, busca, guarda, y crea los mejores <span class="colorVerde">GIFOS</span></h1>
-
             <div class="barraBusqueda">
                 <img src="images/ilustra_header.svg" alt="Ilustracion de tres chicos abrazados">
                 <form action="">
@@ -66,12 +64,10 @@
                     <input type="text" name="buscarGifos" placeholder="Busca GIFOS y más">
                 </form>
             </div>
-
             <div class="barraTrending">
                 <h3 class="titulo">Trending:</h3>
                 <p class="textosPrincipales">Reactions, Entertainment, Sports, Stickers, Artists</p>
             </div>
-
         </section>
 
         <section id="trending">
@@ -80,33 +76,36 @@
                 <p class="textosSecundarios">Mira los últimos GIFOS <br> de nuestra comunidad.</p>
             </div>
             <div class="swipe">
-                <!-- Cambiar por swiope gifs -->
+                <!-- Cambiar por swipe gifs -->
                 <div class="imagenSimulada">imagen simulada </div>
             </div>
         </section>
     </main>
 
     <footer>
-        <p class="textosSecundarios">Compartir en:</p>
-        <div class="iconos">
-            <!-- Completar links -->
-
-            <a class="" href="">
-                <div class="facebook"> </div>
-            </a>
-            <a class="" href="">
-                <div class="twitter"></div>
-            </a>
-            <a class="" href="">
-                <div class="instagram"></div>
-            </a>
-
+        <div class="grillaFooter">
+            <div>
+                <p class="textosSecundarios">Compartir en:</p>
+                <div class="iconos">
+                <!-- Completar links -->
+                    <a class="" href="">
+                        <div class="facebook"> </div>
+                    </a>
+                    <a class="" href="">
+                        <div class="twitter"></div>
+                    </a>
+                    <a class="" href="">
+                        <div class="instagram"></div>
+                    </a>
+                </div>
+            </div>
+            <p class="textosSecundarios texto2">© GIFOS 2020 All Rights Reserved.</p>
         </div>
-        <p class="textosSecundarios texto2">© GIFOS 2020 All Rights Reserved.</p>
         <div class="lineaAzul"></div>
     </footer>
 
     <script src="scripts/script.js"></script>
+    <script src="scripts/nocturno.js"></script>
 </body>
 
 </html>

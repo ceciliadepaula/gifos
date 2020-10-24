@@ -1,0 +1,126 @@
+body.nocturno{
+    background-color: $colorFondoNocClaro;
+    .titulo{
+        color: $colorBlanco;
+    }
+
+    header{
+        .lineaAzul{
+            background-color: $colorNegro;
+        }
+        #barraNavegacion{
+            background-color: $colorFondoNocClaro;  
+            nav{
+                .menu{
+                    ul{
+                        background-color: rgba($colorNegro, 0.90);
+                    }
+                }
+            }
+        }
+    }
+
+    main{
+        #presentacion{
+            .barraBusqueda{          
+                form{
+                    input{
+                        border: $colorBlanco solid 1px;
+                        color: $colorGrisBotones;
+                        background-color: $colorFondoNocClaro;
+                        background-image: url("../images/icon-search-modo-noct.svg");
+                    }
+                }
+            }
+            .barraTrending{
+                p.textosPrincipales{
+                    color: $colorBlanco;
+                }
+            }
+        }
+        #trending{
+            background-color: $colorFondoNocOscuro;
+            p.textosSecundarios{
+                color: $colorBlanco;
+            }  
+        }
+    }
+
+    footer{
+        .grillaFooter{
+            div{
+                .textosSecundarios{
+                    color: $colorBlanco;
+                }
+                .iconos{
+                    a{
+                        .facebook:active{
+                            background-image: url(../images/icon_facebook_noc.svg);
+                        }
+                        .twitter:active{
+                            background-image: url(../images/icon_twitter_noc.svg);
+                        }
+                        .instagram:active{
+                            background-image: url(../images/icon_instagram_noc.svg);
+                        }
+                    }        
+                }
+            }
+            .texto2{
+                color: $colorBlanco;
+            }
+        }  
+        .lineaAzul{
+            background-color: $colorNegro;
+        }
+    }
+}
+
+//-----------------------
+//-----------------------
+//-----------------------
+
+@media screen and (min-width: 768px){
+    body.nocturno{
+        header{
+            background-color: $colorFondoNocClaro;
+            #barraNavegacion{
+                nav{
+                    .menu{
+                        ul{
+                            background-color: $colorFondoNocClaro;
+                            li{
+                                .link{
+                                    color: $colorBlanco;
+                                }
+                                .lineaHover{
+                                    background-color: $colorFondoNocClaro;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        footer{
+            .grillaFooter{
+                div{
+                    .iconos{
+                        a{
+                            .facebook:hover{
+                                background-image: url(../images/icon_facebook_noc.svg);
+                            }
+                            .twitter:hover{
+                                background-image: url(../images/icon_twitter_noc.svg);
+                            }
+                            .instagram:hover{
+                                background-image: url(../images/icon_instagram_noc.svg);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

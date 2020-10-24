@@ -72,12 +72,98 @@
             }
         }
     }
+    header #barraNavegacion nav .menu input[type="checkbox"]:checked ~ ul{
+        height: 90px;
+    }
 
-/* falta mnain y footer */
+    header #barraNavegacion nav .menu input:checked ~ .cruz{
+        display: none;
+    }
 
+    main{
+        position: relative;
+        top: 170px;
+        #presentacion{
+            h1.titulo{
+                max-width: 700px;
+                margin-left: auto;
+                margin-right: auto;
+                font-size: 35px;
+                line-height: 50px;
+            }
+            .barraTrending{
+                h3.titulo{
+                    margin-top: 73px;
+                }
+                p.textosPrincipales{
+                    margin-bottom: 95px;
+                }
+            }
+        }
+        #trending{
+            padding-bottom: 182px;
+            .informacion{
+                padding-top: 63px;
+                h2{
+                    font-size: 25px;
+                    padding-bottom: 12px;
+                }
+                p{
+                    font-size: 18px;
+                    br{
+                        display: none;
+                    } 
+                }
+            }
+            .swipe{      
+                margin-top: 53px;  
+                .imagenSimulada{  // cambiar esto por gifs
+                    height: 275px;
+                    width: 357px;
+                    margin: 0 auto;
+                }
+            }
+        }
+    }
 
-
+    footer{
+        position: relative;
+        top: 120px;
+        .grillaFooter{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            margin: 0 10%;
+            height: 116px;
+            div{
+                display: flex;
+                align-items: center;
+                .textosSecundarios{
+                    font-size: 13px;
+                    line-height: 15px;
+                }
+                .iconos{
+                    margin: 0 0 0 20px;
+                    a{
+                        .facebook:hover{
+                            background-image: url(../images/icon_facebook_hover.svg);
+                        }
+                        .twitter:hover{
+                            background-image: url(../images/icon-twitter-hover.svg);
+                        }
+                        .instagram:hover{
+                            background-image: url(../images/icon_instagram-hover.svg);
+                        }
+                    }
+                }
+            }
+            .texto2{
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                font-size: 13px;
+                line-height: 15px;
+                margin-bottom: 0;
+            }
+        }
+    }
 }
-
-
-

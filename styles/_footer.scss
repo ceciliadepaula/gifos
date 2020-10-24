@@ -2,57 +2,49 @@ footer{
     position: relative;
     top: 100px;
     padding: 47px 0 0 0;
-    .textosSecundarios{
-        font-size: 15px;
-        line-height: 18px;
-    }
-    .iconos{
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        margin: 22px auto 47px auto;
-        width: 100px;
-        a{
-            .facebook, .twitter, .instagram{ 
-                height: 20px;
-                background-repeat: no-repeat;
-                background-position: center;
+    .grillaFooter{
+        div{
+            .textosSecundarios{
+                font-size: 15px;
+                line-height: 18px;
             }
-            .facebook{
-                background-image: url(../images/icon_facebook.svg);
+            .iconos{
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                margin: 22px auto 47px auto;
+                width: 100px;
+                a{
+                    .facebook, .twitter, .instagram{ 
+                        height: 20px;
+                        background-repeat: no-repeat;
+                        background-position: center;
+                    }
+                    .facebook{
+                        background-image: url(../images/icon_facebook.svg);
+                    }
+                    .twitter{
+                        background-image: url(../images/icon-twitter.svg);
+                    }
+                    .instagram{
+                        background-image: url(../images/icon_instagram.svg);
+                    }
+                    .facebook:active{
+                        background-image: url(../images/icon_facebook_hover.svg);
+                    }
+                    .twitter:active{
+                        background-image: url(../images/icon-twitter-hover.svg);
+                    }
+                    .instagram:active{
+                        background-image: url(../images/icon_instagram-hover.svg);
+                    }
+                }        
             }
-            .twitter{
-                background-image: url(../images/icon-twitter.svg);
-            }
-            .instagram{
-                background-image: url(../images/icon_instagram.svg);
-            }
-            
-/*             esto para 768 para arriba
-
-            .facebook:hover{
-                background-image: url(../images/icon_facebook_hover.svg);
-            }
-            .twitter:hover{
-                background-image: url(../images/icon-twitter-hover.svg);
-            }
-            .instagram:hover{
-                background-image: url(../images/icon_instagram-hover.svg);
-            } */
-
-            .facebook:active{
-                background-image: url(../images/icon_facebook_hover.svg);
-            }
-            .twitter:active{
-                background-image: url(../images/icon-twitter-hover.svg);
-            }
-            .instagram:active{
-                background-image: url(../images/icon_instagram-hover.svg);
-            }
-        }        
-    }
-    .texto2{
-        margin-bottom: 25px;
-    }
+        }
+        .texto2{
+                margin-bottom: 25px;
+                font-size: 14px;
+        }
+    }  
     .lineaAzul{
         height: 5px;
         background-color: $colorAzul;
@@ -60,8 +52,4 @@ footer{
         position: fixed;
         bottom: 0px;
     }
-
-    
-
-
 }
