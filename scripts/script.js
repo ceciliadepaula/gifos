@@ -4,15 +4,22 @@
 // Ícono (+) para crear propios Gifos
 
 crearGifos = document.getElementById("crearGifos");
+Unhover(crearGifos);
+
+function UnhoverNoct() {
+    crearGifos.setAttribute('src', 'images/CTA-crear-gifo-modo-noc.svg');
+    crearGifos.addEventListener("mouseleave", () => { crearGifos.setAttribute('src', 'images/CTA-crear-gifo-modo-noc.svg'); });
+    crearGifos.addEventListener("mouseover", () => { crearGifos.setAttribute('src', 'images/CTA-crar-gifo-modo-noc.svg'); });
+    crearGifos.addEventListener("mousedown", () => { crearGifos.setAttribute('src', 'images/CTA-crear-gifo-active-modo-noc.svg'); });
+}
 
 function Unhover() {
     crearGifos.setAttribute('src', 'images/button-crear-gifo.svg');
+    crearGifos.addEventListener("mouseleave", () => { crearGifos.setAttribute('src', 'images/button-crear-gifo.svg'); });
+    crearGifos.addEventListener("mouseover", () => { crearGifos.setAttribute('src', 'images/CTA-crear-gifo-hover.svg'); });
+    crearGifos.addEventListener("mousedown", () => { crearGifos.setAttribute('src', 'images/CTA-crear-gifo-active.svg'); });
 }
 
-Unhover(crearGifos);
-crearGifos.addEventListener("mouseleave", Unhover);
-crearGifos.addEventListener("mouseover", () => { crearGifos.setAttribute('src', 'images/CTA-crear-gifo-hover.svg'); });
-crearGifos.addEventListener("mousedown", () => { crearGifos.setAttribute('src', 'images/CTA-crear-gifo-active.svg'); });
 
 // Nombre de Secciones
 
