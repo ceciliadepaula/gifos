@@ -38,4 +38,3 @@ linkHover[0].addEventListener("mousedown", () => { linkHover[0].style.color = "#
 linkHover[1].addEventListener("mousedown", () => { linkHover[1].style.color = "#9CAFC3"; lineaHover[1].style.backgroundColor = "#9CAFC3" });
 linkHover[2].addEventListener("mousedown", () => { linkHover[2].style.color = "#9CAFC3"; lineaHover[2].style.backgroundColor = "#9CAFC3" });
 
-

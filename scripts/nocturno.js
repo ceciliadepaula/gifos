@@ -1,22 +1,14 @@
 //////  ------ NOCTURNO ------  //////
 
-/* let botonNoct = document.getElementById("nocturno");
-botonNoct.addEventListener("click", Nocturno);
-
-function Nocturno(){
-    var body = document.getElementsByTagName("body");
-    var guardado = body[0].classList.toggle("nocturno");
-}  */
-
 let darkMode = localStorage.getItem("darkMode");
-let botonNoct = document.getElementById("nocturno");
-var body = document.getElementsByTagName("body");
-botonNoct.addEventListener("click", Nocturno);
+let body = document.getElementsByTagName("body");
 let modoDisenio = document.getElementById("modoDisenio");
+let logo = document.getElementById("logo");
+let hamburguesa = document.getElementsByClassName("hamburguesa");
+let cruz = document.getElementsByClassName("cruz");
 
-var logo = document.getElementById("logo");
-var hamburguesa = document.getElementsByClassName("hamburguesa");
-var cruz = document.getElementsByClassName("cruz");
+let botonNoct = document.getElementById("nocturno");
+botonNoct.addEventListener("click", Nocturno);
 
 const Noche = () => {
     body[0].classList.add("nocturno");
@@ -25,7 +17,7 @@ const Noche = () => {
     logo.src = "images/logo-mobile-modo-noct.svg";
     hamburguesa[0].src = "images/burger-modo-noct.svg";
     cruz[0].src = "images/close-modo-noct.svg";
-    UnhoverNoct(crearGifos);
+    UnhoverNoct();
 }
 
 const Dia = () => {
@@ -35,7 +27,7 @@ const Dia = () => {
     logo.src = "images/logo-mobile.svg";
     hamburguesa[0].src = "images/burger.svg";
     cruz[0].src = "images/close.svg";
-    Unhover(crearGifos);
+    Unhover();
 }
 
 if (darkMode === "enabled") {
