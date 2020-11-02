@@ -61,12 +61,12 @@
                 <img src="images/ilustra_header.svg" alt="Ilustracion de tres chicos abrazados">
                 <form action="">
                     <!-- completar accion. hacer que cambie color al tipear algo. falta el link en la lupa-->
-                    <input type="text" name="buscarGifos" placeholder="Busca GIFOS y más">
+                    <input id="tarjetaBusqueda" type="text" name="buscarGifos" placeholder="Busca GIFOS y más">
                 </form>
             </div>
             <div class="barraTrending">
                 <h3 class="titulo">Trending:</h3>
-                <p class="textosPrincipales">Reactions, Entertainment, Sports, Stickers, Artists</p>
+                <p id="resultadosTrendings" class="textosPrincipales"></p>
             </div>
         </section>
 
@@ -106,6 +106,8 @@
 
     <script src="scripts/script.js"></script>
     <script src="scripts/nocturno.js"></script>
+    <script src="scripts/trendings.js"></script>
+    <script src="scripts/tarjetaBusqueda.js"></script>
 </body>
 
 </html>
