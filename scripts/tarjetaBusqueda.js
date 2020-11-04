@@ -1,11 +1,8 @@
 let tarjetaBusqueda = document.getElementById("tarjetaBusqueda");
 let listaSugerencias = document.getElementById("listaSugerencias");
 let lupaAzul = document.getElementById("lupaAzul")
+
 let liLupa = document.getElementsByClassName("liLupa");
-let li1 = document.getElementById("li1");
-let li2 = document.getElementById("li2");
-let li3 = document.getElementById("li3");
-let li4 = document.getElementById("li4");
 
 arrayBusqueda = ["", "", "", ""];
 
@@ -32,19 +29,11 @@ function Autocompletar(linkPalabrasAutocompletadas) {
                 arrayBusqueda.unshift(respuestaTransformada.data[i].name);
                 arrayBusqueda.pop();
             }
-            li1.innerHTML = arrayBusqueda[0];
-            li2.innerHTML = arrayBusqueda[1];
-            li3.innerHTML = arrayBusqueda[2];
-            li4.innerHTML = arrayBusqueda[3];
 
-            li1.style.display = "inherit";
-            li2.style.display = "inherit";
-            li3.style.display = "inherit";
-            li4.style.display = "inherit";
-
-            /////////// VER PORQUE NO ME MUYESTRA LAS LUPAS
-            
-            liLupa[0].style.listStyleImage = " url('../images/icon-search-gris-resultado.svg')"
+            for (i = 0; i < 4; i++) {
+                liLupa[i].innerHTML = arrayBusqueda[i];
+                listaSugerencias.style.display = "initial";
+            }
         })
         .catch(error => {
             console.log("Error: " + error);
@@ -56,15 +45,12 @@ function Autocompletar(linkPalabrasAutocompletadas) {
 lupaAzul.addEventListener("click", SacarInfo);
 
 function SacarInfo() {
-    li1.style.display = "none";
-    li2.style.display = "none";
-    li3.style.display = "none";
-    li4.style.display = "none";
     document.getElementById("lineaGris").style.opacity = "0";
     document.getElementById("lupaGris").style.opacity = "0";
     lupaAzul.src = "images/icon-search.svg";
-    lupaAzul.style.height= "20px";
-    tarjetaBusqueda.value= "";
+    lupaAzul.style.height = "20px";
+    tarjetaBusqueda.value = "";
+    listaSugerencias.style.display = "none";
 }
 
 

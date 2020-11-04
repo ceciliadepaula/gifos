@@ -340,17 +340,19 @@ main #presentacion .barraBusqueda #form #lineaGris {
   opacity: 0;
 }
 
+main #presentacion .barraBusqueda #form ul {
+  display: none;
+}
+
 main #presentacion .barraBusqueda #form ul li {
   color: #9CAFC3;
   font-family: "Roboto", sans-serif;
   font-size: 16px;
   padding: 10px 0 15px 0;
-  display: none;
+  list-style-image: url("../images/icon-search-gris-resultado.svg");
 }
 
 main #presentacion .barraBusqueda #form ul .liLupa {
-  list-style-image: url("../images/icon-search-gris-resultado.svg");
-  /* list-style: none ; */
   margin-left: 11%;
   padding-left: 5%;
 }

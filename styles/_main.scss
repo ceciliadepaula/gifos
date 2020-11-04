@@ -58,20 +58,17 @@ main{
                     opacity: 0;
                 }
                 ul{
+                    display: none; 
                     li{
                         color: $colorGrisBotones;
                         font-family: $tipoTextos;
                         font-size: 16px;
                         padding: 10px 0 15px 0;
-
-                        display: none;
+                        list-style-image: url("../images/icon-search-gris-resultado.svg"); 
                     }
                     .liLupa{
-                        list-style-image: url("../images/icon-search-gris-resultado.svg");
-                        /* list-style: none ; */
                         margin-left: 11%;
                         padding-left: 5%;
-                        
                     }
                 }
             }
