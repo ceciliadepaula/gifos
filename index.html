@@ -59,15 +59,20 @@
             <h1 class="titulo">Inspírate, busca, guarda, y crea los mejores <span class="colorVerde">GIFOS</span></h1>
             <div class="barraBusqueda">
                 <img src="images/ilustra_header.svg" alt="Ilustracion de tres chicos abrazados">
-                <form action="">
-                    <!-- completar accion. hacer que cambie color al tipear algo. falta el link en la lupa 
-                    esto lo tengo que meter adentrero de un form??? ver como funciona el autocomplete que me salta error
-                    -->
-                    <input id="tarjetaBusqueda" type="text" name="buscarGifos" placeholder="Busca GIFOS y más" autocomplete="off">
-
-                    <ul id="listaSugerencias"></ul> <!--esto lo creo acá o desde cero con javascript?-->
-
-                </form>
+                <div id="form"> <!--O tiene que ser form action=""????-->
+                    <div id="CompletarCampo">
+                        <img src="images/icon-search-gris.svg" id="lupaGris" alt="Ícono Lupa de búsqueda">
+                        <input id="tarjetaBusqueda" type="text" name="buscarGifos" placeholder="Busca GIFOS y más" autocomplete="off">
+                        <img src="images/icon-search.svg" id="lupaAzul" alt="Ícono Lupa de búsqueda">
+                    </div>
+                    <div id="lineaGris"></div>
+                    <ul id="listaSugerencias">
+                        <li id="li1" class="liLupa"></li>
+                        <li id="li2" class="liLupa"></li>
+                        <li id="li3" class="liLupa"></li>
+                        <li id="li4" class="liLupa"></li>
+                    </ul> <!--esto lo creo acá o desde cero con javascript?-->
+                </div>
             </div>
             <div class="barraTrending">
                 <h3 class="titulo">Trending:</h3>

@@ -16,36 +16,62 @@ main{
                 width: 80%;
                 max-width: 400px;
             }
-            form{
+            #form{
                 margin: 0 5%;
                 width: 90%;
+                border: $colorAzul solid 1px;
+                border-radius: 25px;
+                max-width: 550px;
+
                 display: flex;
                 flex-direction: column;
-                align-items: center;
-                input{
-                    border: $colorAzul solid 1px;
-                    width: 100%;
+
+                #CompletarCampo{
+                    display: grid;
+                    grid-template-columns: 1fr 4fr 1fr;
+                    align-items: center;
+                    input{
+                    outline: none;
+                    width: 80%;
                     max-width: 550px;
                     height: 50px;
-                    border-radius: 50px;
                     font-family: $tipoTextos;
                     color: $colorGris;
                     font-size: 16px;
                     line-height: 19px;
-                    padding-left: 25px;
-                    padding-right: 25px;
-                    background-image: url("../images/icon-search.svg");
-                    background-repeat: no-repeat;
-                    background-position: right 25px center ;
-                    background-size: 20px;
+                    }
+                    #lupaGris{
+                        height: 20px;
+                        justify-self: center;
+                        opacity: 0;
+                    }
+                    #lupaAzul{
+                        height: 20px;
+                        justify-self: center;
+                    }
+                }
+                #lineaGris{
+                    height: 1px;
+                    width: 90%;
+                    background-color: $colorGrisBotones;
+                    align-self: center;
+                    opacity: 0;
                 }
                 ul{
                     li{
                         color: $colorGrisBotones;
                         font-family: $tipoTextos;
                         font-size: 16px;
-                        padding: 10px 0 15px 10px;
+                        padding: 10px 0 15px 0;
+
+                        display: none;
+                    }
+                    .liLupa{
                         list-style-image: url("../images/icon-search-gris-resultado.svg");
+                        /* list-style: none ; */
+                        margin-left: 11%;
+                        padding-left: 5%;
+                        
                     }
                 }
             }

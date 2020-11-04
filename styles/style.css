@@ -281,9 +281,12 @@ main #presentacion .barraBusqueda img {
   max-width: 400px;
 }
 
-main #presentacion .barraBusqueda form {
+main #presentacion .barraBusqueda #form {
   margin: 0 5%;
   width: 90%;
+  border: #572EE5 solid 1px;
+  border-radius: 25px;
+  max-width: 550px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -291,35 +294,65 @@ main #presentacion .barraBusqueda form {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+main #presentacion .barraBusqueda #form #CompletarCampo {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 4fr 1fr;
+      grid-template-columns: 1fr 4fr 1fr;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
-main #presentacion .barraBusqueda form input {
-  border: #572EE5 solid 1px;
-  width: 100%;
+main #presentacion .barraBusqueda #form #CompletarCampo input {
+  outline: none;
+  width: 80%;
   max-width: 550px;
   height: 50px;
-  border-radius: 50px;
   font-family: "Roboto", sans-serif;
   color: #6B7989;
   font-size: 16px;
   line-height: 19px;
-  padding-left: 25px;
-  padding-right: 25px;
-  background-image: url("../images/icon-search.svg");
-  background-repeat: no-repeat;
-  background-position: right 25px center;
-  background-size: 20px;
 }
 
-main #presentacion .barraBusqueda form ul li {
+main #presentacion .barraBusqueda #form #CompletarCampo #lupaGris {
+  height: 20px;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  opacity: 0;
+}
+
+main #presentacion .barraBusqueda #form #CompletarCampo #lupaAzul {
+  height: 20px;
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+main #presentacion .barraBusqueda #form #lineaGris {
+  height: 1px;
+  width: 90%;
+  background-color: #9CAFC3;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  opacity: 0;
+}
+
+main #presentacion .barraBusqueda #form ul li {
   color: #9CAFC3;
   font-family: "Roboto", sans-serif;
   font-size: 16px;
-  padding: 10px 0 15px 10px;
+  padding: 10px 0 15px 0;
+  display: none;
+}
+
+main #presentacion .barraBusqueda #form ul .liLupa {
   list-style-image: url("../images/icon-search-gris-resultado.svg");
+  /* list-style: none ; */
+  margin-left: 11%;
+  padding-left: 5%;
 }
 
 main #presentacion .barraTrending {
