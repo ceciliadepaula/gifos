@@ -39,6 +39,15 @@ main{
                     background-position: right 25px center ;
                     background-size: 20px;
                 }
+                ul{
+                    li{
+                        color: $colorGrisBotones;
+                        font-family: $tipoTextos;
+                        font-size: 16px;
+                        padding: 10px 0 15px 10px;
+                        list-style-image: url("../images/icon-search-gris-resultado.svg");
+                    }
+                }
             }
         }
         .barraTrending{

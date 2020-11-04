@@ -1,0 +1,75 @@
+main#crearGif{
+    position: relative;
+    top: 105px;
+    .seccionCamara{
+        display: flex;
+        margin-left: 10%;
+        .cajaEncuadre{
+            height: 390px;
+            width: 690px;
+            border: 1px solid $colorAzul;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            h2{
+                font-size: 25px;
+                line-height: 35px;
+            }
+            .textosSecundarios{
+                padding-top: 10px;
+                line-height: 29px;
+            }
+            .marcasEncuadre{
+                position: absolute;
+                margin: 27px;
+                height: 336px;
+                width: 636px;
+                .esquina{
+                    height: 27px;
+                    width: 25px;
+                    border-top: 1px solid $colorVerde;
+                    border-left: 1px solid $colorVerde;
+                }
+                .arribaIzq{
+                    position: absolute;
+                }
+                .arribaDer{
+                    position: absolute;
+                    right: 0;
+                    transform: rotate(90deg); 
+                }
+                .abajoDer{
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+                    transform: rotate(180deg); 
+                }
+                .abajoIzq{
+                    position: absolute;
+                    bottom: 0;
+                    transform: rotate(-90deg); 
+                }
+            }
+        }
+        .imgPelicula{
+            position: relative;
+            left: 50px; 
+            top: 200px;
+        }
+    }
+    .botonesPasos{
+        div{
+            font-family: $tipoTextos;
+            font-weight: $medium;
+            color: $colorAzul;
+            font-size: 18px;
+            line-height: 32px;
+            border: 1px solid $colorAzul;
+            height: 32px;
+            width: 32px;
+            border-radius: 100px;
+            display: flex;
+            justify-content: center;
+        }
+    }
+}

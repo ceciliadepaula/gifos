@@ -54,37 +54,30 @@
         </div>
     </header>
 
-    <main>
-        <section id="presentacion">
-            <h1 class="titulo">Inspírate, busca, guarda, y crea los mejores <span class="colorVerde">GIFOS</span></h1>
-            <div class="barraBusqueda">
-                <img src="images/ilustra_header.svg" alt="Ilustracion de tres chicos abrazados">
-                <form action="">
-                    <!-- completar accion. hacer que cambie color al tipear algo. falta el link en la lupa 
-                    esto lo tengo que meter adentrero de un form??? ver como funciona el autocomplete que me salta error
-                    -->
-                    <input id="tarjetaBusqueda" type="text" name="buscarGifos" placeholder="Busca GIFOS y más" autocomplete="off">
+    <main id="crearGif">
+        <div class="seccionCamara">            
+            <img src="images/camara.svg" alt="Cámara de proyección" />
+            <img src="images/element-luz-camara.svg" alt="Luz" />
+            <div class="cajaEncuadre">
+                <h2 class="titulo">Aquí podrás <br> crear tus propios <span class="colorVerde">GIFOS</span></h2>
+                <p class="textosSecundarios">¡Crea tu GIFO en sólo 3 pasos! <br> (sólo necesitas una cámara para grabar un video)</p>
+                <div class="marcasEncuadre">
+                    <div class="esquina arribaDer"></div>
+                    <div class="esquina abajoDer"></div>
+                    <div class="esquina arribaIzq"></div>
+                    <div class="esquina abajoIzq"></div>
+                </div>
+            </div>
+            <img class="imgPelicula" src="images/pelicula.svg" alt="Película" />
+        </div>
+        
+        <div class="botonesPasos">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
 
-                    <ul id="listaSugerencias"></ul> <!--esto lo creo acá o desde cero con javascript?-->
 
-                </form>
-            </div>
-            <div class="barraTrending">
-                <h3 class="titulo">Trending:</h3>
-                <p id="resultadosTrendings" class="textosPrincipales"></p>
-            </div>
-        </section>
-
-        <section id="trending">
-            <div class="informacion">
-                <h2 class="titulo">Trending GIFOS</h2>
-                <p class="textosSecundarios">Mira los últimos GIFOS <br> de nuestra comunidad.</p>
-            </div>
-            <div class="swipe">
-                <!-- Cambiar por swipe gifs -->
-                <div class="imagenSimulada">imagen simulada </div>
-            </div>
-        </section>
     </main>
 
     <footer>

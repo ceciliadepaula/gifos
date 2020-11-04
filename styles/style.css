@@ -314,6 +314,14 @@ main #presentacion .barraBusqueda form input {
   background-size: 20px;
 }
 
+main #presentacion .barraBusqueda form ul li {
+  color: #9CAFC3;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  padding: 10px 0 15px 10px;
+  list-style-image: url("../images/icon-search-gris-resultado.svg");
+}
+
 main #presentacion .barraTrending {
   margin-bottom: 45px;
   padding: 0 60px;
@@ -612,5 +620,107 @@ footer .lineaAzul {
     margin-left: 10%;
   }
   /* falta header mnain y footer */
+}
+
+main#crearGif {
+  position: relative;
+  top: 105px;
+}
+
+main#crearGif .seccionCamara {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: 10%;
+}
+
+main#crearGif .seccionCamara .cajaEncuadre {
+  height: 390px;
+  width: 690px;
+  border: 1px solid #572EE5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+main#crearGif .seccionCamara .cajaEncuadre h2 {
+  font-size: 25px;
+  line-height: 35px;
+}
+
+main#crearGif .seccionCamara .cajaEncuadre .textosSecundarios {
+  padding-top: 10px;
+  line-height: 29px;
+}
+
+main#crearGif .seccionCamara .cajaEncuadre .marcasEncuadre {
+  position: absolute;
+  margin: 27px;
+  height: 336px;
+  width: 636px;
+}
+
+main#crearGif .seccionCamara .cajaEncuadre .marcasEncuadre .esquina {
+  height: 27px;
+  width: 25px;
+  border-top: 1px solid #50E3C2;
+  border-left: 1px solid #50E3C2;
+}
+
+main#crearGif .seccionCamara .cajaEncuadre .marcasEncuadre .arribaIzq {
+  position: absolute;
+}
+
+main#crearGif .seccionCamara .cajaEncuadre .marcasEncuadre .arribaDer {
+  position: absolute;
+  right: 0;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+main#crearGif .seccionCamara .cajaEncuadre .marcasEncuadre .abajoDer {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+main#crearGif .seccionCamara .cajaEncuadre .marcasEncuadre .abajoIzq {
+  position: absolute;
+  bottom: 0;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+}
+
+main#crearGif .seccionCamara .imgPelicula {
+  position: relative;
+  left: 50px;
+  top: 200px;
+}
+
+main#crearGif .botonesPasos div {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  color: #572EE5;
+  font-size: 18px;
+  line-height: 32px;
+  border: 1px solid #572EE5;
+  height: 32px;
+  width: 32px;
+  border-radius: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 /*# sourceMappingURL=style.css.map */
