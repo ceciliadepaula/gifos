@@ -85,10 +85,15 @@
                 <h2 class="titulo">Trending GIFOS</h2>
                 <p class="textosSecundarios">Mira los últimos GIFOS <br> de nuestra comunidad.</p>
             </div>
-            <div class="swipe">
-                <!-- Cambiar por swipe gifs -->
-                <div class="imagenSimulada">imagen simulada </div>
-            </div>
+            <div class="scroll" id="scroll">
+                <div id="scrollIzquierda">
+                    <img src="images/button-slider-left.svg" alt="Desplazarse hacia la izquierda" id="iconoScrollIzquierda">
+                </div>                
+                <div id="gifTrending"></div>
+                <div id="scrollDerecha">
+                    <img src="images/Button-Slider-right.svg" alt="Desplazarse hacia la derecha" id="iconoScrollDerecha">
+                </div>
+            </div> 
         </section>
     </main>
 
@@ -97,7 +102,7 @@
             <div>
                 <p class="textosSecundarios">Compartir en:</p>
                 <div class="iconos">
-                <!-- Completar links -->
+                <!-- <-- Completar links -->
                     <a class="" href="">
                         <div class="facebook"> </div>
                     </a>
@@ -118,6 +123,7 @@
     <script src="scripts/nocturno.js"></script>
     <script src="scripts/trendings.js"></script>
     <script src="scripts/tarjetaBusqueda.js"></script>
+    <script src="scripts/filaGifs.js"></script>
 </body>
 
 </html>

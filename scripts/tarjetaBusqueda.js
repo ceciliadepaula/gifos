@@ -16,7 +16,6 @@ function Tipeando() {
 function Autocompletar(linkPalabrasAutocompletadas) {
     fetch(linkPalabrasAutocompletadas)
         .then(respuesta => {
-            //Cambio estilo íconos
             document.getElementById("lupaGris").style.opacity = "1";
             document.getElementById("lineaGris").style.opacity = "1";
             lupaAzul.src = "images/close.svg";
@@ -26,8 +25,16 @@ function Autocompletar(linkPalabrasAutocompletadas) {
         })
         .then(respuestaTransformada => {
             for (i = 0; i < 4; i++) {
-                arrayBusqueda.unshift(respuestaTransformada.data[i].name);
+                palabra = (respuestaTransformada.data[i].name);
+                arrayBusqueda.unshift(palabra);
                 arrayBusqueda.pop();
+
+                /* arrayBusqueda.unshift(respuestaTransformada.data[i].name); 
+                arrayBusqueda.pop();*/
+
+                
+                
+
             }
 
             for (i = 0; i < 4; i++) {
@@ -52,7 +59,6 @@ function SacarInfo() {
     tarjetaBusqueda.value = "";
     listaSugerencias.style.display = "none";
 }
-
 
 ////////////////////////////////////////////////////
 
