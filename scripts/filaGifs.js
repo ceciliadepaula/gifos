@@ -1,6 +1,5 @@
 let gifTrending = document.getElementById("gifTrending");
 
-
 async function buscar() {
 
     let url = `https://api.giphy.com/v1/gifs/trending?api_key=${apikey}`;

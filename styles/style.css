@@ -767,6 +767,13 @@ footer .lineaAzul {
 main#crearGif {
   position: relative;
   top: 105px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 main#crearGif .seccionCamara {
@@ -848,6 +855,21 @@ main#crearGif .seccionCamara .imgPelicula {
   top: 200px;
 }
 
+main#crearGif .botonesPasos {
+  width: 200px;
+  margin: 13px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
 main#crearGif .botonesPasos div {
   font-family: "Roboto", sans-serif;
   font-weight: 500;
@@ -864,5 +886,46 @@ main#crearGif .botonesPasos div {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  margin: 13px;
+}
+
+main#crearGif .lineaGruesa {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  width: 795px;
+  height: 7px;
+  background-color: #572EE5;
+  border-radius: 7px;
+}
+
+main#crearGif #botonComenzar {
+  height: 50px;
+  width: 127px;
+  border-radius: 50px;
+  border: 1px #572EE5 solid;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-item-align: center;
+      align-self: center;
+  margin-top: 20px;
+}
+
+main#crearGif #botonComenzar p {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  color: #572EE5;
+  text-transform: uppercase;
+  font-size: 13px;
+  line-height: 16px;
 }
 /*# sourceMappingURL=style.css.map */

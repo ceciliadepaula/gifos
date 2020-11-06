@@ -1,6 +1,8 @@
 main#crearGif{
     position: relative;
     top: 105px;
+    display: flex;
+    flex-direction: column;
     .seccionCamara{
         display: flex;
         margin-left: 10%;
@@ -58,6 +60,11 @@ main#crearGif{
         }
     }
     .botonesPasos{
+        width: 200px;
+        margin: 13px auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
         div{
             font-family: $tipoTextos;
             font-weight: $medium;
@@ -70,6 +77,34 @@ main#crearGif{
             border-radius: 100px;
             display: flex;
             justify-content: center;
+            margin: 13px;
+        }
+    }
+    .lineaGruesa{
+        align-self: center;;
+        width: 795px;
+        height: 7px;
+        background-color: $colorAzul;
+        border-radius: 7px;
+    }
+    #botonComenzar{
+        height: 50px;
+        width: 127px;
+        border-radius: 50px;
+        border: 1px $colorAzul solid;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        align-self: center;
+        margin-top: 20px;
+        p{
+            font-family: $tipoTitulos;
+            font-weight: $bold;
+            color: $colorAzul;
+            text-transform: uppercase;
+            font-size: 13px;
+            line-height: 16px;
         }
     }
 }
