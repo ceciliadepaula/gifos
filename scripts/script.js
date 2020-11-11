@@ -7,7 +7,7 @@ crearGifos = document.getElementById("crearGifos");
 iconoScrollIzquierda = document.getElementById("iconoScrollIzquierda");
 iconoScrollDerecha = document.getElementById("iconoScrollDerecha");
 
-Unhover(crearGifos);
+Unhover(); // crearGifos
 
 function UnhoverNoct() {
     crearGifos.setAttribute('src', 'images/CTA-crear-gifo-modo-noc.svg');
@@ -43,6 +43,16 @@ function Unhover() {
 lineaHover = document.getElementsByClassName("lineaHover");
 linkHover = document.getElementsByClassName("link");
 
+/* arrayLineas = [lineaHover[0], lineaHover[1], lineaHover[2]];
+arrayLinks = [linkHover[0], linkHover[1], linkHover[2]];
+
+
+arrayLinks.forEach(element => {
+    element.addEventListener("mouseover", () => { element.style.backgroundColor = "#50E3C2" });
+    element.addEventListener("mouseleave", () => { element.style.backgroundColor = "#ffffff" });
+    element.addEventListener("mousedown", () => { element.style.color = "#9CAFC3"; element.style.backgroundColor = "#9CAFC3" });
+}); */
+
 linkHover[0].addEventListener("mouseover", () => { lineaHover[0].style.backgroundColor = "#50E3C2" });
 linkHover[1].addEventListener("mouseover", () => { lineaHover[1].style.backgroundColor = "#50E3C2" });
 linkHover[2].addEventListener("mouseover", () => { lineaHover[2].style.backgroundColor = "#50E3C2" });
@@ -54,3 +64,5 @@ linkHover[2].addEventListener("mouseleave", () => { lineaHover[2].style.backgrou
 linkHover[0].addEventListener("mousedown", () => { linkHover[0].style.color = "#9CAFC3"; lineaHover[0].style.backgroundColor = "#9CAFC3" });
 linkHover[1].addEventListener("mousedown", () => { linkHover[1].style.color = "#9CAFC3"; lineaHover[1].style.backgroundColor = "#9CAFC3" });
 linkHover[2].addEventListener("mousedown", () => { linkHover[2].style.color = "#9CAFC3"; lineaHover[2].style.backgroundColor = "#9CAFC3" });
+
+

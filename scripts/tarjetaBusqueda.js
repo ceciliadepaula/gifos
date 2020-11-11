@@ -1,3 +1,5 @@
+// Barra para buscar GIFOS
+
 let tarjetaBusqueda = document.getElementById("tarjetaBusqueda");
 let listaSugerencias = document.getElementById("listaSugerencias");
 let lupaAzul = document.getElementById("lupaAzul")
@@ -28,26 +30,20 @@ function Autocompletar(linkPalabrasAutocompletadas) {
                 palabra = (respuestaTransformada.data[i].name);
                 arrayBusqueda.unshift(palabra);
                 arrayBusqueda.pop();
-
-                /* arrayBusqueda.unshift(respuestaTransformada.data[i].name); 
-                arrayBusqueda.pop();*/
-
-                
-                
-
             }
-
             for (i = 0; i < 4; i++) {
                 liLupa[i].innerHTML = arrayBusqueda[i];
                 listaSugerencias.style.display = "initial";
             }
+            return (arrayBusqueda);   
         })
         .catch(error => {
             console.log("Error: " + error);
         });
 }
 
-///////////////////////////////////////////////////
+
+// Hacer click en el ícono de cerrar
 
 lupaAzul.addEventListener("click", SacarInfo);
 
@@ -60,5 +56,33 @@ function SacarInfo() {
     listaSugerencias.style.display = "none";
 }
 
-////////////////////////////////////////////////////
+
+// Para que al hacer click en los resultados sugeridos, se complete la plabra en el input
+
+liLupa[0].addEventListener("click", CompletarPalabraA);
+liLupa[1].addEventListener("click", CompletarPalabraB);
+liLupa[2].addEventListener("click", CompletarPalabraC);
+liLupa[3].addEventListener("click", CompletarPalabraD);
+
+
+function CompletarPalabraA() { 
+    tarjetaBusqueda.value= arrayBusqueda[0];
+}
+
+function CompletarPalabraB() {
+    tarjetaBusqueda.value= arrayBusqueda[1];
+}
+
+function CompletarPalabraC() {
+    tarjetaBusqueda.value= arrayBusqueda[2];
+}
+
+function CompletarPalabraD() {
+    tarjetaBusqueda.value= arrayBusqueda[3];
+}
+
+//Capturar valor del input para enviarlo a la API
+
+/* palabraParaBuscar = tarjetaBusqueda.value; 
+console.log(palabraParaBuscar); */
 

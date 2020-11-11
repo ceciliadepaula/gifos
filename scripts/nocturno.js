@@ -1,4 +1,4 @@
-//////  ------ NOCTURNO ------  //////
+// Cambios Modo Nocturno
 
 let darkMode = localStorage.getItem("darkMode");
 let body = document.getElementsByTagName("body");

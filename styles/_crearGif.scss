@@ -8,7 +8,7 @@ main#crearGif{
         margin-left: 10%;
         .cajaEncuadre{
             height: 390px;
-            width: 690px;
+            min-width: 690px;
             border: 1px solid $colorAzul;
             display: flex;
             flex-direction: column;

@@ -54,8 +54,11 @@
             <img src="images/camara.svg" alt="Cámara de proyección" />
             <img src="images/element-luz-camara.svg" alt="Luz" />
             <div class="cajaEncuadre">
-                <h2 class="titulo">Aquí podrás <br> crear tus propios <span class="colorVerde">GIFOS</span></h2>
-                <p class="textosSecundarios">¡Crea tu GIFO en sólo 3 pasos! <br> (sólo necesitas una cámara para grabar un video)</p>
+                <h2 id="tituloPermisos" class="titulo">Aquí podrás <br> crear tus propios <span class="colorVerde">GIFOS</span></h2>
+                <p id="textoPermisos" class="textosSecundarios">¡Crea tu GIFO en sólo 3 pasos! <br> (sólo necesitas una cámara para grabar un video)</p>
+                
+                <video src="" id="video"></video>
+
                 <div class="marcasEncuadre">
                     <div class="esquina arribaDer"></div>
                     <div class="esquina abajoDer"></div>
@@ -67,9 +70,9 @@
         </div>
         
         <div class="botonesPasos">
-            <div>1</div>
-            <div>2</div>
-            <div>3</div>
+            <div id="uno">1</div>
+            <div id="dos">2</div>
+            <div id="tres">3</div>
         </div>
 
         <div class="lineaGruesa"></div>
@@ -85,14 +88,13 @@
             <div>
                 <p class="textosSecundarios">Compartir en:</p>
                 <div class="iconos">
-                <!-- Completar links -->
-                    <a class="" href="">
+                    <a class="linksFooter" href="https://www.facebook.com/">
                         <div class="facebook"> </div>
                     </a>
-                    <a class="" href="">
+                    <a class="linksFooter" href="https://www.twitter.com/">
                         <div class="twitter"></div>
                     </a>
-                    <a class="" href="">
+                    <a class="linksFooter" href="https://www.instagram.com/">
                         <div class="instagram"></div>
                     </a>
                 </div>
@@ -102,11 +104,13 @@
         <div class="lineaAzul"></div>
     </footer>
 
-    <script src="scripts/script.js"></script>
-    <script src="scripts/trendings.js"></script>
-    <script src="scripts/tarjetaBusqueda.js"></script>
-    <script src="scripts/filaGifs.js"></script>
+    <!-- <script src="scripts/script.js"></script> -->
+    <!-- <script src="scripts/trendings.js"></script> -->
+    <!-- <script src="scripts/tarjetaBusqueda.js"></script> -->
+    <!-- <script src="scripts/filaGifs.js"></script> -->
+    <script src="https://www.WebRTC-Experiment.com/RecordRTC.js"></script>
     <script src="scripts/nocturno.js"></script>
+    <script src="scripts/crearGif.js"></script>
 </body>
 
 </html>

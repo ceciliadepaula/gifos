@@ -256,6 +256,16 @@ main {
   top: 100px;
 }
 
+main #presentacion {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
 main #presentacion h1.titulo {
   padding: 10px 45px 30px 45px;
   font-size: 25px;
@@ -447,7 +457,7 @@ main #trending .scroll .imagenSimulada {
   position: absolute;
   margin: 0 10px;
   background-color: #572EE5;
-  opacity: 0;
+  opacity: 0.6;
   height: 275px;
   width: 357px;
   display: -webkit-box;
@@ -785,7 +795,7 @@ main#crearGif .seccionCamara {
 
 main#crearGif .seccionCamara .cajaEncuadre {
   height: 390px;
-  width: 690px;
+  min-width: 690px;
   border: 1px solid #572EE5;
   display: -webkit-box;
   display: -ms-flexbox;

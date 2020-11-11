@@ -10,6 +10,7 @@ async function buscar() {
 
     for (i = 0; i < 3; i++) {
         let contenedorImg = document.createElement("div");
+        contenedorImg.classList.add("GifTrending");
         contenedorImg.innerHTML =
             "<img src=" + info.data[i].images.original.url + ">" + 
             "<div class='pasarMouse'> <div class='iconos'>" + 
@@ -21,18 +22,20 @@ async function buscar() {
             info.data[i].title +  "</h4></div></div>";
         gifTrending.appendChild(contenedorImg);
     }
+
+    
 }
 
 buscar();
 
 
 
+pasarMouse = document.getElementsByClassName("pasarMouse");
 
+/*contenedorImg.addEventListener("mouseenter", () => { (document.getElementsByClassName("pasarMouse"))[0].style.opacity = "0.0";}); */
 
-/* contenedorImg.addEventListener("mouseenter", infoAutor);
-function infoAutor() {
-    pasarMouse = document.getElementsByClassName("pasarMouse");
-    pasarMouse[0].style.opacity = "0.6";
+/* gifTrending.addEventListener("mouseenter", Prueba);
+
+function Prueba(){
+    gifTrending.removeChild(contenedorImg);
 } */
-
-/* contenedorImg.addEventListener("mouseenter", () => { (document.getElementsByClassName("pasarMouse"))[0].style.opacity = "0.6";}); */
