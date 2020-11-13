@@ -3,8 +3,13 @@
 let tarjetaBusqueda = document.getElementById("tarjetaBusqueda");
 let listaSugerencias = document.getElementById("listaSugerencias");
 let lupaAzul = document.getElementById("lupaAzul")
-
 let liLupa = document.getElementsByClassName("liLupa");
+let resultadoBusquedaPersonal = document.getElementById("resultadoBusquedaPersonal");
+let tituloBusquedaPersonal = document.getElementById("tituloBusquedaPersonal");
+let lupaGris = document.getElementById("lupaGris");
+let barraTrending = document.getElementsByClassName("barraTrending");
+let grillaBusquedaPersonal = document.getElementById("grillaBusquedaPersonal");
+let botonVerMas = document.getElementById("botonVerMas");
 
 arrayBusqueda = ["", "", "", ""];
 
@@ -35,7 +40,7 @@ function Autocompletar(linkPalabrasAutocompletadas) {
                 liLupa[i].innerHTML = arrayBusqueda[i];
                 listaSugerencias.style.display = "initial";
             }
-            return (arrayBusqueda);   
+            return (arrayBusqueda);
         })
         .catch(error => {
             console.log("Error: " + error);
@@ -65,24 +70,81 @@ liLupa[2].addEventListener("click", CompletarPalabraC);
 liLupa[3].addEventListener("click", CompletarPalabraD);
 
 
-function CompletarPalabraA() { 
-    tarjetaBusqueda.value= arrayBusqueda[0];
+function CompletarPalabraA() {
+    tarjetaBusqueda.value = arrayBusqueda[0];
 }
 
 function CompletarPalabraB() {
-    tarjetaBusqueda.value= arrayBusqueda[1];
+    tarjetaBusqueda.value = arrayBusqueda[1];
 }
 
 function CompletarPalabraC() {
-    tarjetaBusqueda.value= arrayBusqueda[2];
+    tarjetaBusqueda.value = arrayBusqueda[2];
 }
 
 function CompletarPalabraD() {
-    tarjetaBusqueda.value= arrayBusqueda[3];
+    tarjetaBusqueda.value = arrayBusqueda[3];
 }
 
-//Capturar valor del input para enviarlo a la API
+//Capturar valor del input para enviarlo a la API y mostrar resultados busqueda
 
-/* palabraParaBuscar = tarjetaBusqueda.value; 
-console.log(palabraParaBuscar); */
+lupaGris.addEventListener("click", MostrarResultadosBusquedaPersonal);
 
+tarjetaBusqueda.addEventListener('keypress', function (e) {
+    if (e.key === 'Enter') {
+        MostrarResultadosBusquedaPersonal(limiteMostrar);
+    }
+});
+
+function MostrarResultadosBusquedaPersonal() {
+    tituloBusquedaPersonal.innerHTML = (tarjetaBusqueda.value).charAt(0).toUpperCase() + (tarjetaBusqueda.value).slice(1);
+    resultadoBusquedaPersonal.style.display = "flex";
+    grillaBusquedaPersonal.innerHTML = "";
+    TraerResultadosBusqueda(12, 0);
+    limiteMostrar = 12;
+    posicion = 0;
+}
+
+
+function TraerResultadosBusqueda(limiteMostrar, posicion){
+    url = `https://api.giphy.com/v1/gifs/search?api_key=${apikey}&q=${tarjetaBusqueda.value}&limit=${limiteMostrar}&offset=${posicion}`;
+
+    fetch(url)
+        .then(respuesta => {
+            return respuesta.json();
+        })
+        .then( nuevoObjetoRecibido => {
+            for (i = 0; i < 12; i++) {
+                let contenedorImg = document.createElement("div");
+                contenedorImg.classList.add("GifTrending");
+                contenedorImg.innerHTML =
+                    "<img src=" + nuevoObjetoRecibido.data[i].images.original.url + ">" /* +
+                    "<div class='pasarMouse'> <div class='iconos'>" +
+                    "<img id='iconoCorazon' src='images/icon-fav.svg' alt='Ícono añadir a favoritos'>" +
+                    "<img id='iconoDescargar' src='images/icon-download.svg' alt='Ícono download'>" +
+                    "<img id='iconoAgrandar' src='images/icon-max-normal.svg' alt='Ícono maximizar'>" +
+                    "</div><div class='infoTexto'><p>" +
+                    nuevoObjetoRecibido.data[i].username + "</p><h4>" +
+                    nuevoObjetoRecibido.data[i].title + "</h4></div></div>"; */
+                grillaBusquedaPersonal.appendChild(contenedorImg);
+            }
+
+            barraTrending[0].style.display = "none";
+        })
+        .catch (error => {
+            console.log("Error! " + error);
+        });
+}
+
+// Sumar 12 gifs cada vez que se haga click en botón Ver Más
+
+var limiteMostrar = 12;
+var posicion = 0; 
+
+botonVerMas.addEventListener("click", VerMasResultados );
+
+function VerMasResultados(){
+    limiteMostrar = limiteMostrar + 12;
+    posicion = posicion + 12;
+    TraerResultadosBusqueda(limiteMostrar, posicion);
+}

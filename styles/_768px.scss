@@ -99,6 +99,33 @@
                     margin-bottom: 95px;
                 }
             }
+            .barraTrending{
+                margin-bottom: 45px;
+                padding: 0 60px;
+                h3.titulo{
+                    font-size: 16px;
+                    line-height: 25px;
+                }
+                p.textosPrincipales{
+                    color: $colorAzul;
+                    font-size: 14px;
+                    line-height: 25px;
+                }
+            }
+            #resultadoBusquedaPersonal{
+                #lineaGris{
+                    width: 340px;
+                    margin-bottom: 82px;
+                }
+                #tituloBusquedaPersonal{
+                    margin-bottom: 60px;
+                }
+                #grillaBusquedaPersonal{
+                    display: grid;
+                    grid-template-columns: 1fr 1fr 1fr ;
+                    grid-template-rows: 1fr 1fr 1fr 1fr;
+                }
+            }
         }
         #trending{
             padding-bottom: 182px;
