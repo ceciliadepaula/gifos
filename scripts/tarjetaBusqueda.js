@@ -10,6 +10,23 @@ let lupaGris = document.getElementById("lupaGris");
 let barraTrending = document.getElementsByClassName("barraTrending");
 let grillaBusquedaPersonal = document.getElementById("grillaBusquedaPersonal");
 let botonVerMas = document.getElementById("botonVerMas");
+let formBusqueda = document.getElementById("form");
+
+// Barra busqueda sticky en top bar
+
+window.onscroll = function() {PosicionBarraBusqueda()};
+var sticky = formBusqueda.offsetTop;
+
+function PosicionBarraBusqueda() {
+  if (window.pageYOffset >= 500) {
+    formBusqueda.classList.add("sticky");   // FALTA PONER QUE CUANDO LA BUSQUEDA ESTE ARRIBA, NO SE MUESTREN LOS RESULTADOS DESPLEGADOS
+                                            // Y PONER LINES DE SOMBRA
+  } else {
+    formBusqueda.classList.remove("sticky");    // PERO SI VUELVE ACÁ, SI SE MUESTREN
+  }
+}
+
+// Funciones de Búsqueda
 
 arrayBusqueda = ["", "", "", ""];
 
@@ -96,8 +113,11 @@ tarjetaBusqueda.addEventListener('keypress', function (e) {
     }
 });
 
+var palabraBuscada; // Recien cuando hace click o le da ok, me guarda lo que busca
+
 function MostrarResultadosBusquedaPersonal() {
-    tituloBusquedaPersonal.innerHTML = (tarjetaBusqueda.value).charAt(0).toUpperCase() + (tarjetaBusqueda.value).slice(1);
+    palabraBuscada = tarjetaBusqueda.value;
+    tituloBusquedaPersonal.innerHTML = (palabraBuscada).charAt(0).toUpperCase() + (palabraBuscada).slice(1);
     resultadoBusquedaPersonal.style.display = "flex";
     grillaBusquedaPersonal.innerHTML = "";
     TraerResultadosBusqueda(12, 0);
@@ -107,7 +127,8 @@ function MostrarResultadosBusquedaPersonal() {
 
 
 function TraerResultadosBusqueda(limiteMostrar, posicion){
-    url = `https://api.giphy.com/v1/gifs/search?api_key=${apikey}&q=${tarjetaBusqueda.value}&limit=${limiteMostrar}&offset=${posicion}`;
+    
+    url = `https://api.giphy.com/v1/gifs/search?api_key=${apikey}&q=${palabraBuscada}&limit=${limiteMostrar}&offset=${posicion}`;
 
     fetch(url)
         .then(respuesta => {
@@ -148,3 +169,4 @@ function VerMasResultados(){
     posicion = posicion + 12;
     TraerResultadosBusqueda(limiteMostrar, posicion);
 }
+

@@ -23,18 +23,26 @@ body.nocturno{
     main{
         #presentacion{
             .barraBusqueda{          
-                form{
-                    input{
-                        border: $colorBlanco solid 1px;
-                        color: $colorGrisBotones;
-                        background-color: $colorFondoNocClaro;
-                        background-image: url("../images/icon-search-modo-noct.svg");
+                #form{
+                    border: $colorBlanco solid 1px;
+                    #CompletarCampo{
+                        input{
+                            background-color: $colorFondoNocClaro;
+                        }
                     }
                 }
             }
             .barraTrending{
                 p.textosPrincipales{
                     color: $colorBlanco;
+                }
+            }
+            #resultadoBusquedaPersonal{
+                #botonVerMas{
+                    border: 1px $colorGrisClaro solid;
+                    p{
+                        color: $colorGrisClaro;
+                    }
                 }
             }
         }

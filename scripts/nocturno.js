@@ -17,6 +17,9 @@ const Noche = () => {
     logo.src = "images/logo-mobile-modo-noct.svg";
     hamburguesa[0].src = "images/burger-modo-noct.svg";
     cruz[0].src = "images/close-modo-noct.svg";
+    lupaAzul.src = "images/icon-search-gris.svg";
+
+    tarjetaBusqueda.style.color = "#FFFFFF";
     UnhoverNoct();
 }
 
@@ -27,6 +30,10 @@ const Dia = () => {
     logo.src = "images/logo-mobile.svg";
     hamburguesa[0].src = "images/burger.svg";
     cruz[0].src = "images/close.svg";
+
+
+    lupaAzul.src = "images/icon-search.svg";
+    tarjetaBusqueda.style.color = "#000000";
     Unhover();
 }
 

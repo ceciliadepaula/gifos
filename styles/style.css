@@ -57,15 +57,24 @@ body.nocturno header #barraNavegacion nav .menu ul {
   background-color: rgba(0, 0, 0, 0.9);
 }
 
-body.nocturno main #presentacion .barraBusqueda form input {
+body.nocturno main #presentacion .barraBusqueda #form {
   border: #ffffff solid 1px;
-  color: #9CAFC3;
+}
+
+body.nocturno main #presentacion .barraBusqueda #form #CompletarCampo input {
   background-color: #37383C;
-  background-image: url("../images/icon-search-modo-noct.svg");
 }
 
 body.nocturno main #presentacion .barraTrending p.textosPrincipales {
   color: #ffffff;
+}
+
+body.nocturno main #presentacion #resultadoBusquedaPersonal #botonVerMas {
+  border: 1px #F3F5F8 solid;
+}
+
+body.nocturno main #presentacion #resultadoBusquedaPersonal #botonVerMas p {
+  color: #F3F5F8;
 }
 
 body.nocturno main #trending {
@@ -455,6 +464,31 @@ main #presentacion #resultadoBusquedaPersonal #botonVerMas p {
   text-transform: uppercase;
   font-size: 13px;
   line-height: 16px;
+}
+
+main #presentacion #contenedorVacio {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 400px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+main #presentacion #contenedorVacio p {
+  color: #50E3C2;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 33px;
+  text-align: center;
+  margin-top: 25px;
+  margin-bottom: 30px;
 }
 
 main #trending {
@@ -880,6 +914,16 @@ footer .lineaAzul {
         grid-template-columns: 1fr 1fr 1fr 1fr;
     -ms-grid-rows: 1fr 1fr 1fr;
         grid-template-rows: 1fr 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 1250px) {
+  main #presentacion .barraBusqueda .sticky {
+    position: fixed;
+    top: 25px;
+    left: 190px;
+    z-index: 100;
+    width: 334px  !important;
   }
 }
 

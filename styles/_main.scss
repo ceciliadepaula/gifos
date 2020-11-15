@@ -136,6 +136,22 @@ main{
                 }
             }
         }
+        #contenedorVacio{
+            display: flex;
+            flex-direction: column;
+            height: 400px;
+            justify-content: center;
+            p{
+                color: $colorVerde;
+                font-family: $tipoTitulos;
+                font-weight: $bold;
+                font-size: 22px;
+                line-height: 33px;
+                text-align: center;
+                margin-top: 25px;
+                margin-bottom: 30px;
+            }
+        }
     }
     #trending{
         background-color: $colorGrisClaro;
