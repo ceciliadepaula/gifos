@@ -50,8 +50,13 @@
                             }
                             .crearGifos{
                                 display: inherit;
-                                position: relative;
-                                bottom: 10px;
+                                content: url(../images/button-crear-gifo.svg);
+                            }
+                            .crearGifos:hover{
+                                content: url(../images/CTA-crear-gifo-hover.svg);
+                            }
+                            .crearGifos:active{
+                                content: url(../images/CTA-crear-gifo-active.svg);
                             }
                             .lineaFina{
                                 display: none;
@@ -124,6 +129,11 @@
                     display: grid;
                     grid-template-columns: 1fr 1fr 1fr ;
                     grid-template-rows: 1fr 1fr 1fr 1fr;
+                    .GifTrending{
+                        .pasarMouse{
+                            width: 29%;
+                        }
+                    }
                 }
             }
         }
@@ -142,12 +152,29 @@
                     } 
                 }
             }
-            .swipe{      
-                margin-top: 53px;  
-                .imagenSimulada{  // cambiar esto por gifs
-                    height: 275px;
-                    width: 357px;
-                    margin: 0 auto;
+            #scrollIzquierda, #scrollDerecha{
+                display: flex;
+            }
+            #scrollIzquierda{
+                #iconoScrollIzquierda{
+                    content: url(../images/button-slider-left.svg);
+                }
+                #iconoScrollIzquierda:hover{
+                    content: url(../images/button-slider-left-hover.svg);
+                }
+                #iconoScrollIzquierda:active{
+                    content: url(../images/button-slider-left-hover.svg);
+                }
+            }
+            #scrollDerecha{
+                #iconoScrollDerecha{
+                    content: url(../images/Button-Slider-right.svg);
+                }
+                #iconoScrollDerecha:hover{
+                    content: url(../images/Button-Slider-right-hover.svg);
+                }
+                #iconoScrollDerecha:active{
+                    content: url(../images/Button-Slider-right-hover.svg);
                 }
             }
         }

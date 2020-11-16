@@ -20,7 +20,7 @@ const Noche = () => {
     lupaAzul.src = "images/icon-search-gris.svg";
 
     tarjetaBusqueda.style.color = "#FFFFFF";
-    UnhoverNoct();
+
 }
 
 const Dia = () => {
@@ -34,7 +34,7 @@ const Dia = () => {
 
     lupaAzul.src = "images/icon-search.svg";
     tarjetaBusqueda.style.color = "#000000";
-    Unhover();
+
 }
 
 if (darkMode === "enabled") {

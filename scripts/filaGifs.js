@@ -27,15 +27,3 @@ async function buscar() {
 }
 
 buscar();
-
-
-
-pasarMouse = document.getElementsByClassName("pasarMouse");
-
-/*contenedorImg.addEventListener("mouseenter", () => { (document.getElementsByClassName("pasarMouse"))[0].style.opacity = "0.0";}); */
-
-/* gifTrending.addEventListener("mouseenter", Prueba);
-
-function Prueba(){
-    gifTrending.removeChild(contenedorImg);
-} */

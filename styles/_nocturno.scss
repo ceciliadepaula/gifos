@@ -15,6 +15,29 @@ body.nocturno{
                     ul{
                         background-color: rgba($colorNegro, 0.90);
                     }
+                    li:hover{
+                        .lineaHover{
+                            background-color: $colorVerde;
+                        }
+                    }
+                    li:active{
+                        .lineaHover{
+                            background-color: rgba($colorGrisBotones, 0);
+                        }
+                        .link{
+                            color: $colorGrisBotones;
+                        }
+                    }
+                    .crearGifos{
+                        display: inherit;
+                        content: url(../images/CTA-crear-gifo-modo-noc.svg);
+                    }
+                    .crearGifos:hover{
+                        content: url(../images/CTA-crar-gifo-modo-noc.svg);
+                    }
+                    .crearGifos:active{
+                        content: url(../images/CTA-crear-gifo-active-modo-noc.svg);
+                    }
                 }
             }
         }
@@ -50,7 +73,32 @@ body.nocturno{
             background-color: $colorFondoNocOscuro;
             p.textosSecundarios{
                 color: $colorBlanco;
-            }  
+            } 
+            #scrollIzquierda, #scrollDerecha{
+                display: flex;
+            }
+            #scrollIzquierda{
+                #iconoScrollIzquierda{
+                    content: url(../images/button-slider-left-md-noct.svg);
+                }
+                #iconoScrollIzquierda:hover{
+                    content: url(../images/button-slider-left-hover2.svg);
+                }
+                #iconoScrollIzquierda:active{
+                    content: url(../images/button-slider-left-hover2.svg);
+                }
+            }
+            #scrollDerecha{
+                #iconoScrollDerecha{
+                    content: url(../images/button-slider-right-md-noct.svg);
+                }
+                #iconoScrollDerecha:hover{
+                    content: url(../images/Button-Slider-right-hover2.svg);
+                }
+                #iconoScrollDerecha:active{
+                    content: url(../images/Button-Slider-right-hover2.svg);
+                }
+            }
         }
     }
 

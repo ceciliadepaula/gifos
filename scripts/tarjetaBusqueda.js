@@ -11,6 +11,7 @@ let barraTrending = document.getElementsByClassName("barraTrending");
 let grillaBusquedaPersonal = document.getElementById("grillaBusquedaPersonal");
 let botonVerMas = document.getElementById("botonVerMas");
 let formBusqueda = document.getElementById("form");
+let ouchResultados = document.getElementById("ouchResultados");
 
 // Barra busqueda sticky en top bar
 
@@ -48,16 +49,36 @@ function Autocompletar(linkPalabrasAutocompletadas) {
             return respuesta.json();
         })
         .then(respuestaTransformada => {
-            for (i = 0; i < 4; i++) {
-                palabra = (respuestaTransformada.data[i].name);
-                arrayBusqueda.unshift(palabra);
-                arrayBusqueda.pop();
+
+            console.log(respuestaTransformada.data)
+
+            if (respuestaTransformada.data == 0){
+                
+                //PONER MENSAJE DE ERROR!!!!!!!!!!!!! Y BORRAR 4 SUGERENCIAS
+                //ver que no es respyestatransformada.DATA... el mensaje tiene que aparecer cuando la palabra no tiene ningun gif
+                ouchResultados.style.display = "flex";
+                botonVerMas.style.display = "none";
+                
+                
+                /* listaSugerencias.style.display = "none";
+                grillaBusquedaPersonal.style.display = "none";
+                
+                 */
+                
+            } else {
+                ouchResultados.style.display = "none";
+                botonVerMas.style.display = "inherit";
+                for (i = 0; i < 4; i++) {
+                    palabra = (respuestaTransformada.data[i].name);
+                    arrayBusqueda.unshift(palabra);
+                    arrayBusqueda.pop();
+                }
+                for (i = 0; i < 4; i++) {
+                    liLupa[i].innerHTML = arrayBusqueda[i];
+                    listaSugerencias.style.display = "initial";
+                }
+                return (arrayBusqueda);
             }
-            for (i = 0; i < 4; i++) {
-                liLupa[i].innerHTML = arrayBusqueda[i];
-                listaSugerencias.style.display = "initial";
-            }
-            return (arrayBusqueda);
         })
         .catch(error => {
             console.log("Error: " + error);
@@ -139,14 +160,14 @@ function TraerResultadosBusqueda(limiteMostrar, posicion){
                 let contenedorImg = document.createElement("div");
                 contenedorImg.classList.add("GifTrending");
                 contenedorImg.innerHTML =
-                    "<img src=" + nuevoObjetoRecibido.data[i].images.original.url + ">" /* +
+                    "<img src=" + nuevoObjetoRecibido.data[i].images.original.url + ">" +
                     "<div class='pasarMouse'> <div class='iconos'>" +
                     "<img id='iconoCorazon' src='images/icon-fav.svg' alt='Ícono añadir a favoritos'>" +
                     "<img id='iconoDescargar' src='images/icon-download.svg' alt='Ícono download'>" +
                     "<img id='iconoAgrandar' src='images/icon-max-normal.svg' alt='Ícono maximizar'>" +
                     "</div><div class='infoTexto'><p>" +
                     nuevoObjetoRecibido.data[i].username + "</p><h4>" +
-                    nuevoObjetoRecibido.data[i].title + "</h4></div></div>"; */
+                    nuevoObjetoRecibido.data[i].title + "</h4></div></div>"; 
                 grillaBusquedaPersonal.appendChild(contenedorImg);
             }
 

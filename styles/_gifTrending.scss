@@ -3,7 +3,7 @@
     flex-direction: row;
     justify-content: center;
     #scrollIzquierda, #scrollDerecha{
-        display: flex;
+        display: none;
     }
     #gifTrending{
         display: inline-flex;
@@ -19,7 +19,7 @@
                 position: absolute;
                 margin: 0 10px;
                 background-color: $colorAzul;
-                opacity: 0.6; //-----------------------------------
+                opacity: 0; //-----------------------------------
                 height: 275px;
                 width: 357px;
                 display: flex;
@@ -57,8 +57,9 @@
                     }
                 }
             }
+            .pasarMouse:hover{
+                opacity: 0.6; 
+            }
         }
     }
 }
-
-

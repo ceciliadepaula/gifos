@@ -57,6 +57,31 @@ body.nocturno header #barraNavegacion nav .menu ul {
   background-color: rgba(0, 0, 0, 0.9);
 }
 
+body.nocturno header #barraNavegacion nav .menu li:hover .lineaHover {
+  background-color: #50E3C2;
+}
+
+body.nocturno header #barraNavegacion nav .menu li:active .lineaHover {
+  background-color: rgba(156, 175, 195, 0);
+}
+
+body.nocturno header #barraNavegacion nav .menu li:active .link {
+  color: #9CAFC3;
+}
+
+body.nocturno header #barraNavegacion nav .menu .crearGifos {
+  display: inherit;
+  content: url(../images/CTA-crear-gifo-modo-noc.svg);
+}
+
+body.nocturno header #barraNavegacion nav .menu .crearGifos:hover {
+  content: url(../images/CTA-crar-gifo-modo-noc.svg);
+}
+
+body.nocturno header #barraNavegacion nav .menu .crearGifos:active {
+  content: url(../images/CTA-crear-gifo-active-modo-noc.svg);
+}
+
 body.nocturno main #presentacion .barraBusqueda #form {
   border: #ffffff solid 1px;
 }
@@ -83,6 +108,36 @@ body.nocturno main #trending {
 
 body.nocturno main #trending p.textosSecundarios {
   color: #ffffff;
+}
+
+body.nocturno main #trending #scrollIzquierda, body.nocturno main #trending #scrollDerecha {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body.nocturno main #trending #scrollIzquierda #iconoScrollIzquierda {
+  content: url(../images/button-slider-left-md-noct.svg);
+}
+
+body.nocturno main #trending #scrollIzquierda #iconoScrollIzquierda:hover {
+  content: url(../images/button-slider-left-hover2.svg);
+}
+
+body.nocturno main #trending #scrollIzquierda #iconoScrollIzquierda:active {
+  content: url(../images/button-slider-left-hover2.svg);
+}
+
+body.nocturno main #trending #scrollDerecha #iconoScrollDerecha {
+  content: url(../images/button-slider-right-md-noct.svg);
+}
+
+body.nocturno main #trending #scrollDerecha #iconoScrollDerecha:hover {
+  content: url(../images/Button-Slider-right-hover2.svg);
+}
+
+body.nocturno main #trending #scrollDerecha #iconoScrollDerecha:active {
+  content: url(../images/Button-Slider-right-hover2.svg);
 }
 
 body.nocturno footer .grillaFooter div .textosSecundarios {
@@ -235,6 +290,18 @@ header #barraNavegacion nav .menu ul li .lineaFina {
 
 header #barraNavegacion nav .menu ul li .lineaHover {
   display: none;
+}
+
+header #barraNavegacion nav .menu ul li:hover .lineaHover {
+  background-color: #50E3C2;
+}
+
+header #barraNavegacion nav .menu ul li:active .lineaHover {
+  background-color: rgba(156, 175, 195, 0);
+}
+
+header #barraNavegacion nav .menu ul li:active .link {
+  color: #9CAFC3;
 }
 
 header #barraNavegacion nav .menu input[type="checkbox"]:checked ~ ul {
@@ -436,6 +503,78 @@ main #presentacion #resultadoBusquedaPersonal #grillaBusquedaPersonal .GifTrendi
   height: 200px;
 }
 
+main #presentacion #resultadoBusquedaPersonal #grillaBusquedaPersonal .GifTrending .pasarMouse {
+  position: absolute;
+  margin-top: -204px;
+  background-color: #572EE5;
+  opacity: 0;
+  height: 200px;
+  width: 43%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+main #presentacion #resultadoBusquedaPersonal #grillaBusquedaPersonal .GifTrending .pasarMouse .iconos {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  padding: 10px;
+}
+
+main #presentacion #resultadoBusquedaPersonal #grillaBusquedaPersonal .GifTrending .pasarMouse .iconos img {
+  height: 32px;
+  padding: 0;
+  margin: 0;
+  margin-left: 10px;
+  width: 32px;
+  -o-object-fit: none;
+     object-fit: none;
+}
+
+main #presentacion #resultadoBusquedaPersonal #grillaBusquedaPersonal .GifTrending .pasarMouse .infoTexto {
+  font-family: "Roboto", sans-serif;
+  color: #ffffff;
+  padding: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+main #presentacion #resultadoBusquedaPersonal #grillaBusquedaPersonal .GifTrending .pasarMouse .infoTexto p {
+  font-size: 15px;
+  line-height: 18px;
+  padding-bottom: 5px;
+}
+
+main #presentacion #resultadoBusquedaPersonal #grillaBusquedaPersonal .GifTrending .pasarMouse .infoTexto h4 {
+  font-size: 15px;
+  line-height: 18px;
+  font-weight: 700;
+}
+
+main #presentacion #resultadoBusquedaPersonal #grillaBusquedaPersonal .GifTrending .pasarMouse:hover {
+  opacity: 0.6;
+}
+
 main #presentacion #resultadoBusquedaPersonal #botonVerMas {
   height: 50px;
   width: 127px;
@@ -464,6 +603,27 @@ main #presentacion #resultadoBusquedaPersonal #botonVerMas p {
   text-transform: uppercase;
   font-size: 13px;
   line-height: 16px;
+}
+
+main #presentacion #resultadoBusquedaPersonal #ouchResultados {
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 340px;
+}
+
+main #presentacion #resultadoBusquedaPersonal #ouchResultados p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #50E3C2;
+  text-align: center;
+  margin: 30px 0 110px 0;
 }
 
 main #presentacion #contenedorVacio {
@@ -536,9 +696,7 @@ main #trending .scroll .imagenSimulada {
 }
 
 .scroll #scrollIzquierda, .scroll #scrollDerecha {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
 }
 
 .scroll #gifTrending {
@@ -565,7 +723,7 @@ main #trending .scroll .imagenSimulada {
   position: absolute;
   margin: 0 10px;
   background-color: #572EE5;
-  opacity: 0.6;
+  opacity: 0;
   height: 275px;
   width: 357px;
   display: -webkit-box;
@@ -627,6 +785,10 @@ main #trending .scroll .imagenSimulada {
   font-size: 15px;
   line-height: 18px;
   font-weight: 700;
+}
+
+.scroll #gifTrending div .pasarMouse:hover {
+  opacity: 0.6;
 }
 
 footer {
@@ -759,8 +921,13 @@ footer .lineaAzul {
   }
   header #barraNavegacion nav .menu ul li .crearGifos {
     display: inherit;
-    position: relative;
-    bottom: 10px;
+    content: url(../images/button-crear-gifo.svg);
+  }
+  header #barraNavegacion nav .menu ul li .crearGifos:hover {
+    content: url(../images/CTA-crear-gifo-hover.svg);
+  }
+  header #barraNavegacion nav .menu ul li .crearGifos:active {
+    content: url(../images/CTA-crear-gifo-active.svg);
   }
   header #barraNavegacion nav .menu ul li .lineaFina {
     display: none;
@@ -826,6 +993,9 @@ footer .lineaAzul {
     -ms-grid-rows: 1fr 1fr 1fr 1fr;
         grid-template-rows: 1fr 1fr 1fr 1fr;
   }
+  main #presentacion #resultadoBusquedaPersonal #grillaBusquedaPersonal .GifTrending .pasarMouse {
+    width: 29%;
+  }
   main #trending {
     padding-bottom: 182px;
   }
@@ -842,13 +1012,28 @@ footer .lineaAzul {
   main #trending .informacion p br {
     display: none;
   }
-  main #trending .swipe {
-    margin-top: 53px;
+  main #trending #scrollIzquierda, main #trending #scrollDerecha {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
-  main #trending .swipe .imagenSimulada {
-    height: 275px;
-    width: 357px;
-    margin: 0 auto;
+  main #trending #scrollIzquierda #iconoScrollIzquierda {
+    content: url(../images/button-slider-left.svg);
+  }
+  main #trending #scrollIzquierda #iconoScrollIzquierda:hover {
+    content: url(../images/button-slider-left-hover.svg);
+  }
+  main #trending #scrollIzquierda #iconoScrollIzquierda:active {
+    content: url(../images/button-slider-left-hover.svg);
+  }
+  main #trending #scrollDerecha #iconoScrollDerecha {
+    content: url(../images/Button-Slider-right.svg);
+  }
+  main #trending #scrollDerecha #iconoScrollDerecha:hover {
+    content: url(../images/Button-Slider-right-hover.svg);
+  }
+  main #trending #scrollDerecha #iconoScrollDerecha:active {
+    content: url(../images/Button-Slider-right-hover.svg);
   }
   footer {
     position: relative;
@@ -914,6 +1099,9 @@ footer .lineaAzul {
         grid-template-columns: 1fr 1fr 1fr 1fr;
     -ms-grid-rows: 1fr 1fr 1fr;
         grid-template-rows: 1fr 1fr 1fr;
+  }
+  main #presentacion #resultadoBusquedaPersonal #grillaBusquedaPersonal .GifTrending .pasarMouse {
+    width: 21.5%;
   }
 }
 

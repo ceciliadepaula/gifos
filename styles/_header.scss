@@ -53,7 +53,7 @@ header{
                             text-align: center;
                         }
                         .crearGifos{
-                            display: none;                   
+                            display: none;
                         }
                         .lineaFina{
                             width: 41px;
@@ -64,6 +64,19 @@ header{
                         }
                         .lineaHover{
                            display: none;
+                        }
+                    }
+                    li:hover{
+                        .lineaHover{
+                            background-color: $colorVerde;
+                        }
+                    }
+                    li:active{
+                        .lineaHover{
+                            background-color: rgba($colorGrisBotones, 0);
+                        }
+                        .link{
+                            color: $colorGrisBotones;
                         }
                     }
                 }
