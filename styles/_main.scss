@@ -85,6 +85,11 @@ main{
                 font-size: 14px;
                 line-height: 25px;
             }
+            #resultadosTrendings{
+                span:hover{
+                    font-weight: $bold;
+                }
+            }
         }
         #resultadoBusquedaPersonal{
             display: none;

@@ -44,7 +44,7 @@
                     color: $colorBlanco;
                     padding: 15px;       
                     display: flex;
-                    flex-direction: column;         
+                    flex-direction: column;      
                     p{
                         font-size: 15px;
                         line-height: 18px;
@@ -62,4 +62,21 @@
             }
         }
     }
+}
+
+
+.iconoCorazon:hover{
+    content: url(../images/icon-fav-hover.svg);
+}
+
+.iconoCorazon:active{
+     content: url(../images/icon-fav-active.svg);
+}
+
+.iconoDescargar:hover{
+    content: url(../images/icon-download-hover.svg);
+}
+
+.iconoAgrandar:hover{
+    content: url(../images/icon-max-hover.svg);
 }

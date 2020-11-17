@@ -459,6 +459,10 @@ main #presentacion .barraTrending p.textosPrincipales {
   line-height: 25px;
 }
 
+main #presentacion .barraTrending #resultadosTrendings span:hover {
+  font-weight: 700;
+}
+
 main #presentacion #resultadoBusquedaPersonal {
   display: none;
   -webkit-box-orient: vertical;
@@ -789,6 +793,22 @@ main #trending .scroll .imagenSimulada {
 
 .scroll #gifTrending div .pasarMouse:hover {
   opacity: 0.6;
+}
+
+.iconoCorazon:hover {
+  content: url(../images/icon-fav-hover.svg);
+}
+
+.iconoCorazon:active {
+  content: url(../images/icon-fav-active.svg);
+}
+
+.iconoDescargar:hover {
+  content: url(../images/icon-download-hover.svg);
+}
+
+.iconoAgrandar:hover {
+  content: url(../images/icon-max-hover.svg);
 }
 
 footer {

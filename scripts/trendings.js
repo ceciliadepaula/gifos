@@ -2,21 +2,29 @@
 
 const apikey = "qh1YngMeTeNY1hh1ul31qyOxXD9gAjLC";
 
-var arrayTrendings = [];
-
 async function trendings(url) {
     let resultadosTrendings = document.getElementById("resultadosTrendings");
     try {
         let respuesta = await fetch(url);
         let listaJson = await respuesta.json();
-        for (i = 0; i < 5; i++) {
-            arrayTrendings.push(listaJson.data[i]);
+
+        resultadosTrendings.innerHTML = `
+           <span class="buscarTrending">${listaJson.data[0]}</span> - 
+           <span class="buscarTrending">${listaJson.data[1]}</span> - 
+           <span class="buscarTrending">${listaJson.data[2]}</span> - 
+           <span class="buscarTrending">${listaJson.data[3]}</span> - 
+           <span class="buscarTrending">${listaJson.data[4]}</span>
+        `;
+
+        // Al hacer click en algunos de los trendings sugeridos, se muestran los gifs de esa busqueda
+        let buscarTrending = document.getElementsByClassName("buscarTrending");
+        for(let i = 0; i<buscarTrending.length; i++){
+            buscarTrending[i].addEventListener("click", function (e) {
+                tarjetaBusqueda.value = listaJson.data[i];
+                MostrarResultadosBusquedaPersonal();
+            })
         }
-        array_aString = new String(arrayTrendings);
-        for (i = 0; i < 4; i++) {
-            array_aString = array_aString.replace(",", " - ");
-        }
-        resultadosTrendings.innerHTML = array_aString;
+
     }
     catch (error) {
         console.log("Error!!!: " + error);
@@ -24,6 +32,3 @@ async function trendings(url) {
 }
 
 trendings(`https://api.giphy.com/v1/trending/searches?api_key=${apikey}`)
-
-// Ver como hacer para que el trending me aparezca en mayuscula la primera
-//Hacer que se ponga negrita y que se busqye el termino al dar click
