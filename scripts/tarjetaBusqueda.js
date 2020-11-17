@@ -15,6 +15,7 @@ let grillaBusquedaPersonal = document.getElementById("grillaBusquedaPersonal");
 let botonVerMas = document.getElementById("botonVerMas");
 let formBusqueda = document.getElementById("form");
 let ouchResultados = document.getElementById("ouchResultados");
+let gifTrending = document.getElementById("gifTrending");
 
 
 // Barra busqueda sticky en top bar

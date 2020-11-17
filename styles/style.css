@@ -686,6 +686,32 @@ main #trending .scroll .imagenSimulada {
   margin: 0 auto;
 }
 
+@supports (display: grid) {
+  #gifTrending {
+    position: relative;
+    width: 80%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    white-space: nowrap;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+    -webkit-transform: scale(0.98);
+            transform: scale(0.98);
+    will-change: transform;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    cursor: pointer;
+  }
+  .scroll {
+    grid-area: main;
+    padding: 0;
+    overflow-x: hidden;
+    overflow-y: hidden;
+  }
+}
+
 .scroll {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -716,8 +742,8 @@ main #trending .scroll .imagenSimulada {
 }
 
 .scroll #gifTrending div img {
-  height: 275px;
-  width: 357px;
+  height: 200px;
+  width: 260px;
   margin: 0 10px;
   -o-object-fit: cover;
      object-fit: cover;
@@ -728,8 +754,8 @@ main #trending .scroll .imagenSimulada {
   margin: 0 10px;
   background-color: #572EE5;
   opacity: 0;
-  height: 275px;
-  width: 357px;
+  height: 200px;
+  width: 260px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1104,6 +1130,14 @@ footer .lineaAzul {
     font-size: 13px;
     line-height: 15px;
     margin-bottom: 0;
+  }
+  .scroll #gifTrending div img {
+    height: 275px;
+    width: 357px;
+  }
+  .scroll #gifTrending div .pasarMouse {
+    height: 275px;
+    width: 357px;
   }
 }
 
