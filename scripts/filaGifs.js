@@ -17,7 +17,9 @@ function buscar(){
                 <img src=${info.data[i].images.original.url}>
                 <div class='pasarMouse'> <div class='iconos'>" 
                 <img class='iconoCorazon' src='images/icon-fav.svg' alt='Ícono añadir a favoritos'>
-                <img class='iconoDescargar' src='images/icon-download.svg' alt='Ícono download'>
+                <a onclick="DescargarUnGif('${info.data[i].id}')">        
+                    <img class='iconoDescargar' src='images/icon-download.svg' alt='Ícono download'>
+                </a>
                 <img class='iconoAgrandar' src='images/icon-max-normal.svg' alt='Ícono maximizar'>
                 </div><div class='infoTexto'><p>
                 ${info.data[i].username}</p><h4>

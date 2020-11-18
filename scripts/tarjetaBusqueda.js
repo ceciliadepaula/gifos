@@ -112,10 +112,10 @@ liLupa[1].addEventListener("click", CompletarPalabraB);
 liLupa[2].addEventListener("click", CompletarPalabraC);
 liLupa[3].addEventListener("click", CompletarPalabraD);
 
-function CompletarPalabraA() {    tarjetaBusqueda.value = arrayBusqueda[0];}
-function CompletarPalabraB() {    tarjetaBusqueda.value = arrayBusqueda[1];}
-function CompletarPalabraC() {    tarjetaBusqueda.value = arrayBusqueda[2];}
-function CompletarPalabraD() {    tarjetaBusqueda.value = arrayBusqueda[3];}
+function CompletarPalabraA() { tarjetaBusqueda.value = arrayBusqueda[0]; }
+function CompletarPalabraB() { tarjetaBusqueda.value = arrayBusqueda[1]; }
+function CompletarPalabraC() { tarjetaBusqueda.value = arrayBusqueda[2]; }
+function CompletarPalabraD() { tarjetaBusqueda.value = arrayBusqueda[3]; }
 
 //Capturar valor del input para enviarlo a la API y mostrar resultados busqueda
 
@@ -150,18 +150,22 @@ function TraerResultadosBusqueda(limiteMostrar, posicion){
         })
         .then( nuevoObjetoRecibido => {
             for (i = 0; i < 12; i++) {
+                console.log(nuevoObjetoRecibido);
+
                 let contenedorImg = document.createElement("div");
                 contenedorImg.classList.add("GifTrending");
                 contenedorImg.innerHTML = `
-                    <img src=${nuevoObjetoRecibido.data[i].images.original.url}>
-                    <div class='pasarMouse'> <div class='iconos'>" 
-                    <img class='iconoCorazon' src='images/icon-fav.svg' alt='Ícono añadir a favoritos'>
+                <img src=${nuevoObjetoRecibido.data[i].images.original.url}>
+                <div class='pasarMouse'> <div class='iconos'>" 
+                <img class='iconoCorazon'src='images/icon-fav.svg' alt='Ícono añadir a favoritos'>
+                <a onclick="DescargarUnGif('${nuevoObjetoRecibido.data[i].id}')">        
                     <img class='iconoDescargar' src='images/icon-download.svg' alt='Ícono download'>
-                    <img class='iconoAgrandar' src='images/icon-max-normal.svg' alt='Ícono maximizar'>
-                    </div><div class='infoTexto'><p>
-                    ${nuevoObjetoRecibido.data[i].username}</p><h4>
-                    ${nuevoObjetoRecibido.data[i].title}</h4></div></div>
-                `
+                </a>
+                <img class='iconoAgrandar' src='images/icon-max-normal.svg' alt='Ícono maximizar'>
+                </div><div class='infoTexto'><p>
+                ${nuevoObjetoRecibido.data[i].username}</p><h4>
+                ${nuevoObjetoRecibido.data[i].title}</h4></div></div>
+            `
                 grillaBusquedaPersonal.appendChild(contenedorImg);
             }
             /* barraTrending[0].style.display = "none";        */ 
@@ -184,3 +188,13 @@ function VerMasResultados(){
     TraerResultadosBusqueda(limiteMostrar, posicion);
 }
 
+
+// Descargar gifs
+
+async function DescargarUnGif(gifoImg) {
+    let blob = await fetch(
+      "https://media.giphy.com/media/" + gifoImg + "/giphy.gif"
+    ).then((img) => img.blob());
+        console.log(blob);
+    invokeSaveAsDialog(blob, "");
+  }
