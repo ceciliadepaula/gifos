@@ -837,6 +837,89 @@ main #trending .scroll .imagenSimulada {
   content: url(../images/icon-max-hover.svg);
 }
 
+#agrandarGif {
+  height: 100vh;
+  width: 70vw;
+  position: relative;
+  left: 15vw;
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#agrandarGif #iconoCerrar {
+  position: absolute;
+  top: 50px;
+  right: 50px;
+}
+
+#agrandarGif #agregarElGifAqui {
+  width: 695px;
+  height: 385px;
+  margin-top: 90px;
+  -ms-flex-item-align: center;
+      align-self: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#agrandarGif #agregarElGifAqui img {
+  width: 695px;
+}
+
+#agrandarGif #datosAmpliado {
+  margin-top: 30px;
+  width: 695px;
+  -ms-grid-row-align: center;
+      align-self: center;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+}
+
+#agrandarGif #datosAmpliado #datosGifAmpliado {
+  font-family: "Roboto", sans-serif;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+#agrandarGif #datosAmpliado #datosGifAmpliado p {
+  font-size: 15px;
+  line-height: 18px;
+  font-weight: 400;
+}
+
+#agrandarGif #datosAmpliado #datosGifAmpliado h4 {
+  font-size: 16px;
+  line-height: 32px;
+  font-weight: 700;
+}
+
+#agrandarGif #datosAmpliado #botones {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+#agrandarGif #datosAmpliado #botones img {
+  float: right;
+  margin-left: 10px;
+  border: #9CAFC3 1px solid;
+  border-radius: 10px;
+}
+
 footer {
   position: relative;
   top: 100px;
