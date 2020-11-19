@@ -20,7 +20,9 @@ function buscar(){
                 <a onclick="DescargarUnGif('${info.data[i].id}')">        
                     <img class='iconoDescargar' src='images/icon-download.svg' alt='Ícono download'>
                 </a>
-                <img class='iconoAgrandar' src='images/icon-max-normal.svg' alt='Ícono maximizar'>
+                <a onclick="AgrandarGif('${info.data[i].id}')"> 
+                    <img class='iconoAgrandar' src='images/icon-max-normal.svg' alt='Ícono maximizar'>
+                </a>
                 </div><div class='infoTexto'><p>
                 ${info.data[i].username}</p><h4>
                 ${info.data[i].title}</h4></div></div>  
@@ -36,6 +38,9 @@ function buscar(){
 
 
 // Ir derecha e izquierda
+
+
+/////////////// O USAR EL QUE HICE EN OTRO ARCHIVO, PARA IR PASANDO DE A 3
 
 iconoScrollIzquierda.addEventListener("click", () => {
    gifTrending.scrollLeft -= 200;

@@ -18,21 +18,24 @@ let ouchResultados = document.getElementById("ouchResultados");
 let gifTrending = document.getElementById("gifTrending");
 let iconoAgrandar = document.getElementsByClassName("iconoAgrandar");
 let agrandarGif = document.getElementById("agrandarGif");
+let header = document.getElementsByTagName("header")[0];
+let main = document.getElementsByTagName("main")[0];
+let footer = document.getElementsByTagName("footer")[0];
 
 
 // Barra busqueda sticky en top bar
 
-window.onscroll = function () { PosicionBarraBusqueda() };
+/* window.onscroll = function () { PosicionBarraBusqueda() };
 var sticky = formBusqueda.offsetTop;
 
 function PosicionBarraBusqueda() {
     if (window.pageYOffset >= 500) {
         formBusqueda.classList.add("sticky");   // FALTA PONER QUE CUANDO LA BUSQUEDA ESTE ARRIBA, NO SE MUESTREN LOS RESULTADOS DESPLEGADOS
-        // Y PONER LINES DE SOMBRA
+                                                // Y PONER LINES DE SOMBRA
     } else {
         formBusqueda.classList.remove("sticky");    // PERO SI VUELVE ACÁ, SI SE MUESTREN
     }
-}
+} */
 
 // Funciones de Búsqueda
 
@@ -215,24 +218,47 @@ function AgrandarGif(gifoImg) {
             return respuesta.json();
         })
         .then(nuevoObjeto => {
+
+            //Para abrir
+
             agrandarGif.style.display = "flex";
             agrandarGif.innerHTML = `
-            <img id="iconoCerrar" src="images/close.svg" alt="Ícono Cerrar ventana">
-            <div id="agregarElGifAqui">
-                <img src=${nuevoObjeto.data.images.original.url}>
-            </div>
-            <div id="datosAmpliado">
-                <div id="datosGifAmpliado">
-                    <p>${nuevoObjeto.data.username}</p>
-                    <h4>${nuevoObjeto.data.title}</h4>
+                <div id="marcoIcono">
+                    <img id="iconoCerrar" src="images/close.svg" alt="Ícono Cerrar ventana">
                 </div>
-            <div id="botones">
-                <img src="images/icon-download.svg" alt="Ícono descarga">
-                <img src="images/icon-fav.svg" alt="Ícono corazón">
-            </div>
-        `
+                <div id="agregarElGifAqui">
+                    <img src=${nuevoObjeto.data.images.original.url}>
+                </div>
+                <div id="datosAmpliado">
+                    <div id="datosGifAmpliado">
+                        <p>${nuevoObjeto.data.username}</p>
+                        <h4>${nuevoObjeto.data.title}</h4>
+                    </div>
+                <div id="botones">
+                    <a onclick="DescargarUnGif('${nuevoObjeto.data.id}')">        
+                        <img class='iconoDescargar' src='images/icon-download.svg' alt='Ícono download'>
+                    </a>
+                    <img src="images/icon-fav.svg" alt="Ícono corazón">
+                </div>
+            `
+            header.style.display = "none";
+            main.style.display = "none";
+            footer.style.display = "none";
+
+            // Para cerrar
+
+            document.getElementById("iconoCerrar").addEventListener("click", ()=> {
+                agrandarGif.style.display = "none";
+                agrandarGif.innerHTML = ``;
+                gifGrande = false;
+                header.style.display = "inherit";
+                main.style.display = "inherit";
+                footer.style.display = "inherit";
+            });
+
         })
         .catch(error => {
             console.log("Error: " + error);
         })
 }
+

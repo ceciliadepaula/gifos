@@ -164,6 +164,18 @@ body.nocturno footer .lineaAzul {
   background-color: #000000;
 }
 
+body.nocturno #agrandarGif #marcoIcono #iconoCerrar {
+  content: url(../images/close-modo-noct.svg);
+}
+
+body.nocturno #agrandarGif #datosAmpliado #datosGifAmpliado {
+  color: #ffffff;
+}
+
+body.nocturno #agrandarGif #datosAmpliado #botones img {
+  border: none;
+}
+
 @media screen and (min-width: 768px) {
   body.nocturno header {
     background-color: #37383C;
@@ -839,9 +851,9 @@ main #trending .scroll .imagenSimulada {
 
 #agrandarGif {
   height: 100vh;
-  width: 70vw;
+  width: 90vw;
   position: relative;
-  left: 15vw;
+  left: 5vw;
   display: none;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -849,16 +861,23 @@ main #trending .scroll .imagenSimulada {
           flex-direction: column;
 }
 
-#agrandarGif #iconoCerrar {
+#agrandarGif #marcoIcono {
+  margin-top: 50px;
+  width: 90%;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+#agrandarGif #marcoIcono #iconoCerrar {
   position: absolute;
-  top: 50px;
-  right: 50px;
+  right: 5%;
 }
 
 #agrandarGif #agregarElGifAqui {
-  width: 695px;
+  width: 90%;
   height: 385px;
-  margin-top: 90px;
+  margin-top: 50px;
   -ms-flex-item-align: center;
       align-self: center;
   display: -webkit-box;
@@ -874,12 +893,14 @@ main #trending .scroll .imagenSimulada {
 }
 
 #agrandarGif #agregarElGifAqui img {
-  width: 695px;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 #agrandarGif #datosAmpliado {
   margin-top: 30px;
-  width: 695px;
+  width: 90%;
   -ms-grid-row-align: center;
       align-self: center;
   display: -ms-grid;
@@ -984,6 +1005,11 @@ footer .lineaAzul {
 }
 
 @media screen and (min-width: 768px) {
+  #agrandarGif {
+    width: 70vw;
+    position: relative;
+    left: 15vw;
+  }
   header {
     background-color: #ffffff;
   }
@@ -1242,16 +1268,21 @@ footer .lineaAzul {
   }
 }
 
-@media screen and (min-width: 1250px) {
-  main #presentacion .barraBusqueda .sticky {
-    position: fixed;
-    top: 25px;
-    left: 190px;
-    z-index: 100;
-    width: 334px  !important;
-  }
-}
-
+/* @media screen and (min-width: 1250px){
+    main{
+        #presentacion{
+            .barraBusqueda{
+                .sticky {  // Para hacer que la barra suba y quede fija cuando se scrolea y desaparece de pantalla
+                    position: fixed;
+                    top: 25px;
+                    left: 190px;
+                    z-index: 100;
+                    width: 334px  !important;
+                }
+            }
+        }
+    }    
+} */
 main#crearGif {
   position: relative;
   top: 105px;

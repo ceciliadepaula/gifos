@@ -1,4 +1,9 @@
 @media screen and (min-width: 768px){
+    #agrandarGif{
+        width: 70vw;
+        position: relative;
+        left: 15vw;
+    }
     header{
         background-color: $colorBlanco;
         #barraNavegacion{

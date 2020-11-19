@@ -24,11 +24,12 @@
     }    
 }
 
-@media screen and (min-width: 1250px){
+
+/* @media screen and (min-width: 1250px){
     main{
         #presentacion{
             .barraBusqueda{
-                .sticky {
+                .sticky {  // Para hacer que la barra suba y quede fija cuando se scrolea y desaparece de pantalla
                     position: fixed;
                     top: 25px;
                     left: 190px;
@@ -38,4 +39,4 @@
             }
         }
     }    
-}
+} */
