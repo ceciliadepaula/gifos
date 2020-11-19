@@ -16,7 +16,9 @@ function buscar(){
             contenedorImg.innerHTML = `
                 <img src=${info.data[i].images.original.url}>
                 <div class='pasarMouse'> <div class='iconos'>" 
-                <img class='iconoCorazon' src='images/icon-fav.svg' alt='Ícono añadir a favoritos'>
+                <a onclick="AgregarFavoritos('${info.data[i].id}', '${i}')"> 
+                    <img class='iconoCorazon' src='images/icon-fav.svg' alt='Ícono añadir a favoritos'>
+                </a>
                 <a onclick="DescargarUnGif('${info.data[i].id}')">        
                     <img class='iconoDescargar' src='images/icon-download.svg' alt='Ícono download'>
                 </a>

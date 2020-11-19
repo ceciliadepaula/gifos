@@ -21,21 +21,7 @@ let agrandarGif = document.getElementById("agrandarGif");
 let header = document.getElementsByTagName("header")[0];
 let main = document.getElementsByTagName("main")[0];
 let footer = document.getElementsByTagName("footer")[0];
-
-
-// Barra busqueda sticky en top bar
-
-/* window.onscroll = function () { PosicionBarraBusqueda() };
-var sticky = formBusqueda.offsetTop;
-
-function PosicionBarraBusqueda() {
-    if (window.pageYOffset >= 500) {
-        formBusqueda.classList.add("sticky");   // FALTA PONER QUE CUANDO LA BUSQUEDA ESTE ARRIBA, NO SE MUESTREN LOS RESULTADOS DESPLEGADOS
-                                                // Y PONER LINES DE SOMBRA
-    } else {
-        formBusqueda.classList.remove("sticky");    // PERO SI VUELVE ACÁ, SI SE MUESTREN
-    }
-} */
+let iconoCorazon = document.getElementsByClassName("iconoCorazon");
 
 // Funciones de Búsqueda
 
@@ -161,7 +147,9 @@ function TraerResultadosBusqueda(limiteMostrar, posicion) {
                     <img src=${nuevoObjetoRecibido.data[i].images.original.url}>
                     <div class='pasarMouse'> 
                         <div class='iconos'>" 
-                            <img class='iconoCorazon' id="${nuevoObjetoRecibido.data[i].id}" src='images/icon-fav.svg' alt='Ícono añadir a favoritos'>
+                            <a onclick="AgregarFavoritos('${nuevoObjetoRecibido.data[i].id}', '${i}')"> 
+                                <img class='iconoCorazon' src='images/icon-fav.svg' alt='Ícono añadir a favoritos'>
+                            </a>
                             <a onclick="DescargarUnGif('${nuevoObjetoRecibido.data[i].id}')">        
                                 <img class='iconoDescargar' src='images/icon-download.svg' alt='Ícono download'>
                             </a>
@@ -238,12 +226,20 @@ function AgrandarGif(gifoImg) {
                     <a onclick="DescargarUnGif('${nuevoObjeto.data.id}')">        
                         <img class='iconoDescargar' src='images/icon-download.svg' alt='Ícono download'>
                     </a>
-                    <img src="images/icon-fav.svg" alt="Ícono corazón">
+                    <a onclick="AgregarFavoritos('${nuevoObjeto.data.id}', '0')"> 
+                        <img class='iconoCorazon' src='images/icon-fav.svg' alt='Ícono añadir a favoritos'>
+                    </a>
                 </div>
             `
             header.style.display = "none";
             main.style.display = "none";
             footer.style.display = "none";
+            
+
+/*            esto tendria que ir en el local storahe me parece
+             if ( arrayDeFavoritos.indexOf(gifoImg) >= 0){
+                document.getElementsByClassName("iconoCorazon")[0].style.content = "url(./images/icon-fav-active.svg)";
+            } */
 
             // Para cerrar
 
@@ -262,3 +258,18 @@ function AgrandarGif(gifoImg) {
         })
 }
 
+
+// Favoritos
+
+arrayDeFavoritos = [];
+
+function AgregarFavoritos(gifoImg, e) {
+    var indice = arrayDeFavoritos.indexOf(gifoImg);
+    if ( indice < 0){
+        arrayDeFavoritos.push(gifoImg);
+        iconoCorazon[e].style.content = "url(./images/icon-fav-active.svg)";
+    } else {
+        arrayDeFavoritos.splice(indice, 1);
+        iconoCorazon[e].style.content= "url(./images/icon-fav.svg)";
+    }
+}
