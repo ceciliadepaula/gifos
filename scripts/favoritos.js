@@ -7,6 +7,7 @@ if (StringDeFavoritos == null){
    // y tengo que poner que si el array es 0, me tiene que aparece el texto de 'agrefe su arrau bla bla' en la otra pagina.
 } else {
     var arrayDeFavoritos = JSON.parse(StringDeFavoritos); // me lo vuelve a hacer array
+    contenedorVacioFav.style.display = "none";
 }
 
 

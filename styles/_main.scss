@@ -163,30 +163,6 @@ main{
                     .pasarMouse:hover{
                         opacity: 0.6; 
                     } 
-
-
-
-
-                }
-            }
-            #botonVerMas{
-                height: 50px;
-                width: 127px;
-                border-radius: 50px;
-                border: 1px $colorAzul solid;
-                display: flex;
-                flex-direction: column;
-                text-align: center;
-                justify-content: center;
-                align-self: center;
-                margin-bottom: 78px;
-                p{
-                    font-family: $tipoTitulos;
-                    font-weight: $bold;
-                    color: $colorAzul;
-                    text-transform: uppercase;
-                    font-size: 13px;
-                    line-height: 16px;
                 }
             }
             #ouchResultados{
@@ -246,6 +222,33 @@ main{
                 margin: 0 auto;
             }
         }
+    }
+}
+
+#botonVerMas, #botonVerMasFavoritos{
+    height: 50px;
+    width: 127px;
+    border-radius: 50px;
+    border: 1px $colorAzul solid;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-self: center;
+    margin-bottom: 78px;
+    p{
+        font-family: $tipoTitulos;
+        font-weight: $bold;
+        color: $colorAzul;
+        text-transform: uppercase;
+        font-size: 13px;
+        line-height: 16px;
+    }
+}
+#botonVerMas:hover, #botonVerMasFavoritos:hover{
+    background-color: $colorAzul;
+    p{
+        color: $colorBlanco;
     }
 }
 

@@ -1,9 +1,7 @@
 // Descargar gifs
 
 async function DescargarUnGif(gifoImg) {
-    let blob = await fetch(
-        "https://media.giphy.com/media/" + gifoImg + "/giphy.gif"
-    ).then((img) => img.blob());
-    console.log(blob);
-    invokeSaveAsDialog(blob, "");
+    let blob = await fetch("https://media.giphy.com/media/" + gifoImg + "/giphy.gif")
+    .then(r => r.blob());
+	invokeSaveAsDialog(blob);
 }

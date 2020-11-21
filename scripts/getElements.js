@@ -22,6 +22,7 @@ let header = document.getElementsByTagName("header")[0];
 let main = document.getElementsByTagName("main")[0];
 let footer = document.getElementsByTagName("footer")[0];
 let iconoCorazon = document.getElementsByClassName("iconoCorazon");
+let contenedorVacioFav = document.getElementsByClassName("contenedorVacioFav")[0];
 
 
 // API KEYS

@@ -591,36 +591,6 @@ main #presentacion #resultadoBusquedaPersonal #grillaBusquedaPersonal .GifTrendi
   opacity: 0.6;
 }
 
-main #presentacion #resultadoBusquedaPersonal #botonVerMas {
-  height: 50px;
-  width: 127px;
-  border-radius: 50px;
-  border: 1px #572EE5 solid;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  text-align: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-item-align: center;
-      align-self: center;
-  margin-bottom: 78px;
-}
-
-main #presentacion #resultadoBusquedaPersonal #botonVerMas p {
-  font-family: "Montserrat", sans-serif;
-  font-weight: 700;
-  color: #572EE5;
-  text-transform: uppercase;
-  font-size: 13px;
-  line-height: 16px;
-}
-
 main #presentacion #resultadoBusquedaPersonal #ouchResultados {
   display: none;
   -webkit-box-orient: vertical;
@@ -696,6 +666,44 @@ main #trending .scroll .imagenSimulada {
   width: 243px;
   background-color: #572EE5;
   margin: 0 auto;
+}
+
+#botonVerMas, #botonVerMasFavoritos {
+  height: 50px;
+  width: 127px;
+  border-radius: 50px;
+  border: 1px #572EE5 solid;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-item-align: center;
+      align-self: center;
+  margin-bottom: 78px;
+}
+
+#botonVerMas p, #botonVerMasFavoritos p {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  color: #572EE5;
+  text-transform: uppercase;
+  font-size: 13px;
+  line-height: 16px;
+}
+
+#botonVerMas:hover, #botonVerMasFavoritos:hover {
+  background-color: #572EE5;
+}
+
+#botonVerMas:hover p, #botonVerMasFavoritos:hover p {
+  color: #ffffff;
 }
 
 @supports (display: grid) {
