@@ -92,7 +92,6 @@ if (screen.width < 720) {
     
 } else if (screen.width >= 720) {
     buscar();
-    /* scrollHorizontal(); */
     iconoScrollDerecha.style.display = "initial";
     iconoScrollIzquierda.style.display = "initial";
 }

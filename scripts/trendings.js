@@ -1,7 +1,5 @@
 // Mostrar 5 palabras más buscadas en barra de TRENDINGS
 
-const apikey = "qh1YngMeTeNY1hh1ul31qyOxXD9gAjLC";
-
 async function trendings(url) {
     let resultadosTrendings = document.getElementById("resultadosTrendings");
     try {

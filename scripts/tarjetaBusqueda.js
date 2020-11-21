@@ -1,28 +1,3 @@
-// Traigo los elementos a usar
-
-let crearGifos = document.getElementById("crearGifos");
-let iconoScrollIzquierda = document.getElementById("iconoScrollIzquierda");
-let iconoScrollDerecha = document.getElementById("iconoScrollDerecha");
-let tarjetaBusqueda = document.getElementById("tarjetaBusqueda");
-let listaSugerencias = document.getElementById("listaSugerencias");
-let lupaAzul = document.getElementById("lupaAzul")
-let liLupa = document.getElementsByClassName("liLupa");
-let resultadoBusquedaPersonal = document.getElementById("resultadoBusquedaPersonal");
-let tituloBusquedaPersonal = document.getElementById("tituloBusquedaPersonal");
-let lupaGris = document.getElementById("lupaGris");
-let barraTrending = document.getElementsByClassName("barraTrending");
-let grillaBusquedaPersonal = document.getElementById("grillaBusquedaPersonal");
-let botonVerMas = document.getElementById("botonVerMas");
-let formBusqueda = document.getElementById("form");
-let ouchResultados = document.getElementById("ouchResultados");
-let gifTrending = document.getElementById("gifTrending");
-let iconoAgrandar = document.getElementsByClassName("iconoAgrandar");
-let agrandarGif = document.getElementById("agrandarGif");
-let header = document.getElementsByTagName("header")[0];
-let main = document.getElementsByTagName("main")[0];
-let footer = document.getElementsByTagName("footer")[0];
-let iconoCorazon = document.getElementsByClassName("iconoCorazon");
-
 // Funciones de Búsqueda
 
 arrayBusqueda = ["", "", "", ""];
@@ -125,13 +100,14 @@ function MostrarResultadosBusquedaPersonal() {
     tituloBusquedaPersonal.innerHTML = (palabraBuscada).charAt(0).toUpperCase() + (palabraBuscada).slice(1);
     resultadoBusquedaPersonal.style.display = "flex";
     grillaBusquedaPersonal.innerHTML = "";
-    TraerResultadosBusqueda(12, 0);
+    TraerResultadosBusqueda(12, 0, 0);
     limiteMostrar = 12;
     posicion = 0;
+    i = 0;
 }
 
 
-function TraerResultadosBusqueda(limiteMostrar, posicion) {
+function TraerResultadosBusqueda(limiteMostrar, posicion, i) {
 
     url = `https://api.giphy.com/v1/gifs/search?api_key=${apikey}&q=${palabraBuscada}&limit=${limiteMostrar}&offset=${posicion}`;
 
@@ -140,7 +116,7 @@ function TraerResultadosBusqueda(limiteMostrar, posicion) {
             return respuesta.json();
         })
         .then(nuevoObjetoRecibido => {
-            for (i = 0; i < 12; i++) {
+            for (i; i < limiteMostrar; i++) {
                 let contenedorImg = document.createElement("div");
                 contenedorImg.classList.add("GifTrending");
                 contenedorImg.innerHTML = `
@@ -173,120 +149,11 @@ function TraerResultadosBusqueda(limiteMostrar, posicion) {
 
 // Sumar 12 gifs cada vez que se haga click en botón Ver Más
 
-var limiteMostrar = 12;
-var posicion = 0;
-
 botonVerMas.addEventListener("click", VerMasResultados);
 
-function VerMasResultados() {
+function VerMasResultados() {   // los indices siempre se quedan en 0 a 11
+    i = i + 12;
     limiteMostrar = limiteMostrar + 12;
     posicion = posicion + 12;
-    TraerResultadosBusqueda(limiteMostrar, posicion);
-}
-
-
-// Descargar gifs
-
-async function DescargarUnGif(gifoImg) {
-    let blob = await fetch(
-        "https://media.giphy.com/media/" + gifoImg + "/giphy.gif"
-    ).then((img) => img.blob());
-    console.log(blob);
-    invokeSaveAsDialog(blob, "");
-}
-
-
-// Maximizar gif
-
-function AgrandarGif(gifoImg) {
-    url = `https://api.giphy.com/v1/gifs/${gifoImg}?api_key=${apikey}`;
-
-    fetch(url)
-        .then(respuesta => {
-            return respuesta.json();
-        })
-        .then(nuevoObjeto => {
-
-            //Para abrir
-
-            agrandarGif.style.display = "flex";
-            agrandarGif.innerHTML = `
-                <div id="marcoIcono">
-                    <img id="iconoCerrar" src="images/close.svg" alt="Ícono Cerrar ventana">
-                </div>
-                <div id="agregarElGifAqui">
-                    <img src=${nuevoObjeto.data.images.original.url}>
-                </div>
-                <div id="datosAmpliado">
-                    <div id="datosGifAmpliado">
-                        <p>${nuevoObjeto.data.username}</p>
-                        <h4>${nuevoObjeto.data.title}</h4>
-                    </div>
-                <div id="botones">
-                    <a onclick="DescargarUnGif('${nuevoObjeto.data.id}')">        
-                        <img class='iconoDescargar' src='images/icon-download.svg' alt='Ícono download'>
-                    </a>
-                    <a onclick="AgregarFavoritos('${nuevoObjeto.data.id}', '0')"> 
-                        <img class='iconoCorazon' src='images/icon-fav.svg' alt='Ícono añadir a favoritos'>
-                    </a>
-                </div>
-            `
-            header.style.display = "none";
-            main.style.display = "none";
-            footer.style.display = "none";
-            
-
-/*            esto tendria que ir en el local storahe me parece
-             if ( arrayDeFavoritos.indexOf(gifoImg) >= 0){
-                document.getElementsByClassName("iconoCorazon")[0].style.content = "url(./images/icon-fav-active.svg)";
-            } */
-
-            // Para cerrar
-
-            document.getElementById("iconoCerrar").addEventListener("click", ()=> {
-                agrandarGif.style.display = "none";
-                agrandarGif.innerHTML = ``;
-                gifGrande = false;
-                header.style.display = "inherit";
-                main.style.display = "inherit";
-                footer.style.display = "inherit";
-            });
-
-        })
-        .catch(error => {
-            console.log("Error: " + error);
-        })
-}
-
-
-// Favoritos
-
-
-let StringDeFavoritos = localStorage.getItem("Favoritos");
-
-if (StringDeFavoritos == null){
-   var arrayDeFavoritos = [];
-   // y tengo que poner que si el array es 0, me tiene que aparece el texto de 'agrefe su arrau bla bla' en la otra pagina.
-} else {
-    var arrayDeFavoritos = JSON.parse(StringDeFavoritos); // me lo vuelve a hacer array
-}
-
-
-function AgregarFavoritos(gifoImg, e) {
-
-    var indice = arrayDeFavoritos.indexOf(gifoImg);
-
-    if ( indice < 0){
-        arrayDeFavoritos.push(gifoImg);
-        iconoCorazon[e].style.content = "url(./images/icon-fav-active.svg)";
-    } else {
-        arrayDeFavoritos.splice(indice, 1);
-        iconoCorazon[e].style.content= "url(./images/icon-fav.svg)";
-    }
-
-    localStorage.setItem('Favoritos', JSON.stringify(arrayDeFavoritos)); // me lo convierte en string   
-    
-
-    // el tipo de icono de ese e me tiene que quedar en el local storage. puedo pensarlo como un nombre de clase que cambie
-    
+    TraerResultadosBusqueda(limiteMostrar, posicion, i);
 }
