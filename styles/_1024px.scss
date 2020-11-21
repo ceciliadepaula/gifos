@@ -22,4 +22,14 @@
             }
         }
     }    
+
+    #grillaResultadosFavoritos{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        .GifFavoritos{
+            .pasarMouse{
+                width: 21.5%;
+            }
+        }
+    }
 }
