@@ -1420,31 +1420,45 @@ main#crearGif .seccionCamara .cajaEncuadre {
 main#crearGif .seccionCamara .cajaEncuadre h2 {
   font-size: 25px;
   line-height: 35px;
-  display: none;
 }
 
 main#crearGif .seccionCamara .cajaEncuadre .textosSecundarios {
   padding-top: 10px;
   line-height: 29px;
-  display: none;
 }
 
-main#crearGif .seccionCamara .cajaEncuadre #gifGrabado {
+main#crearGif .seccionCamara .cajaEncuadre #gifAzul {
   display: none;
-  width: 430px;
-  margin: auto;
-}
-
-main#crearGif .seccionCamara .cajaEncuadre #cuadroAzul {
-  z-index: 100;
-  background-color: #572EE5;
-  opacity: 0.60;
   width: 430px;
   height: 240px;
   margin: auto;
 }
 
-main#crearGif .seccionCamara .cajaEncuadre #cuadroAzul #iconosEsquina {
+main#crearGif .seccionCamara .cajaEncuadre #gifAzul #videoGif video {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: auto;
+}
+
+main#crearGif .seccionCamara .cajaEncuadre #gifAzul #videoGif #gifGrabado {
+  display: none;
+  width: 430px;
+  margin: auto;
+}
+
+main#crearGif .seccionCamara .cajaEncuadre #gifAzul #cuadroAzul {
+  display: none;
+  z-index: 50;
+  background-color: #572EE5;
+  opacity: 0.60;
+  width: 430px;
+  height: 240px;
+  position: absolute;
+  bottom: 236px;
+}
+
+main#crearGif .seccionCamara .cajaEncuadre #gifAzul #cuadroAzul #iconosEsquina {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1455,24 +1469,24 @@ main#crearGif .seccionCamara .cajaEncuadre #cuadroAzul #iconosEsquina {
   margin: 12px 12px 0 0;
 }
 
-main#crearGif .seccionCamara .cajaEncuadre #cuadroAzul #iconosEsquina #iconoCompartir {
+main#crearGif .seccionCamara .cajaEncuadre #gifAzul #cuadroAzul #iconosEsquina #iconoCompartir {
   margin-left: 8px;
   opacity: 0;
 }
 
-main#crearGif .seccionCamara .cajaEncuadre #cuadroAzul #iconosEsquina #iconoDescarga {
+main#crearGif .seccionCamara .cajaEncuadre #gifAzul #cuadroAzul #iconosEsquina #iconoDescarga {
   opacity: 0;
 }
 
-main#crearGif .seccionCamara .cajaEncuadre #cuadroAzul #iconosEsquina #iconoDescarga:hover {
+main#crearGif .seccionCamara .cajaEncuadre #gifAzul #cuadroAzul #iconosEsquina #iconoDescarga:hover {
   content: url(../images/icon-download-hover.svg);
 }
 
-main#crearGif .seccionCamara .cajaEncuadre #cuadroAzul #iconosEsquina #iconoCompartir:hover {
+main#crearGif .seccionCamara .cajaEncuadre #gifAzul #cuadroAzul #iconosEsquina #iconoCompartir:hover {
   content: url(../images/icon-link-hover.svg);
 }
 
-main#crearGif .seccionCamara .cajaEncuadre #cuadroAzul #estadoSubida {
+main#crearGif .seccionCamara .cajaEncuadre #gifAzul #cuadroAzul #estadoSubida {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1483,11 +1497,11 @@ main#crearGif .seccionCamara .cajaEncuadre #cuadroAzul #estadoSubida {
   margin-top: 40px;
 }
 
-main#crearGif .seccionCamara .cajaEncuadre #cuadroAzul #estadoSubida #iconoEstado {
+main#crearGif .seccionCamara .cajaEncuadre #gifAzul #cuadroAzul #estadoSubida #iconoEstado {
   margin-bottom: 15px;
 }
 
-main#crearGif .seccionCamara .cajaEncuadre #cuadroAzul #estadoSubida p {
+main#crearGif .seccionCamara .cajaEncuadre #gifAzul #cuadroAzul #estadoSubida p {
   text-align: center;
   font-family: "Montserrat", sans-serif;
   font-size: 15px;

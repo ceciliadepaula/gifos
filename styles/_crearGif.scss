@@ -16,60 +16,70 @@ main#crearGif{
             h2{
                 font-size: 25px;
                 line-height: 35px;
-
-
-                                        display: none;
             }
             .textosSecundarios{
                 padding-top: 10px;
-                line-height: 29px;
+                line-height: 29px;          
+            }
 
-                                     display: none;
-            }
-            #gifGrabado{
+            #gifAzul{
                 display: none;
-                width: 430px;
-                margin: auto;
-            }
-            #cuadroAzul{
-                z-index: 100;
-                background-color: $colorAzul;
-                opacity: 0.60;
                 width: 430px;
                 height: 240px;
                 margin: auto;
-                #iconosEsquina{
-                    display: flex;
-                    flex-direction: row-reverse;
-                    margin: 12px 12px 0 0;
-                    #iconoCompartir{
-                        margin-left: 8px;
-                        opacity: 0;
+                #videoGif{
+                    video{
+                        display: flex;
+                        margin: auto;
                     }
-                    #iconoDescarga{
-                        opacity: 0;
-                    }
-                    #iconoDescarga:hover{
-                        content: url(../images/icon-download-hover.svg);
-                    }
-                    #iconoCompartir:hover{
-                        content: url(../images/icon-link-hover.svg);
+                    #gifGrabado{
+                        display: none;
+                        width: 430px;
+                        margin: auto;
                     }
                 }
-                #estadoSubida{
-                    display: flex;
-                    flex-direction: column;
-                    margin-top: 40px;
-                    #iconoEstado{
-                        margin-bottom: 15px;
+                #cuadroAzul{
+                    display: none;
+                    z-index: 50;
+                    background-color: $colorAzul;
+                    opacity: 0.60;
+                    width: 430px;
+                    height: 240px;
+                    position: absolute;
+                    bottom: 236px;
+                    #iconosEsquina{
+                        display: flex;
+                        flex-direction: row-reverse;
+                        margin: 12px 12px 0 0;
+                        #iconoCompartir{
+                            margin-left: 8px;
+                            opacity: 0;
+                        }
+                        #iconoDescarga{
+                            opacity: 0;
+                        }
+                        #iconoDescarga:hover{
+                            content: url(../images/icon-download-hover.svg);
+                        }
+                        #iconoCompartir:hover{
+                            content: url(../images/icon-link-hover.svg);
+                        }
                     }
-                    p{
-                        text-align: center;
-                        font-family: $tipoTitulos;
-                        font-size: 15px;
-                        line-height: 19px;
-                        color: $colorBlanco;
-                        font-weight: $bold;
+                    #estadoSubida{
+                        display: flex;
+                        flex-direction: column;
+                        margin-top: 40px;
+                        #iconoEstado{
+                            margin-bottom: 15px;
+                        }
+                        p{
+                            text-align: center;
+                            font-family: $tipoTitulos;
+                            font-size: 15px;
+                            line-height: 19px;
+                            color: $colorBlanco;
+                            font-weight: $bold;
+                        }
                     }
                 }
             }

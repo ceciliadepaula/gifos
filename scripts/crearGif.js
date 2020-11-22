@@ -7,10 +7,12 @@ let botonComenzar = document.getElementById("botonComenzar");
 let botonGrabar = document.getElementById("botonGrabar");
 let botonFinalizar = document.getElementById("botonFinalizar");
 let botonSubir = document.getElementById("botonSubir");
+let cuadroAzul = document.getElementById("cuadroAzul");
 
 let tituloPermisos = document.getElementById("tituloPermisos");
 let textoPermisos = document.getElementById("textoPermisos");
 let gifGrabado = document.getElementById("gifGrabado");
+let gifAzul = document.getElementById("gifAzul");
 
 let video = document.getElementById("video");
 video.style.display = "none";
@@ -18,8 +20,6 @@ video.style.display = "none";
 let recorder;
 let blob;
 let form = new FormData();
-
-/* let dateStarted; */
 
 
 
@@ -47,10 +47,8 @@ async function AbrirCamara() {
     uno.style.color = "#572EE5";
     botonGrabar.style.display = "inherit";
     video.style.display = "inherit";
-
+    gifAzul.style.display="block";
     resultado = await getStreamAndRecord();
-    /* video.src = resultado; */
-
     botonGrabar.addEventListener("click", GrabarVideo);
 }
 
@@ -89,7 +87,6 @@ function GrabarVideo() {
     uno.style.color = "#572EE5";
     botonGrabar.style.display = "none";
     botonFinalizar.style.display = "inherit";
-
     recorder.startRecording();
     botonFinalizar.addEventListener("click", FinalizarGrabacion);
 
@@ -120,9 +117,11 @@ function FinalizarGrabacion() {
 // Subir a Gifos
 
 function SubirGrabacionAGifos() {
-    //aparecer pantalla lila con iconos y texto de gifo subido con exito
-    // botton 3 lila
-
+    dos.style.backgroundColor = "#ffffff";
+    dos.style.color = "#572EE5";
+    tres.style.color = "#ffffff";
+    tres.style.backgroundColor = "#572EE5";
+    cuadroAzul.style.display = "block";
 
     fetch("https://upload.giphy.com/v1/gifs", {
         method: "POST",
@@ -135,9 +134,13 @@ function SubirGrabacionAGifos() {
             console.log(nuevoObjetoRecibido);
             let gifId = nuevoObjetoRecibido.data.id;  //el id de ese gif subido
 
-            
+            document.getElementById("txtEstado").innerHTML = "GIFO subido con éxito";
+            document.getElementById("iconoEstado").style.content= "url(./images/ok.svg)";
+            document.getElementById("iconoDescarga").style.opacity ="1";
+            document.getElementById("iconoCompartir").style.opacity ="1";
         })
         .catch(error => {
             console.log("Error! " + error);
         });
 }
+
