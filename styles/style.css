@@ -1338,11 +1338,11 @@ footer .lineaAzul {
   }
   .scroll #gifTrending div img {
     height: 275px;
-    width: 357px;
+    width: 340px;
   }
   .scroll #gifTrending div .pasarMouse {
     height: 275px;
-    width: 357px;
+    width: 340px;
   }
   #grillaResultadosFavoritos {
     display: -ms-grid;
@@ -1420,11 +1420,80 @@ main#crearGif .seccionCamara .cajaEncuadre {
 main#crearGif .seccionCamara .cajaEncuadre h2 {
   font-size: 25px;
   line-height: 35px;
+  display: none;
 }
 
 main#crearGif .seccionCamara .cajaEncuadre .textosSecundarios {
   padding-top: 10px;
   line-height: 29px;
+  display: none;
+}
+
+main#crearGif .seccionCamara .cajaEncuadre #gifGrabado {
+  display: none;
+  width: 430px;
+  margin: auto;
+}
+
+main#crearGif .seccionCamara .cajaEncuadre #cuadroAzul {
+  z-index: 100;
+  background-color: #572EE5;
+  opacity: 0.60;
+  width: 430px;
+  height: 240px;
+  margin: auto;
+}
+
+main#crearGif .seccionCamara .cajaEncuadre #cuadroAzul #iconosEsquina {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  margin: 12px 12px 0 0;
+}
+
+main#crearGif .seccionCamara .cajaEncuadre #cuadroAzul #iconosEsquina #iconoCompartir {
+  margin-left: 8px;
+  opacity: 0;
+}
+
+main#crearGif .seccionCamara .cajaEncuadre #cuadroAzul #iconosEsquina #iconoDescarga {
+  opacity: 0;
+}
+
+main#crearGif .seccionCamara .cajaEncuadre #cuadroAzul #iconosEsquina #iconoDescarga:hover {
+  content: url(../images/icon-download-hover.svg);
+}
+
+main#crearGif .seccionCamara .cajaEncuadre #cuadroAzul #iconosEsquina #iconoCompartir:hover {
+  content: url(../images/icon-link-hover.svg);
+}
+
+main#crearGif .seccionCamara .cajaEncuadre #cuadroAzul #estadoSubida {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 40px;
+}
+
+main#crearGif .seccionCamara .cajaEncuadre #cuadroAzul #estadoSubida #iconoEstado {
+  margin-bottom: 15px;
+}
+
+main#crearGif .seccionCamara .cajaEncuadre #cuadroAzul #estadoSubida p {
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  line-height: 19px;
+  color: #ffffff;
+  font-weight: 700;
 }
 
 main#crearGif .seccionCamara .cajaEncuadre .marcasEncuadre {
@@ -1517,7 +1586,7 @@ main#crearGif .lineaGruesa {
   border-radius: 7px;
 }
 
-main#crearGif #botonComenzar {
+main#crearGif .botonesCreacion {
   height: 50px;
   width: 127px;
   border-radius: 50px;
@@ -1538,12 +1607,24 @@ main#crearGif #botonComenzar {
   margin-top: 20px;
 }
 
-main#crearGif #botonComenzar p {
+main#crearGif .botonesCreacion p {
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
   color: #572EE5;
   text-transform: uppercase;
   font-size: 13px;
   line-height: 16px;
+}
+
+main#crearGif .botonesCreacion:hover {
+  background-color: #572EE5;
+}
+
+main#crearGif .botonesCreacion:hover p {
+  color: #ffffff;
+}
+
+main#crearGif #botonGrabar, main#crearGif #botonFinalizar, main#crearGif #botonSubir {
+  display: none;
 }
 /*# sourceMappingURL=style.css.map */
