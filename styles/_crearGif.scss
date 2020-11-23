@@ -46,7 +46,7 @@ main#crearGif{
                     width: 430px;
                     height: 240px;
                     position: absolute;
-                    bottom: 236px;
+                    bottom: 210px;
                     #iconosEsquina{
                         display: flex;
                         flex-direction: row-reverse;
@@ -121,25 +121,51 @@ main#crearGif{
             top: 200px;
         }
     }
-    .botonesPasos{
-        width: 200px;
-        margin: 13px auto;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-        div{
-            font-family: $tipoTextos;
-            font-weight: $medium;
-            color: $colorAzul;
-            font-size: 18px;
-            line-height: 32px;
-            border: 1px solid $colorAzul;
-            height: 32px;
-            width: 32px;
-            border-radius: 100px;
+    #lineaBotonesCronom{
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        width: 690px;
+        margin: auto;
+        .botonesPasos{
+            width: 200px;
+            /* margin: 13px auto; */
             display: flex;
-            justify-content: center;
-            margin: 13px;
+            flex-direction: row;
+            /* justify-content: space-evenly; */
+            justify-self: right;
+            div{
+                font-family: $tipoTextos;
+                font-weight: $medium;
+                color: $colorAzul;
+                font-size: 18px;
+                line-height: 32px;
+                border: 1px solid $colorAzul;
+                height: 32px;
+                width: 32px;
+                border-radius: 100px;
+                display: flex;
+                justify-content: center;
+                margin: 13px;
+            }
+        }
+        #cronometro, #repetirCaptura{
+            font-family: $tipoTitulos;
+            color: $colorAzul;
+            font-size: 15px;
+            line-height: 22px;
+            font-weight: $bold;
+            align-self: center;
+            justify-self: right;
+        }
+        #repetirCaptura{
+            text-transform: uppercase;
+            display: none;
+        }
+        #repetirCaptura:hover{
+            .lineaHover{
+                background-color: $colorVerde;
+                height: 3px;
+            }
         }
     }
     .lineaGruesa{

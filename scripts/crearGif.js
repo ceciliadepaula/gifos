@@ -8,11 +8,13 @@ let botonGrabar = document.getElementById("botonGrabar");
 let botonFinalizar = document.getElementById("botonFinalizar");
 let botonSubir = document.getElementById("botonSubir");
 let cuadroAzul = document.getElementById("cuadroAzul");
+let cronometro = document.getElementById("cronometro");
 
 let tituloPermisos = document.getElementById("tituloPermisos");
 let textoPermisos = document.getElementById("textoPermisos");
 let gifGrabado = document.getElementById("gifGrabado");
 let gifAzul = document.getElementById("gifAzul");
+let repetirCaptura = document.getElementById("repetirCaptura");
 
 let video = document.getElementById("video");
 video.style.display = "none";
@@ -20,7 +22,7 @@ video.style.display = "none";
 let recorder;
 let blob;
 let form = new FormData();
-
+let dateStarted;
 
 
 // Pedir permisos para acceder
@@ -47,7 +49,7 @@ async function AbrirCamara() {
     uno.style.color = "#572EE5";
     botonGrabar.style.display = "inherit";
     video.style.display = "inherit";
-    gifAzul.style.display="block";
+    gifAzul.style.display = "block";
     resultado = await getStreamAndRecord();
     botonGrabar.addEventListener("click", GrabarVideo);
 }
@@ -83,6 +85,7 @@ function getStreamAndRecord() {
 // Grabar video
 
 function GrabarVideo() {
+    cronometro.style.display = "block";
     uno.style.backgroundColor = "#ffffff";
     uno.style.color = "#572EE5";
     botonGrabar.style.display = "none";
@@ -90,14 +93,24 @@ function GrabarVideo() {
     recorder.startRecording();
     botonFinalizar.addEventListener("click", FinalizarGrabacion);
 
+    // Cronómetro
+    dateStarted = new Date().getTime();
+    (function looper() {
+        if (!recorder) {
+            return;
+        }
+        cronometro.innerHTML = calcularTiempo(
+            (new Date().getTime() - dateStarted) / 1000
+        );
+        setTimeout(looper, 1000);
+    })();
 }
 
 // Finalizar grabación
 
 function FinalizarGrabacion() {
-
-    //me tiene que aparecer el texto de si quiere repetirlo.  si lo clickea, va a granar video de nuevpo
-
+    cronometro.style.display = "none";
+    repetirCaptura.style.display = "block";
     botonFinalizar.style.display = "none";
     botonSubir.style.display = "inherit";
 
@@ -111,10 +124,54 @@ function FinalizarGrabacion() {
         form.append("api_key", apikey);
     });
 
+    repetirCaptura.addEventListener("click", RepetirCaptura);
     botonSubir.addEventListener("click", SubirGrabacionAGifos);
 }
 
-// Subir a Gifos
+// Cronómetro
+let hours = '00';
+let minutes = '00';
+let seconds = '00';
+
+function calcularTiempo(seconds) {
+    var hours = Math.floor(seconds / 3600);
+    var minutes = Math.floor((seconds - hours * 3600) / 60);
+    var seconds = Math.floor(seconds - hours * 3600 - minutes * 60);
+    if (minutes < 10) {
+        minutes = "0" + minutes;
+    }
+    if (seconds < 10) {
+        seconds = "0" + seconds;
+    }
+    return hours + ":" + minutes + ":" + seconds;
+}
+
+// Volver a repetir la filmación
+
+async function RepetirCaptura() {
+
+    // ¿Esta bien esto? Porque me sube el primer video que grabé, no el nuevo que estoy grabando. 
+    //¿Se borra lo guardado con alguna de estas 2 funciones? ¿O se lo estoy aplicando al elemento equivocado?
+    // recorder.reset();
+    // recorder.clearRecordedData();
+    
+    form = new FormData(); // para que me suba el ultimo filmado, tengo que sobreescribir el elemento form
+    
+    repetirCaptura.style.display = "none";
+    botonSubir.style.display = "none";
+    gifGrabado.style.display = "none";
+    botonGrabar.style.display = "inherit";
+
+    resultado = await getStreamAndRecord();
+    video.style.display = "block";
+}
+
+// LocalStorage
+
+var arrayGifsPropios = [];
+
+
+// Subir a Gifos al Local Storage 
 
 function SubirGrabacionAGifos() {
     dos.style.backgroundColor = "#ffffff";
@@ -131,16 +188,18 @@ function SubirGrabacionAGifos() {
             return respuesta.json();
         })
         .then(nuevoObjetoRecibido => {
-            console.log(nuevoObjetoRecibido);
-            let gifId = nuevoObjetoRecibido.data.id;  //el id de ese gif subido
-
             document.getElementById("txtEstado").innerHTML = "GIFO subido con éxito";
-            document.getElementById("iconoEstado").style.content= "url(./images/ok.svg)";
-            document.getElementById("iconoDescarga").style.opacity ="1";
-            document.getElementById("iconoCompartir").style.opacity ="1";
+            document.getElementById("iconoEstado").style.content = "url(./images/ok.svg)";
+            document.getElementById("iconoDescarga").style.opacity = "1";
+            document.getElementById("iconoCompartir").style.opacity = "1";
+
+            let gifId = nuevoObjetoRecibido.data.id;  //el id de ese gif subido
+            arrayGifsPropios.push(gifId);
+
         })
         .catch(error => {
             console.log("Error! " + error);
         });
 }
+
 

@@ -1455,7 +1455,7 @@ main#crearGif .seccionCamara .cajaEncuadre #gifAzul #cuadroAzul {
   width: 430px;
   height: 240px;
   position: absolute;
-  bottom: 236px;
+  bottom: 210px;
 }
 
 main#crearGif .seccionCamara .cajaEncuadre #gifAzul #cuadroAzul #iconosEsquina {
@@ -1556,9 +1556,18 @@ main#crearGif .seccionCamara .imgPelicula {
   top: 200px;
 }
 
-main#crearGif .botonesPasos {
+main#crearGif #lineaBotonesCronom {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 2fr 1fr;
+      grid-template-columns: 2fr 1fr;
+  width: 690px;
+  margin: auto;
+}
+
+main#crearGif #lineaBotonesCronom .botonesPasos {
   width: 200px;
-  margin: 13px auto;
+  /* margin: 13px auto; */
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1566,12 +1575,11 @@ main#crearGif .botonesPasos {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  /* justify-content: space-evenly; */
+  justify-self: right;
 }
 
-main#crearGif .botonesPasos div {
+main#crearGif #lineaBotonesCronom .botonesPasos div {
   font-family: "Roboto", sans-serif;
   font-weight: 500;
   color: #572EE5;
@@ -1588,6 +1596,29 @@ main#crearGif .botonesPasos div {
       -ms-flex-pack: center;
           justify-content: center;
   margin: 13px;
+}
+
+main#crearGif #lineaBotonesCronom #cronometro, main#crearGif #lineaBotonesCronom #repetirCaptura {
+  font-family: "Montserrat", sans-serif;
+  color: #572EE5;
+  font-size: 15px;
+  line-height: 22px;
+  font-weight: 700;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -ms-grid-column-align: right;
+      justify-self: right;
+}
+
+main#crearGif #lineaBotonesCronom #repetirCaptura {
+  text-transform: uppercase;
+  display: none;
+}
+
+main#crearGif #lineaBotonesCronom #repetirCaptura:hover .lineaHover {
+  background-color: #50E3C2;
+  height: 3px;
 }
 
 main#crearGif .lineaGruesa {
