@@ -17,7 +17,7 @@ function buscar(){
                 <img src=${info.data[i].images.original.url}>
                 <div class='pasarMouse'> <div class='iconos'>" 
                 <a onclick="AgregarFavoritos('${info.data[i].id}', '${i}')"> 
-                    <img class='iconoCorazon' src='images/icon-fav.svg' alt='Ícono añadir a favoritos'>
+                    <img class='iconoCorazon'  alt='Ícono añadir a favoritos'>
                 </a>
                 <a onclick="DescargarUnGif('${info.data[i].id}')">        
                     <img class='iconoDescargar' src='images/icon-download.svg' alt='Ícono download'>
@@ -30,8 +30,13 @@ function buscar(){
                 ${info.data[i].title}</h4></div></div>  
             `;
             gifTrending.appendChild(contenedorImg);
+            
             arrayDeTrendings.push(contenedorImg);
+            
+            ColorCorazon(`${info.data[i].id}`, i);
+
         }
+
     })
     .catch( error => {
         console.log("Error! " + error);

@@ -18,9 +18,6 @@ function AgregarFavoritos(gifoImg, e) {
     if ( indice < 0){
         arrayDeFavoritos.push(gifoImg);
         iconoCorazon[e].style.content = "url(./images/icon-fav-active.svg)";
-        
-        //me falta hacer lo de los iconos, que al volver abrir me los muestren en azul
-        // el tipo de icono de ese e me tiene que quedar en el local storage. puedo pensarlo como un nombre de clase que cambie
     } else {
         arrayDeFavoritos.splice(indice, 1);
         iconoCorazon[e].style.content= "url(./images/icon-fav.svg)";
@@ -55,7 +52,7 @@ function TraerResultadosFavoritos(limiteMostrar, m) {
                     <div class='pasarMouse'> 
                         <div class='iconos'>" 
                             <a onclick="AgregarFavoritos('${nuevoObjetoRecibido.data[m].id}', '${m}')" href="javascript:location.reload()"> 
-                                <img class='iconoCorazon' src='images/icon-fav.svg' alt='Ícono añadir a favoritos'> 
+                                <img class='iconoCorazon' alt='Ícono añadir a favoritos'> 
                             </a>
                             <a onclick="DescargarUnGif('${nuevoObjetoRecibido.data[m].id}')">        
                                 <img class='iconoDescargar' src='images/icon-download.svg' alt='Ícono download'>
@@ -71,6 +68,11 @@ function TraerResultadosFavoritos(limiteMostrar, m) {
                     </div>
                 `
                 grillaResultadosFavoritos.appendChild(contenedorImg); 
+
+                ColorCorazon(`${nuevoObjetoRecibido.data[m].id}`, m);
+
+                
+                
             }
         })
         .catch(error => {
@@ -87,4 +89,16 @@ function VerMasResultados() {
     m = m + 12;
     limiteMostrar = limiteMostrar + 12;
     TraerResultadosFavoritos(limiteMostrar, m);   
+}
+
+
+
+// Color icono corazón
+
+function ColorCorazon(variable, letra){
+    if (arrayDeFavoritos.indexOf(variable) == -1){
+        iconoCorazon[letra].style.content= "url(./images/icon-fav.svg)";
+    } else {
+        iconoCorazon[letra].style.content = "url(./images/icon-fav-active.svg)";
+    }
 }

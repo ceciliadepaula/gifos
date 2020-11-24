@@ -29,13 +29,24 @@ function AgrandarGif(gifoImg) {
                         <img class='iconoDescargar' src='images/icon-download.svg' alt='Ícono download'>
                     </a>
                     <a onclick="AgregarFavoritos('${nuevoObjeto.data.id}', '0')"> 
-                        <img class='iconoCorazon' src='images/icon-fav.svg' alt='Ícono añadir a favoritos'>
+                        <img class='iconoCorazonAbierto'  alt='Ícono añadir a favoritos'>
                     </a>
                 </div>
             `
+
+            // Color corazón
+            let iconoCorazonAbierto = document.getElementsByClassName("iconoCorazonAbierto")[0]
+
+            if (arrayDeFavoritos.indexOf(`${nuevoObjeto.data.id}`) == -1){
+                iconoCorazonAbierto.style.content= "url(./images/icon-fav.svg)";
+            } else {
+                iconoCorazonAbierto.style.content = "url(./images/icon-fav-active.svg)";
+            }
+
             header.style.display = "none";
             main.style.display = "none";
             footer.style.display = "none";
+
 
             // Para cerrar
 
@@ -47,6 +58,8 @@ function AgrandarGif(gifoImg) {
                 main.style.display = "inherit";
                 footer.style.display = "inherit";
             });
+
+        
 
         })
         .catch(error => {

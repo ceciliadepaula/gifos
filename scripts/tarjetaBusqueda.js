@@ -112,7 +112,7 @@ function TraerResultadosBusqueda(limiteMostrar, posicion, i) {
                         <div class='pasarMouse'> 
                             <div class='iconos'>" 
                                 <a onclick="AgregarFavoritos('${nuevoObjetoRecibido.data[i].id}', '${i}')"> 
-                                    <img class='iconoCorazon' src='images/icon-fav.svg' alt='Ícono añadir a favoritos'>
+                                    <img class='iconoCorazon'  alt='Ícono añadir a favoritos'>
                                 </a>
                                 <a onclick="DescargarUnGif('${nuevoObjetoRecibido.data[i].id}')">        
                                     <img class='iconoDescargar' src='images/icon-download.svg' alt='Ícono download'>
@@ -127,7 +127,17 @@ function TraerResultadosBusqueda(limiteMostrar, posicion, i) {
                             </div>
                         </div>
                     `
+                    
                     grillaBusquedaPersonal.appendChild(contenedorImg);
+                    
+                    ColorCorazon(`${nuevoObjetoRecibido.data[i].id}`, i);
+                    
+
+                    /* if (arrayDeFavoritos.indexOf(`${nuevoObjetoRecibido.data[i].id}`) == -1){
+                        iconoCorazon[i].style.content= "url(./images/icon-fav.svg)";
+                    } else {
+                        iconoCorazon[i].style.content = "url(./images/icon-fav-active.svg)";
+                    } */
 
                 }
 
