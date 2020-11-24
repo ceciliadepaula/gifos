@@ -667,7 +667,7 @@ main #trending .scroll .imagenSimulada {
   margin: 0 auto;
 }
 
-#botonVerMas, #botonVerMasFavoritos {
+#botonVerMas, #botonVerMasFavoritos, #botonVerMasMisGifos {
   height: 50px;
   width: 127px;
   border-radius: 50px;
@@ -688,7 +688,7 @@ main #trending .scroll .imagenSimulada {
   margin-bottom: 78px;
 }
 
-#botonVerMas p, #botonVerMasFavoritos p {
+#botonVerMas p, #botonVerMasFavoritos p, #botonVerMasMisGifos p {
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
   color: #572EE5;

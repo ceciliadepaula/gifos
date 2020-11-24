@@ -169,7 +169,24 @@ async function RepetirCaptura() {
 
 // Subir a Gifos al Local Storage 
 
-var arrayGifsPropios;
+let StringDeGifsPropios = localStorage.getItem("MisGifs");
+
+/* let grillaResultadosMisGifos = document.getElementById("grillaResultadosFavoritos"); */
+/* let contenedorVacioMisGifos = document.getElementsByClassName("contenedorVacioMisGifos")[0];
+let botonVerMasMisGifos = document.getElementById("botonVerMasMisGifos"); */
+
+if (StringDeGifsPropios == null || StringDeGifsPropios == "[]"){
+   var arrayGifsPropios = [];
+
+ /*   contenedorVacioMisGifos.style.display = "flex";
+   botonVerMasMisGifos.style.display = "none";
+ */
+} else {
+    var arrayGifsPropios = JSON.parse(StringDeGifsPropios);
+    
+    /* contenedorVacioMisGifos.style.display = "none"; */
+
+}
 
 function SubirGrabacionAGifos() {
     dos.style.backgroundColor = "#ffffff";
@@ -203,15 +220,6 @@ function SubirGrabacionAGifos() {
 }
 
 
-/// Local storahe
 
 
-// Agregar a Mis Gifos
 
-let StringDeGifsPropios = localStorage.getItem("MisGifs");
-
-if (StringDeGifsPropios == null || StringDeGifsPropios == "[]"){
-   var arrayGifsPropios = [];
-} else {
-    var arrayGifsPropios = JSON.parse(StringDeGifsPropios);
-}

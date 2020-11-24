@@ -4,12 +4,8 @@ let StringDeFavoritos = localStorage.getItem("Favoritos");
 
 if (StringDeFavoritos == null || StringDeFavoritos == "[]"){
    var arrayDeFavoritos = [];
-   contenedorVacioFav.style.display = "flex";
-   botonVerMasFavoritos.style.display = "none";
 } else {
     var arrayDeFavoritos = JSON.parse(StringDeFavoritos); // me lo vuelve a hacer array
-    contenedorVacioFav.style.display = "none";
-    MostrarResultadosFavoritos();
 }
 
 
@@ -44,54 +40,18 @@ function TraerResultadosFavoritos(limiteMostrar, m) {
             return respuesta.json();
         })
         .then(nuevoObjetoRecibido => {
-            for (m; m < limiteMostrar; m++) {
+            for (m = 0; m < limiteMostrar; m++) {
                 let contenedorImg = document.createElement("div");
-                contenedorImg.classList.add("GifFavoritos"); 
-                contenedorImg.innerHTML = `
-                    <img src=${nuevoObjetoRecibido.data[m].images.original.url}> 
-                    <div class='pasarMouse'> 
-                        <div class='iconos'>" 
-                            <a onclick="AgregarFavoritos('${nuevoObjetoRecibido.data[m].id}', '${m}')" href="javascript:location.reload()"> 
-                                <img class='iconoCorazon' alt='Ícono añadir a favoritos'> 
-                            </a>
-                            <a onclick="DescargarUnGif('${nuevoObjetoRecibido.data[m].id}')">        
-                                <img class='iconoDescargar' src='images/icon-download.svg' alt='Ícono download'>
-                            </a>
-                            <a onclick="AgrandarGif('${nuevoObjetoRecibido.data[m].id}')"> 
-                                <img class='iconoAgrandar' src='images/icon-max-normal.svg' alt='Ícono maximizar'>
-                            </a>
-                        </div>
-                        <div class='infoTexto'>
-                            <p>${nuevoObjetoRecibido.data[m].username}</p>
-                            <h4>${nuevoObjetoRecibido.data[m].title}</h4>
-                        </div>
-                    </div>
-                `
+                ResultadosIterando(contenedorImg, nuevoObjetoRecibido, m, "GifFavoritos"); // el código innerHTML que se repite
+                // agregar href="javascript:location.reload()"
                 grillaResultadosFavoritos.appendChild(contenedorImg); 
-
-                ColorCorazon(`${nuevoObjetoRecibido.data[m].id}`, m);
-
-                
-                
+                ColorCorazon(`${nuevoObjetoRecibido.data[m].id}`, m); // el cambio del color del corazón s/ array guardado en localstorage            
             }
         })
         .catch(error => {
             console.log("Error! " + error);
         });
 }
-
-
-// Sumar 12 gifs cada vez que se haga click en botón Ver Más
-
-botonVerMasFavoritos.addEventListener("click", VerMasResultados);
-
-function VerMasResultados() {   
-    m = m + 12;
-    limiteMostrar = limiteMostrar + 12;
-    TraerResultadosFavoritos(limiteMostrar, m);   
-}
-
-
 
 // Color icono corazón
 
