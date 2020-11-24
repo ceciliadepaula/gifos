@@ -503,8 +503,7 @@ main #presentacion #resultadoBusquedaPersonal #grillaBusquedaPersonal {
   display: grid;
   -ms-grid-columns: 1fr 1fr;
       grid-template-columns: 1fr 1fr;
-  -ms-grid-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-      grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  /* grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr; */
   margin: 0 5% 78px 5%;
 }
 
@@ -1241,8 +1240,7 @@ footer .lineaAzul {
     display: grid;
     -ms-grid-columns: 1fr 1fr 1fr;
         grid-template-columns: 1fr 1fr 1fr;
-    -ms-grid-rows: 1fr 1fr 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr 1fr;
+    /* grid-template-rows: 1fr 1fr 1fr 1fr; */
   }
   main #presentacion #resultadoBusquedaPersonal #grillaBusquedaPersonal .GifTrending .pasarMouse {
     width: 29%;
@@ -1365,8 +1363,7 @@ footer .lineaAzul {
     display: grid;
     -ms-grid-columns: 1fr 1fr 1fr 1fr;
         grid-template-columns: 1fr 1fr 1fr 1fr;
-    -ms-grid-rows: 1fr 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr;
+    /* grid-template-rows: 1fr 1fr 1fr; */
   }
   main #presentacion #resultadoBusquedaPersonal #grillaBusquedaPersonal .GifTrending .pasarMouse {
     width: 21.5%;

@@ -20,36 +20,16 @@ function Autocompletar(linkPalabrasAutocompletadas) {
             return respuesta.json();
         })
         .then(respuestaTransformada => {
-
-            /* console.log(respuestaTransformada.data) */
-
-            if (respuestaTransformada.data == 0) {
-
-                //PONER MENSAJE DE ERROR!!!!!!!!!!!!! Y BORRAR 4 SUGERENCIAS
-                //ver que no es respyestatransformada.DATA... el mensaje tiene que aparecer cuando la palabra no tiene ningun gif
-                ouchResultados.style.display = "flex";
-                botonVerMas.style.display = "none";
-
-
-                /* listaSugerencias.style.display = "none";
-                grillaBusquedaPersonal.style.display = "none";
-                
-                 */
-
-            } else {
-                ouchResultados.style.display = "none";
-                botonVerMas.style.display = "inherit";
-                for (i = 0; i < 4; i++) {
-                    palabra = (respuestaTransformada.data[i].name);
-                    arrayBusqueda.unshift(palabra);
-                    arrayBusqueda.pop();
-                }
-                for (i = 0; i < 4; i++) {
-                    liLupa[i].innerHTML = arrayBusqueda[i];
-                    listaSugerencias.style.display = "initial";
-                }
-                return (arrayBusqueda);
+            for (i = 1; i < 4; i++) {
+                palabra = (respuestaTransformada.data[i].name);
+                arrayBusqueda.unshift(palabra);
+                arrayBusqueda.pop();
             }
+            for (i = 0; i < 4; i++) {
+                liLupa[i].innerHTML = arrayBusqueda[i];
+                listaSugerencias.style.display = "initial";
+            }
+            return (arrayBusqueda);
         })
         .catch(error => {
             console.log("Error: " + error);
@@ -89,7 +69,7 @@ lupaGris.addEventListener("click", MostrarResultadosBusquedaPersonal);
 
 tarjetaBusqueda.addEventListener('keypress', function (e) {
     if (e.key === 'Enter') {
-        MostrarResultadosBusquedaPersonal(limiteMostrar);
+        MostrarResultadosBusquedaPersonal();
     }
 });
 
@@ -116,30 +96,41 @@ function TraerResultadosBusqueda(limiteMostrar, posicion, i) {
             return respuesta.json();
         })
         .then(nuevoObjetoRecibido => {
-            for (i; i < limiteMostrar; i++) {
-                let contenedorImg = document.createElement("div");
-                contenedorImg.classList.add("GifTrending");
-                contenedorImg.innerHTML = `
-                    <img src=${nuevoObjetoRecibido.data[i].images.original.url}>
-                    <div class='pasarMouse'> 
-                        <div class='iconos'>" 
-                            <a onclick="AgregarFavoritos('${nuevoObjetoRecibido.data[i].id}', '${i}')"> 
-                                <img class='iconoCorazon' src='images/icon-fav.svg' alt='Ícono añadir a favoritos'>
-                            </a>
-                            <a onclick="DescargarUnGif('${nuevoObjetoRecibido.data[i].id}')">        
-                                <img class='iconoDescargar' src='images/icon-download.svg' alt='Ícono download'>
-                            </a>
-                            <a onclick="AgrandarGif('${nuevoObjetoRecibido.data[i].id}')"> 
-                                <img class='iconoAgrandar' src='images/icon-max-normal.svg' alt='Ícono maximizar'>
-                            </a>
+            if (nuevoObjetoRecibido.data == 0) {
+                ouchResultados.style.display = "flex";
+                botonVerMas.style.display = "none";
+            } else {
+
+                ouchResultados.style.display = "none";
+                botonVerMas.style.display = "inherit";
+
+                for (i; i < limiteMostrar; i++) {
+                    let contenedorImg = document.createElement("div");
+                    contenedorImg.classList.add("GifTrending");
+                    contenedorImg.innerHTML = `
+                        <img src=${nuevoObjetoRecibido.data[i].images.original.url}>
+                        <div class='pasarMouse'> 
+                            <div class='iconos'>" 
+                                <a onclick="AgregarFavoritos('${nuevoObjetoRecibido.data[i].id}', '${i}')"> 
+                                    <img class='iconoCorazon' src='images/icon-fav.svg' alt='Ícono añadir a favoritos'>
+                                </a>
+                                <a onclick="DescargarUnGif('${nuevoObjetoRecibido.data[i].id}')">        
+                                    <img class='iconoDescargar' src='images/icon-download.svg' alt='Ícono download'>
+                                </a>
+                                <a onclick="AgrandarGif('${nuevoObjetoRecibido.data[i].id}')"> 
+                                    <img class='iconoAgrandar' src='images/icon-max-normal.svg' alt='Ícono maximizar'>
+                                </a>
+                            </div>
+                            <div class='infoTexto'>
+                                <p>${nuevoObjetoRecibido.data[i].username}</p>
+                                <h4>${nuevoObjetoRecibido.data[i].title}</h4>
+                            </div>
                         </div>
-                        <div class='infoTexto'>
-                            <p>${nuevoObjetoRecibido.data[i].username}</p>
-                            <h4>${nuevoObjetoRecibido.data[i].title}</h4>
-                        </div>
-                    </div>
-                `
-                grillaBusquedaPersonal.appendChild(contenedorImg);
+                    `
+                    grillaBusquedaPersonal.appendChild(contenedorImg);
+
+                }
+
             }
         })
         .catch(error => {
