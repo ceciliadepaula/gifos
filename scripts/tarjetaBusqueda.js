@@ -86,6 +86,7 @@ function MostrarResultadosBusquedaPersonal() {
     i = 0;
 }
 
+
 function TraerResultadosBusqueda(limiteMostrar, posicion, i) {
 
     url = `https://api.giphy.com/v1/gifs/search?api_key=${apikey}&q=${palabraBuscada}&limit=${limiteMostrar}&offset=${posicion}`;
@@ -103,12 +104,43 @@ function TraerResultadosBusqueda(limiteMostrar, posicion, i) {
                 ouchResultados.style.display = "none";
                 botonVerMas.style.display = "inherit";
 
-                for (i = 0; i < nuevoObjetoRecibido.data.length; i++) {
+                for (i; i < limiteMostrar; i++) {
                     let contenedorImg = document.createElement("div");
-                    ResultadosIterando(contenedorImg, nuevoObjetoRecibido, i, "GifTrending"); // el código innerHTML que se repite
+                    contenedorImg.classList.add("GifTrending");
+                    contenedorImg.innerHTML = `
+                        <img src=${nuevoObjetoRecibido.data[i].images.original.url}>
+                        <div class='pasarMouse'> 
+                            <div class='iconos'>" 
+                                <a onclick="AgregarFavoritos('${nuevoObjetoRecibido.data[i].id}', '${i}')"> 
+                                    <img class='iconoCorazon'  alt='Ícono añadir a favoritos'>
+                                </a>
+                                <a onclick="DescargarUnGif('${nuevoObjetoRecibido.data[i].id}')">        
+                                    <img class='iconoDescargar' src='images/icon-download.svg' alt='Ícono download'>
+                                </a>
+                                <a onclick="AgrandarGif('${nuevoObjetoRecibido.data[i].id}')"> 
+                                    <img class='iconoAgrandar' src='images/icon-max-normal.svg' alt='Ícono maximizar'>
+                                </a>
+                            </div>
+                            <div class='infoTexto'>
+                                <p>${nuevoObjetoRecibido.data[i].username}</p>
+                                <h4>${nuevoObjetoRecibido.data[i].title}</h4>
+                            </div>
+                        </div>
+                    `
+                    
                     grillaBusquedaPersonal.appendChild(contenedorImg);
-                    ColorCorazon(`${nuevoObjetoRecibido.data[i].id}`, i); // el cambio del color del corazón s/ array guardado en localstorage            
+                    
+                    ColorCorazon(`${nuevoObjetoRecibido.data[i].id}`, i);
+                    
+
+                    /* if (arrayDeFavoritos.indexOf(`${nuevoObjetoRecibido.data[i].id}`) == -1){
+                        iconoCorazon[i].style.content= "url(./images/icon-fav.svg)";
+                    } else {
+                        iconoCorazon[i].style.content = "url(./images/icon-fav-active.svg)";
+                    } */
+
                 }
+
             }
         })
         .catch(error => {
@@ -120,10 +152,9 @@ function TraerResultadosBusqueda(limiteMostrar, posicion, i) {
 
 botonVerMas.addEventListener("click", VerMasResultados);
 
-function VerMasResultados() {   
+function VerMasResultados() {   // los indices siempre se quedan en 0 a 11
     i = i + 12;
-    /* limiteMostrar = limiteMostrar + 12; */
+    limiteMostrar = limiteMostrar + 12;
     posicion = posicion + 12;
     TraerResultadosBusqueda(limiteMostrar, posicion, i);
 }
-
