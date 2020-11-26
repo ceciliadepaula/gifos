@@ -28,6 +28,7 @@ let botonVerMasFavoritos = document.getElementById("botonVerMasFavoritos");
 let body = document.getElementsByTagName("body");
 let botonNoct = document.getElementById("nocturno");
 
+
 // Api Key de Giphy
 
 const apikey = "qh1YngMeTeNY1hh1ul31qyOxXD9gAjLC";

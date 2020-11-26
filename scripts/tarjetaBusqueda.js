@@ -15,9 +15,11 @@ function Autocompletar(linkPalabrasAutocompletadas) {
             document.getElementById("lupaGris").style.opacity = "1";
             document.getElementById("lineaGris").style.opacity = "1";
             lupaAzul.style.content = "url(../images/close.svg)";
+            lupaAzul.style.height = "15px";
+
             lupaAzulNocturna.style.content = "url(../images/close-modo-noct.svg)";
             lupaAzulNocturna.style.height = "15px";
-            lupaAzul.style.height = "15px";
+
             return respuesta.json();
         })
         .then(respuestaTransformada => {
@@ -32,9 +34,9 @@ function Autocompletar(linkPalabrasAutocompletadas) {
             }
             return (arrayBusqueda);
         })
-        .catch(error => {
+        /* .catch(error => {
             console.log("Error: " + error);
-        });
+        }); */
 }
 
 
@@ -47,8 +49,10 @@ function SacarInfo() {
     document.getElementById("lupaGris").style.opacity = "0";
     lupaAzul.style.content = "url(../images/icon-search.svg)"
     lupaAzul.style.height = "20px";
-    lupaAzulNocturna.style.content = "url(../images/icon-search-gris.svg)";
-    lupaAzulNocturna.style.height="20px";
+
+    lupaAzulNocturna.style.content = "url(../images/icon-search-modo-noct.svg)";
+    lupaAzulNocturna.style.height = "20px";
+
     tarjetaBusqueda.value = "";
     listaSugerencias.style.display = "none";
 }
