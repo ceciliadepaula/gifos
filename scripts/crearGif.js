@@ -169,14 +169,6 @@ async function RepetirCaptura() {
 
 // Subir a Gifos al Local Storage 
 
-let StringDeGifsPropios = localStorage.getItem("MisGifs");
-
-if (StringDeGifsPropios == null || StringDeGifsPropios == "[]"){
-   var arrayGifsPropios = [];
-} else {
-    var arrayGifsPropios = JSON.parse(StringDeGifsPropios);
-}
-
 function SubirGrabacionAGifos() {
     dos.style.backgroundColor = "#ffffff";
     dos.style.color = "#572EE5";
@@ -210,12 +202,8 @@ function SubirGrabacionAGifos() {
             localStorage.setItem('MisGifs', JSON.stringify(arrayGifsPropios)); // me lo sube al local Storage
 
         })
-        /* .catch(error => {
+        .catch(error => {
             console.log("Error! " + error);
-        }); */
+        });
 }
-
-
-
-
 

@@ -9,9 +9,17 @@ body.nocturno{
             background-color: $colorNegro;
         }
         #barraNavegacion{
-            background-color: $colorFondoNocClaro;  
+            background-color: $colorFondoNocClaro; 
+            a{
+                #logo{
+                    content: url(../images/logo-mobile-modo-noct.svg);
+                }
+            } 
             nav{
                 .menu{
+                    .hamburguesa{
+                        content: url("../images/burger-modo-noct.svg");
+                    }
                     ul{
                         background-color: rgba($colorNegro, 0.90);
                     }
@@ -28,16 +36,6 @@ body.nocturno{
                             color: $colorGrisBotones;
                         }
                     }
-                    .crearGifos{
-                        display: inherit;
-                        content: url(../images/CTA-crear-gifo-modo-noc.svg);
-                    }
-                    .crearGifos:hover{
-                        content: url(../images/CTA-crar-gifo-modo-noc.svg);
-                    }
-                    .crearGifos:active{
-                        content: url(../images/CTA-crear-gifo-active-modo-noc.svg);
-                    }
                 }
             }
         }
@@ -51,6 +49,10 @@ body.nocturno{
                     #CompletarCampo{
                         input{
                             background-color: $colorFondoNocClaro;
+                            color: $colorBlanco;
+                        }
+                        #lupaAzul{
+                            content: url("../images/icon-search-gris.svg");
                         }
                     }
                 }
@@ -101,6 +103,65 @@ body.nocturno{
             }
         }
     }
+
+    main#crearGif{
+        .seccionCamara{
+            #camaraProy{
+                content: url(../images/camara-modo-noc.svg);
+            }
+            .cajaEncuadre{
+                #textoPermisos{
+                    color: $colorBlanco;
+                }
+            }
+            .imgPelicula{
+                content: url(../images/pelicula-modo-noc.svg);
+            }
+        }
+        #lineaBotonesCronom{
+            .botonesPasos{
+                div{
+                    color: $colorBlanco;
+                    border: 1px solid $colorBlanco;
+                }
+            }
+            #cronometro, #repetirCaptura{
+                color: $colorBlanco;
+            }
+        }
+        .lineaGruesa{
+            background-color: $colorBlanco;
+        }
+        .botonesCreacion{
+            border: 1px $colorBlanco solid;
+            p{
+                color: $colorBlanco;
+            }
+        }
+        .botonesCreacion:hover{
+            background-color: $colorBlanco;
+            p{
+                color: $colorNegro;
+            }
+        }
+        #botonGrabar, #botonFinalizar, #botonSubir{
+            display: none;
+        }
+    }
+
+    #botonVerMasFavoritos, #botonVerMasMisGifos{
+        border: 1px $colorBlanco solid;
+        p{
+            color: $colorBlanco;
+        }
+    }
+    #botonVerMasFavoritos:hover, #botonVerMasMisGifos:hover{
+        background-color: $colorBlanco;
+        p{
+            color: $colorNegro;
+        }
+    }
+
 
     footer{
         .grillaFooter{
@@ -171,6 +232,16 @@ body.nocturno{
                                     background-color: $colorFondoNocClaro;
                                 }
                             }
+                        }
+                        .crearGifos{
+                            display: inherit;
+                            content: url(../images/CTA-crear-gifo-modo-noc.svg);
+                        }
+                        .crearGifos:hover{
+                            content: url(../images/CTA-crar-gifo-modo-noc.svg);
+                        }
+                        .crearGifos:active{
+                            content: url(../images/CTA-crear-gifo-active-modo-noc.svg);
                         }
                     }
                 }

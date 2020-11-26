@@ -80,10 +80,6 @@ function TraerResultadosFavoritos(limiteMostrar, m) {
                 grillaResultadosFavoritos.appendChild(contenedorImg); 
                 ColorCorazon(`${nuevoObjetoRecibido.data[m].id}`, m);
                 }
-
-
-                
-
             }
         })
         .catch(error => {

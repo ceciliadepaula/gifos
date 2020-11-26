@@ -245,7 +245,7 @@ main{
         line-height: 16px;
     }
 }
-#botonVerMas:hover, #botonVerMasFavoritos:hover{
+#botonVerMas:hover, #botonVerMasFavoritos:hover, #botonVerMasMisGifos:hover{
     background-color: $colorAzul;
     p{
         color: $colorBlanco;
@@ -276,7 +276,7 @@ main{
 
 // Favoritos
 
-#grillaResultadosFavoritos{
+#grillaResultadosFavoritos, #grillaResultadosMisGifos{
     display: grid;
     grid-template-columns: 1fr 1fr;
     margin: 0 5% 78px 5%;

@@ -25,6 +25,8 @@ let iconoCorazon = document.getElementsByClassName("iconoCorazon");
 let contenedorVacioFav = document.getElementsByClassName("contenedorVacioFav")[0];
 let grillaResultadosFavoritos = document.getElementById("grillaResultadosFavoritos");
 let botonVerMasFavoritos = document.getElementById("botonVerMasFavoritos");
+let body = document.getElementsByTagName("body");
+let botonNoct = document.getElementById("nocturno");
 
 // Api Key de Giphy
 

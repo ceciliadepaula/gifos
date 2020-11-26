@@ -53,6 +53,14 @@ body.nocturno header #barraNavegacion {
   background-color: #37383C;
 }
 
+body.nocturno header #barraNavegacion a #logo {
+  content: url(../images/logo-mobile-modo-noct.svg);
+}
+
+body.nocturno header #barraNavegacion nav .menu .hamburguesa {
+  content: url("../images/burger-modo-noct.svg");
+}
+
 body.nocturno header #barraNavegacion nav .menu ul {
   background-color: rgba(0, 0, 0, 0.9);
 }
@@ -69,25 +77,17 @@ body.nocturno header #barraNavegacion nav .menu li:active .link {
   color: #9CAFC3;
 }
 
-body.nocturno header #barraNavegacion nav .menu .crearGifos {
-  display: inherit;
-  content: url(../images/CTA-crear-gifo-modo-noc.svg);
-}
-
-body.nocturno header #barraNavegacion nav .menu .crearGifos:hover {
-  content: url(../images/CTA-crar-gifo-modo-noc.svg);
-}
-
-body.nocturno header #barraNavegacion nav .menu .crearGifos:active {
-  content: url(../images/CTA-crear-gifo-active-modo-noc.svg);
-}
-
 body.nocturno main #presentacion .barraBusqueda #form {
   border: #ffffff solid 1px;
 }
 
 body.nocturno main #presentacion .barraBusqueda #form #CompletarCampo input {
   background-color: #37383C;
+  color: #ffffff;
+}
+
+body.nocturno main #presentacion .barraBusqueda #form #CompletarCampo #lupaAzul {
+  content: url("../images/icon-search-gris.svg");
 }
 
 body.nocturno main #presentacion .barraTrending p.textosPrincipales {
@@ -140,6 +140,67 @@ body.nocturno main #trending #scrollDerecha #iconoScrollDerecha:active {
   content: url(../images/Button-Slider-right-hover2.svg);
 }
 
+body.nocturno main#crearGif .seccionCamara #camaraProy {
+  content: url(../images/camara-modo-noc.svg);
+}
+
+body.nocturno main#crearGif .seccionCamara .cajaEncuadre #textoPermisos {
+  color: #ffffff;
+}
+
+body.nocturno main#crearGif .seccionCamara .imgPelicula {
+  content: url(../images/pelicula-modo-noc.svg);
+}
+
+body.nocturno main#crearGif #lineaBotonesCronom .botonesPasos div {
+  color: #ffffff;
+  border: 1px solid #ffffff;
+}
+
+body.nocturno main#crearGif #lineaBotonesCronom #cronometro, body.nocturno main#crearGif #lineaBotonesCronom #repetirCaptura {
+  color: #ffffff;
+}
+
+body.nocturno main#crearGif .lineaGruesa {
+  background-color: #ffffff;
+}
+
+body.nocturno main#crearGif .botonesCreacion {
+  border: 1px #ffffff solid;
+}
+
+body.nocturno main#crearGif .botonesCreacion p {
+  color: #ffffff;
+}
+
+body.nocturno main#crearGif .botonesCreacion:hover {
+  background-color: #ffffff;
+}
+
+body.nocturno main#crearGif .botonesCreacion:hover p {
+  color: #000000;
+}
+
+body.nocturno main#crearGif #botonGrabar, body.nocturno main#crearGif #botonFinalizar, body.nocturno main#crearGif #botonSubir {
+  display: none;
+}
+
+body.nocturno #botonVerMasFavoritos, body.nocturno #botonVerMasMisGifos {
+  border: 1px #ffffff solid;
+}
+
+body.nocturno #botonVerMasFavoritos p, body.nocturno #botonVerMasMisGifos p {
+  color: #ffffff;
+}
+
+body.nocturno #botonVerMasFavoritos:hover, body.nocturno #botonVerMasMisGifos:hover {
+  background-color: #ffffff;
+}
+
+body.nocturno #botonVerMasFavoritos:hover p, body.nocturno #botonVerMasMisGifos:hover p {
+  color: #000000;
+}
+
 body.nocturno footer .grillaFooter div .textosSecundarios {
   color: #ffffff;
 }
@@ -188,6 +249,16 @@ body.nocturno #agrandarGif #datosAmpliado #botones img {
   }
   body.nocturno header #barraNavegacion nav .menu ul li .lineaHover {
     background-color: #37383C;
+  }
+  body.nocturno header #barraNavegacion nav .menu .crearGifos {
+    display: inherit;
+    content: url(../images/CTA-crear-gifo-modo-noc.svg);
+  }
+  body.nocturno header #barraNavegacion nav .menu .crearGifos:hover {
+    content: url(../images/CTA-crar-gifo-modo-noc.svg);
+  }
+  body.nocturno header #barraNavegacion nav .menu .crearGifos:active {
+    content: url(../images/CTA-crear-gifo-active-modo-noc.svg);
   }
   body.nocturno footer .grillaFooter div .iconos a .facebook:hover {
     background-image: url(../images/icon_facebook_noc.svg);
@@ -696,11 +767,11 @@ main #trending .scroll .imagenSimulada {
   line-height: 16px;
 }
 
-#botonVerMas:hover, #botonVerMasFavoritos:hover {
+#botonVerMas:hover, #botonVerMasFavoritos:hover, #botonVerMasMisGifos:hover {
   background-color: #572EE5;
 }
 
-#botonVerMas:hover p, #botonVerMasFavoritos:hover p {
+#botonVerMas:hover p, #botonVerMasFavoritos:hover p, #botonVerMasMisGifos:hover p {
   color: #ffffff;
 }
 
@@ -730,7 +801,7 @@ main #trending .scroll .imagenSimulada {
   }
 }
 
-#grillaResultadosFavoritos {
+#grillaResultadosFavoritos, #grillaResultadosMisGifos {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr;
@@ -738,21 +809,21 @@ main #trending .scroll .imagenSimulada {
   margin: 0 5% 78px 5%;
 }
 
-#grillaResultadosFavoritos .GifFavoritos {
+#grillaResultadosFavoritos .GifFavoritos, #grillaResultadosMisGifos .GifFavoritos {
   margin: 2%;
   /* .pasarMouse:hover{
             opacity: 0.6; 
         }  */
 }
 
-#grillaResultadosFavoritos .GifFavoritos img {
+#grillaResultadosFavoritos .GifFavoritos img, #grillaResultadosMisGifos .GifFavoritos img {
   -o-object-fit: cover;
      object-fit: cover;
   width: 100%;
   height: 200px;
 }
 
-#grillaResultadosFavoritos .GifFavoritos .pasarMouse {
+#grillaResultadosFavoritos .GifFavoritos .pasarMouse, #grillaResultadosMisGifos .GifFavoritos .pasarMouse {
   position: absolute;
   margin-top: -204px;
   background-color: #572EE5;
@@ -771,7 +842,7 @@ main #trending .scroll .imagenSimulada {
           justify-content: space-between;
 }
 
-#grillaResultadosFavoritos .GifFavoritos .pasarMouse .iconos {
+#grillaResultadosFavoritos .GifFavoritos .pasarMouse .iconos, #grillaResultadosMisGifos .GifFavoritos .pasarMouse .iconos {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -785,7 +856,7 @@ main #trending .scroll .imagenSimulada {
   padding: 10px;
 }
 
-#grillaResultadosFavoritos .GifFavoritos .pasarMouse .iconos img {
+#grillaResultadosFavoritos .GifFavoritos .pasarMouse .iconos img, #grillaResultadosMisGifos .GifFavoritos .pasarMouse .iconos img {
   height: 32px;
   padding: 0;
   margin: 0;
@@ -795,7 +866,7 @@ main #trending .scroll .imagenSimulada {
      object-fit: none;
 }
 
-#grillaResultadosFavoritos .GifFavoritos .pasarMouse .infoTexto {
+#grillaResultadosFavoritos .GifFavoritos .pasarMouse .infoTexto, #grillaResultadosMisGifos .GifFavoritos .pasarMouse .infoTexto {
   font-family: "Roboto", sans-serif;
   color: #ffffff;
   padding: 15px;
@@ -808,13 +879,13 @@ main #trending .scroll .imagenSimulada {
           flex-direction: column;
 }
 
-#grillaResultadosFavoritos .GifFavoritos .pasarMouse .infoTexto p {
+#grillaResultadosFavoritos .GifFavoritos .pasarMouse .infoTexto p, #grillaResultadosMisGifos .GifFavoritos .pasarMouse .infoTexto p {
   font-size: 15px;
   line-height: 18px;
   padding-bottom: 5px;
 }
 
-#grillaResultadosFavoritos .GifFavoritos .pasarMouse .infoTexto h4 {
+#grillaResultadosFavoritos .GifFavoritos .pasarMouse .infoTexto h4, #grillaResultadosMisGifos .GifFavoritos .pasarMouse .infoTexto h4 {
   font-size: 15px;
   line-height: 18px;
   font-weight: 700;
@@ -1345,16 +1416,16 @@ footer .lineaAzul {
   .scroll #gifTrending div .pasarMouse:hover {
     opacity: 0.6;
   }
-  #grillaResultadosFavoritos {
+  #grillaResultadosFavoritos, #grillaResultadosMisGifos {
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: 1fr 1fr 1fr;
         grid-template-columns: 1fr 1fr 1fr;
   }
-  #grillaResultadosFavoritos .GifFavoritos .pasarMouse {
+  #grillaResultadosFavoritos .GifFavoritos .pasarMouse, #grillaResultadosMisGifos .GifFavoritos .pasarMouse {
     width: 29%;
   }
-  #grillaResultadosFavoritos .GifFavoritos .pasarMouse:hover {
+  #grillaResultadosFavoritos .GifFavoritos .pasarMouse:hover, #grillaResultadosMisGifos .GifFavoritos .pasarMouse:hover {
     opacity: 0.6;
   }
 }
@@ -1374,13 +1445,13 @@ footer .lineaAzul {
   main #presentacion #resultadoBusquedaPersonal #grillaBusquedaPersonal .GifTrending .pasarMouse {
     width: 21.5%;
   }
-  #grillaResultadosFavoritos {
+  #grillaResultadosFavoritos, #grillaResultadosMisGifos {
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: 1fr 1fr 1fr 1fr;
         grid-template-columns: 1fr 1fr 1fr 1fr;
   }
-  #grillaResultadosFavoritos .GifFavoritos .pasarMouse {
+  #grillaResultadosFavoritos .GifFavoritos .pasarMouse, #grillaResultadosMisGifos .GifFavoritos .pasarMouse {
     width: 21.5%;
   }
 }
