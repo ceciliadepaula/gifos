@@ -131,13 +131,6 @@ function TraerResultadosBusqueda(limiteMostrar, posicion, i) {
                     grillaBusquedaPersonal.appendChild(contenedorImg);
                     
                     ColorCorazon(`${nuevoObjetoRecibido.data[i].id}`, i);
-                    
-
-                    /* if (arrayDeFavoritos.indexOf(`${nuevoObjetoRecibido.data[i].id}`) == -1){
-                        iconoCorazon[i].style.content= "url(./images/icon-fav.svg)";
-                    } else {
-                        iconoCorazon[i].style.content = "url(./images/icon-fav-active.svg)";
-                    } */
 
                 }
 

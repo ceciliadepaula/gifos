@@ -1471,10 +1471,6 @@ main#crearGif .seccionCamara .cajaEncuadre #gifAzul #cuadroAzul #iconosEsquina #
   opacity: 0;
 }
 
-main#crearGif .seccionCamara .cajaEncuadre #gifAzul #cuadroAzul #iconosEsquina #iconoDescarga {
-  opacity: 0;
-}
-
 main#crearGif .seccionCamara .cajaEncuadre #gifAzul #cuadroAzul #iconosEsquina #iconoDescarga:hover {
   content: url(../images/icon-download-hover.svg);
 }

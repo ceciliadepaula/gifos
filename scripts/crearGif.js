@@ -171,21 +171,10 @@ async function RepetirCaptura() {
 
 let StringDeGifsPropios = localStorage.getItem("MisGifs");
 
-/* let grillaResultadosMisGifos = document.getElementById("grillaResultadosFavoritos"); */
-/* let contenedorVacioMisGifos = document.getElementsByClassName("contenedorVacioMisGifos")[0];
-let botonVerMasMisGifos = document.getElementById("botonVerMasMisGifos"); */
-
 if (StringDeGifsPropios == null || StringDeGifsPropios == "[]"){
    var arrayGifsPropios = [];
-
- /*   contenedorVacioMisGifos.style.display = "flex";
-   botonVerMasMisGifos.style.display = "none";
- */
 } else {
     var arrayGifsPropios = JSON.parse(StringDeGifsPropios);
-    
-    /* contenedorVacioMisGifos.style.display = "none"; */
-
 }
 
 function SubirGrabacionAGifos() {
@@ -205,18 +194,25 @@ function SubirGrabacionAGifos() {
         .then(nuevoObjetoRecibido => {
             document.getElementById("txtEstado").innerHTML = "GIFO subido con éxito";
             document.getElementById("iconoEstado").style.content = "url(./images/ok.svg)";
-            document.getElementById("iconoDescarga").style.opacity = "1";
+            /* document.getElementById("iconoDescarga").style.opacity = "1"; */
             document.getElementById("iconoCompartir").style.opacity = "1";
 
             let gifId = nuevoObjetoRecibido.data.id;  //el id de ese gif subido
             arrayGifsPropios.push(gifId);
 
+            let descargarGifPropio = document.getElementById("descargarGifPropio");
+            descargarGifPropio.innerHTML=`
+                <a onclick="DescargarUnGif('${nuevoObjetoRecibido.data.id}')">
+                    <img id="iconoDescarga" src="images/icon-download.svg" alt="Descargar gif">
+                </a>
+                `
+
             localStorage.setItem('MisGifs', JSON.stringify(arrayGifsPropios)); // me lo sube al local Storage
 
         })
-        .catch(error => {
+        /* .catch(error => {
             console.log("Error! " + error);
-        });
+        }); */
 }
 
 
