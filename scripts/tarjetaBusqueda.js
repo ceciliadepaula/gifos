@@ -107,7 +107,19 @@ function TraerResultadosBusqueda(limiteMostrar, posicion, i) {
                 for (i; i < limiteMostrar; i++) {
                     let contenedorImg = document.createElement("div");
                     contenedorImg.classList.add("GifTrending");
-                    contenedorImg.innerHTML = `
+
+
+                    if (window.innerWidth < 720) {
+                        contenedorImg.innerHTML = `
+                        <a onclick="AgrandarGif('${nuevoObjetoRecibido.data[i].id}')"> 
+                            <img src=${nuevoObjetoRecibido.data[i].images.original.url}>
+                        </a>
+                        `;
+        
+                        grillaBusquedaPersonal.appendChild(contenedorImg);
+                            
+                    } else if (window.innerWidth >= 720) {
+                        contenedorImg.innerHTML = `
                         <img src=${nuevoObjetoRecibido.data[i].images.original.url}>
                         <div class='pasarMouse'> 
                             <div class='iconos'>" 
@@ -127,11 +139,11 @@ function TraerResultadosBusqueda(limiteMostrar, posicion, i) {
                             </div>
                         </div>
                     `
-                    
                     grillaBusquedaPersonal.appendChild(contenedorImg);
-                    
                     ColorCorazon(`${nuevoObjetoRecibido.data[i].id}`, i);
 
+                    }
+                   
                 }
 
             }

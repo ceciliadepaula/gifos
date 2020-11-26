@@ -47,7 +47,17 @@ function TraerResultadosFavoritos(limiteMostrar, m) {
             for (m; m < limiteMostrar; m++) {
                 let contenedorImg = document.createElement("div");
                 contenedorImg.classList.add("GifFavoritos"); 
-                contenedorImg.innerHTML = `
+
+                if (window.innerWidth < 720) {
+                    contenedorImg.innerHTML = `
+                    <a onclick="AgrandarGif('${nuevoObjetoRecibido.data[m].id}')"> 
+                        <img src=${nuevoObjetoRecibido.data[m].images.original.url}> 
+                    </a>`;
+    
+                    grillaResultadosFavoritos.appendChild(contenedorImg); 
+                        
+                } else if (window.innerWidth >= 720) {
+                    contenedorImg.innerHTML = `
                     <img src=${nuevoObjetoRecibido.data[m].images.original.url}> 
                     <div class='pasarMouse'> 
                         <div class='iconos'>" 
@@ -68,8 +78,11 @@ function TraerResultadosFavoritos(limiteMostrar, m) {
                     </div>
                 `
                 grillaResultadosFavoritos.appendChild(contenedorImg); 
-
                 ColorCorazon(`${nuevoObjetoRecibido.data[m].id}`, m);
+                }
+
+
+                
 
             }
         })

@@ -13,30 +13,39 @@ function buscar(){
         for (i = 0; i < info.data.length; i++) {
             let contenedorImg = document.createElement("div");
             contenedorImg.classList.add("GifTrending");
-            contenedorImg.innerHTML = `
-                <img src=${info.data[i].images.original.url}>
-                <div class='pasarMouse'> <div class='iconos'>" 
-                <a onclick="AgregarFavoritos('${info.data[i].id}', '${i}')"> 
-                    <img class='iconoCorazon'  alt='Ícono añadir a favoritos'>
-                </a>
-                <a onclick="DescargarUnGif('${info.data[i].id}')">        
-                    <img class='iconoDescargar' src='images/icon-download.svg' alt='Ícono download'>
-                </a>
-                <a onclick="AgrandarGif('${info.data[i].id}')"> 
-                    <img class='iconoAgrandar' src='images/icon-max-normal.svg' alt='Ícono maximizar'>
-                </a>
-                </div><div class='infoTexto'><p>
-                ${info.data[i].username}</p><h4>
-                ${info.data[i].title}</h4></div></div>  
-            `;
-            gifTrending.appendChild(contenedorImg);
-            
-            arrayDeTrendings.push(contenedorImg);
-            
-            ColorCorazon(`${info.data[i].id}`, i);
 
+            if (window.innerWidth < 720) {
+                contenedorImg.innerHTML = `
+                    <a onclick="AgrandarGif('${info.data[i].id}')"> 
+                        <img src=${info.data[i].images.original.url}>
+                    </a>
+                `;
+
+                gifTrending.appendChild(contenedorImg);
+                arrayDeTrendings.push(contenedorImg);
+                    
+            } else if (window.innerWidth >= 720) {
+                contenedorImg.innerHTML = `
+                    <img src=${info.data[i].images.original.url}>
+                    <div class='pasarMouse'> <div class='iconos'>" 
+                    <a onclick="AgregarFavoritos('${info.data[i].id}', '${i}')"> 
+                        <img class='iconoCorazon'  alt='Ícono añadir a favoritos'>
+                    </a>
+                    <a onclick="DescargarUnGif('${info.data[i].id}')">        
+                        <img class='iconoDescargar' src='images/icon-download.svg' alt='Ícono download'>
+                    </a>
+                    <a onclick="AgrandarGif('${info.data[i].id}')"> 
+                        <img class='iconoAgrandar' src='images/icon-max-normal.svg' alt='Ícono maximizar'>
+                    </a>
+                    </div><div class='infoTexto'><p>
+                    ${info.data[i].username}</p><h4>
+                    ${info.data[i].title}</h4></div></div>  
+                `;
+                gifTrending.appendChild(contenedorImg);
+                arrayDeTrendings.push(contenedorImg);
+                ColorCorazon(`${info.data[i].id}`, i);
+            }
         }
-
     })
     .catch( error => {
         console.log("Error! " + error);
