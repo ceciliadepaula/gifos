@@ -26,6 +26,6 @@ let contenedorVacioFav = document.getElementsByClassName("contenedorVacioFav")[0
 let grillaResultadosFavoritos = document.getElementById("grillaResultadosFavoritos");
 let botonVerMasFavoritos = document.getElementById("botonVerMasFavoritos");
 
-// API KEYS
+// Api Key de Giphy
 
 const apikey = "qh1YngMeTeNY1hh1ul31qyOxXD9gAjLC";

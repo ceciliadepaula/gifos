@@ -29,7 +29,7 @@ function AgrandarGif(gifoImg) {
                         <img class='iconoDescargar' src='images/icon-download.svg' alt='Ícono download'>
                     </a>
                     <a onclick="AgregarFavoritos('${nuevoObjeto.data.id}', '0')"> 
-                        <img class='iconoCorazonAbierto'  alt='Ícono añadir a favoritos'>
+                        <img class='iconoCorazonAbierto iconoCorazon' src="images/icon-fav.svg" alt='Ícono añadir a favoritos'>
                     </a>
                 </div>
             `
@@ -48,8 +48,6 @@ function AgrandarGif(gifoImg) {
             }
 
             
-
-
             // Para cerrar
 
             document.getElementById("iconoCerrar").addEventListener("click", ()=> {
@@ -61,7 +59,6 @@ function AgrandarGif(gifoImg) {
                 footer.style.display = "inherit";
             });
 
-        
 
         })
         .catch(error => {

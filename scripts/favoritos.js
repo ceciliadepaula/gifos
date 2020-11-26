@@ -4,12 +4,8 @@ let StringDeFavoritos = localStorage.getItem("Favoritos");
 
 if (StringDeFavoritos == null || StringDeFavoritos == "[]"){
    var arrayDeFavoritos = [];
-   contenedorVacioFav.style.display = "flex";
-   botonVerMasFavoritos.style.display = "none";
 } else {
     var arrayDeFavoritos = JSON.parse(StringDeFavoritos); // me lo vuelve a hacer array
-    contenedorVacioFav.style.display = "none";
-    MostrarResultadosFavoritos();
 }
 
 
@@ -74,6 +70,7 @@ function TraerResultadosFavoritos(limiteMostrar, m) {
                 grillaResultadosFavoritos.appendChild(contenedorImg); 
 
                 ColorCorazon(`${nuevoObjetoRecibido.data[m].id}`, m);
+
             }
         })
         .catch(error => {
@@ -81,19 +78,7 @@ function TraerResultadosFavoritos(limiteMostrar, m) {
         });
 }
 
-
-// Sumar 12 gifs cada vez que se haga click en botón Ver Más
-
-botonVerMasFavoritos.addEventListener("click", VerMasResultados);
-
-function VerMasResultados() {   
-    m = m + 12;
-    limiteMostrar = limiteMostrar + 12;
-    TraerResultadosFavoritos(limiteMostrar, m);   
-}
-
-
-// Color icono corazón
+// Color icono corazón (s/ agregado o no agregado a favoriton)
 
 function ColorCorazon(variable, letra){
     if (arrayDeFavoritos.indexOf(variable) == -1){
