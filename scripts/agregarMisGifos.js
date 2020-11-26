@@ -1,4 +1,4 @@
-// Agregar a Mis Gifos
+// Agregar gif propios a pestaña Mis Gifos
 
 let grillaResultadosMisGifos = document.getElementById("grillaResultadosMisGifos");
 let contenedorVacioMisGifos = document.getElementsByClassName("contenedorVacioMisGifos")[0];
@@ -6,28 +6,18 @@ let botonVerMasMisGifos = document.getElementById("botonVerMasMisGifos");
 
 // Funciones
 
-/* let StringDeGifsPropios = localStorage.getItem("MisGifs"); */
-
 if (StringDeGifsPropios == null || StringDeGifsPropios == "[]"){
-   /* var arrayGifsPropios = []; */
    contenedorVacioMisGifos.style.display = "flex";
    botonVerMasMisGifos.style.display = "none";
 } else {
-   /*  var arrayGifsPropios = JSON.parse(StringDeGifsPropios); */
     contenedorVacioMisGifos.style.display = "none";
     MostrarResultadosMisGifos(); 
 }
 
 
-function AgregarMisGif(gifoImg, e) {
+function EliminarMiGif(gifoImg, e) {
     var indice = arrayGifsPropios.indexOf(gifoImg);
-    if ( indice < 0){
-        arrayGifsPropios.push(gifoImg);
-        iconoCorazon[e].style.content = "url(./images/icon-fav-active.svg)";
-    } else {
-        arrayGifsPropios.splice(indice, 1);
-        iconoCorazon[e].style.content= "url(./images/icon-fav.svg)";
-    }
+    arrayGifsPropios.splice(indice, 1);
     localStorage.setItem('MisGifs', JSON.stringify(arrayGifsPropios)); // me lo convierte en string   
 }
 
@@ -54,7 +44,7 @@ function TraerResultadosMisGifos(limiteMostrar, j) {
                 let contenedorImg2 = document.createElement("div");
                 contenedorImg2.classList.add("GifFavoritos"); 
 
-                if (window.innerWidth < 720) {
+                if (window.innerWidth < 720) {                    
                     contenedorImg2.innerHTML = `
                     <a onclick="AgrandarGif('${nuevoObjetoRecibido.data[j].id}')"> 
                         <img src=${nuevoObjetoRecibido.data[j].images.original.url}> 
@@ -67,8 +57,8 @@ function TraerResultadosMisGifos(limiteMostrar, j) {
                     <img src=${nuevoObjetoRecibido.data[j].images.original.url}> 
                     <div class='pasarMouse'> 
                         <div class='iconos'>" 
-                            <a onclick="AgregarFavoritos('${nuevoObjetoRecibido.data[j].id}', '${j}')" href="javascript:location.reload()"> 
-                                <img class='iconoCorazon' alt='Ícono añadir a favoritos'> 
+                            <a onclick="EliminarMiGif('${nuevoObjetoRecibido.data[j].id}', '${j}')" href="javascript:location.reload()"> 
+                                <img class='iconoBasura' src='images/icon-trash-normal.svg' alt='Ícono eliminar Gif' > 
                             </a>
                             <a onclick="DescargarUnGif('${nuevoObjetoRecibido.data[j].id}')">        
                                 <img class='iconoDescargar' src='images/icon-download.svg' alt='Ícono download'>
@@ -84,11 +74,20 @@ function TraerResultadosMisGifos(limiteMostrar, j) {
                     </div>
                 `
                 grillaResultadosMisGifos.appendChild(contenedorImg2); 
-                ColorCorazon(`${nuevoObjetoRecibido.data[j].id}`, j);
                 }
             }
         })
-       /*  .catch(error => {
+        .catch(error => {
             console.log("Error! " + error);
-        }); */
+        });
 }
+
+ // Sumar 12 gifs en Favoritos cada vez que se haga click en botón Ver Más
+
+ botonVerMasMisGifos.addEventListener("click", VerMasResultadosGifos);
+
+ function VerMasResultadosGifos() {   
+     j = j + 12;
+     limiteMostrar = limiteMostrar + 12;
+     TraerResultadosMisGifos(limiteMostrar, j);   
+ }

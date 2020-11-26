@@ -51,9 +51,9 @@ main#crearGif{
                         display: flex;
                         flex-direction: row-reverse;
                         margin: 12px 12px 0 0;
-                        #iconoCompartir{
+                        #iconoCompartir, #iconoDescarga{
                             margin-left: 8px;
-                            opacity: 0;
+                            opacity: 1;
                         }
                         #iconoDescarga:hover{
                             content: url(../images/icon-download-hover.svg);

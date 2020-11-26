@@ -154,9 +154,9 @@ async function RepetirCaptura() {
     //¿Se borra lo guardado con alguna de estas 2 funciones? ¿O se lo estoy aplicando al elemento equivocado?
     // recorder.reset();
     // recorder.clearRecordedData();
-    
+
     form = new FormData(); // para que me suba el ultimo filmado, tengo que sobreescribir el elemento form
-    
+
     repetirCaptura.style.display = "none";
     botonSubir.style.display = "none";
     gifGrabado.style.display = "none";
@@ -186,21 +186,35 @@ function SubirGrabacionAGifos() {
         .then(nuevoObjetoRecibido => {
             document.getElementById("txtEstado").innerHTML = "GIFO subido con éxito";
             document.getElementById("iconoEstado").style.content = "url(./images/ok.svg)";
-            /* document.getElementById("iconoDescarga").style.opacity = "1"; */
-            document.getElementById("iconoCompartir").style.opacity = "1";
 
             let gifId = nuevoObjetoRecibido.data.id;  //el id de ese gif subido
             arrayGifsPropios.push(gifId);
+                
 
-            let descargarGifPropio = document.getElementById("descargarGifPropio");
-            descargarGifPropio.innerHTML=`
+            document.getElementById("iconosEsquina").innerHTML = `
+                <a onclick="CompartirUnGif('${nuevoObjetoRecibido.data.id}')">
+                    <img id="iconoCompartir" src="images/icon-link-normal.svg" alt="Compartir gif">
+                </a>
                 <a onclick="DescargarUnGif('${nuevoObjetoRecibido.data.id}')">
                     <img id="iconoDescarga" src="images/icon-download.svg" alt="Descargar gif">
                 </a>
-                `
-
+            `
             localStorage.setItem('MisGifs', JSON.stringify(arrayGifsPropios)); // me lo sube al local Storage
 
+        })
+        .catch(error => {
+            console.log("Error! " + error);
+        });
+}
+
+function CompartirUnGif(gifId){
+    url = `https://api.giphy.com/v1/gifs?api_key=${apikey}&ids=${gifId}`
+    fetch(url)
+        .then(respuesta => {
+            return respuesta.json();
+        })
+        .then(nuevoObjetoRecibido => {
+            window.open(nuevoObjetoRecibido.data[0].url)
         })
         .catch(error => {
             console.log("Error! " + error);
