@@ -7,6 +7,8 @@ botonNoct.addEventListener("click", Nocturno);
 const Noche = () => {
     body[0].classList.add("nocturno");
     localStorage.setItem("darkMode", "enabled");
+    lupaAzul.id = "lupaAzulNocturna";
+    
 }
 
 const Dia = () => {
@@ -26,3 +28,4 @@ function Nocturno() {
         Dia();
     }
 }
+

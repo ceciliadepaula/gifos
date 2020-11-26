@@ -61,6 +61,10 @@ body.nocturno header #barraNavegacion nav .menu .hamburguesa {
   content: url("../images/burger-modo-noct.svg");
 }
 
+body.nocturno header #barraNavegacion nav .menu .cruz {
+  content: url("../images/close-modo-noct.svg");
+}
+
 body.nocturno header #barraNavegacion nav .menu ul {
   background-color: rgba(0, 0, 0, 0.9);
 }
@@ -494,6 +498,14 @@ main #presentacion .barraBusqueda #form #CompletarCampo #lupaGris {
 }
 
 main #presentacion .barraBusqueda #form #CompletarCampo #lupaAzul {
+  content: url(../images/icon-search.svg);
+  height: 20px;
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+main #presentacion .barraBusqueda #form #CompletarCampo #lupaAzulNocturna {
+  content: url(../images/icon-search-gris.svg);
   height: 20px;
   -ms-grid-column-align: center;
       justify-self: center;

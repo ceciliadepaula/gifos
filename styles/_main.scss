@@ -46,6 +46,12 @@ main{
                         opacity: 0;
                     }
                     #lupaAzul{
+                        content: url(../images/icon-search.svg);
+                        height: 20px;
+                        justify-self: center;
+                    }
+                    #lupaAzulNocturna{
+                        content: url(../images/icon-search-gris.svg);
                         height: 20px;
                         justify-self: center;
                     }

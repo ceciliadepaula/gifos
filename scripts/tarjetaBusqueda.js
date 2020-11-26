@@ -14,9 +14,10 @@ function Autocompletar(linkPalabrasAutocompletadas) {
         .then(respuesta => {
             document.getElementById("lupaGris").style.opacity = "1";
             document.getElementById("lineaGris").style.opacity = "1";
-            lupaAzul.src = "images/close.svg";
+            lupaAzul.style.content = "url(../images/close.svg)";
+            lupaAzulNocturna.style.content = "url(../images/close-modo-noct.svg)";
+            lupaAzulNocturna.style.height = "15px";
             lupaAzul.style.height = "15px";
-            tarjetaBusqueda.style.color = "#000000";
             return respuesta.json();
         })
         .then(respuestaTransformada => {
@@ -44,8 +45,10 @@ lupaAzul.addEventListener("click", SacarInfo);
 function SacarInfo() {
     document.getElementById("lineaGris").style.opacity = "0";
     document.getElementById("lupaGris").style.opacity = "0";
-    lupaAzul.src = "images/icon-search.svg";
+    lupaAzul.style.content = "url(../images/icon-search.svg)"
     lupaAzul.style.height = "20px";
+    lupaAzulNocturna.style.content = "url(../images/icon-search-gris.svg)";
+    lupaAzulNocturna.style.height="20px";
     tarjetaBusqueda.value = "";
     listaSugerencias.style.display = "none";
 }
