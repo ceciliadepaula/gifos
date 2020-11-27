@@ -65,14 +65,14 @@ body.nocturno{
                     color: $colorBlanco;
                 }
             }
-            #resultadoBusquedaPersonal{
+            /* #resultadoBusquedaPersonal{
                 #botonVerMas{
                     border: 1px $colorGrisClaro solid;
                     p{
                         color: $colorGrisClaro;
                     }
                 }
-            }
+            } */
         }
         #trending{
             background-color: $colorFondoNocOscuro;
@@ -152,13 +152,13 @@ body.nocturno{
         }
     }
 
-    #botonVerMasFavoritos, #botonVerMasMisGifos{
+    #botonVerMas, #botonVerMasFavoritos, #botonVerMasMisGifos{
         border: 1px $colorBlanco solid;
         p{
             color: $colorBlanco;
         }
     }
-    #botonVerMasFavoritos:hover, #botonVerMasMisGifos:hover{
+    #botonVerMas:hover, #botonVerMasFavoritos:hover, #botonVerMasMisGifos:hover{
         background-color: $colorBlanco;
         p{
             color: $colorNegro;

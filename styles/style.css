@@ -81,6 +81,17 @@ body.nocturno header #barraNavegacion nav .menu li:active .link {
   color: #9CAFC3;
 }
 
+body.nocturno main #presentacion {
+  /* #resultadoBusquedaPersonal{
+                #botonVerMas{
+                    border: 1px $colorGrisClaro solid;
+                    p{
+                        color: $colorGrisClaro;
+                    }
+                }
+            } */
+}
+
 body.nocturno main #presentacion .barraBusqueda #form {
   border: #ffffff solid 1px;
 }
@@ -96,14 +107,6 @@ body.nocturno main #presentacion .barraBusqueda #form #CompletarCampo #lupaAzul 
 
 body.nocturno main #presentacion .barraTrending p.textosPrincipales {
   color: #ffffff;
-}
-
-body.nocturno main #presentacion #resultadoBusquedaPersonal #botonVerMas {
-  border: 1px #F3F5F8 solid;
-}
-
-body.nocturno main #presentacion #resultadoBusquedaPersonal #botonVerMas p {
-  color: #F3F5F8;
 }
 
 body.nocturno main #trending {
@@ -189,19 +192,19 @@ body.nocturno main#crearGif #botonGrabar, body.nocturno main#crearGif #botonFina
   display: none;
 }
 
-body.nocturno #botonVerMasFavoritos, body.nocturno #botonVerMasMisGifos {
+body.nocturno #botonVerMas, body.nocturno #botonVerMasFavoritos, body.nocturno #botonVerMasMisGifos {
   border: 1px #ffffff solid;
 }
 
-body.nocturno #botonVerMasFavoritos p, body.nocturno #botonVerMasMisGifos p {
+body.nocturno #botonVerMas p, body.nocturno #botonVerMasFavoritos p, body.nocturno #botonVerMasMisGifos p {
   color: #ffffff;
 }
 
-body.nocturno #botonVerMasFavoritos:hover, body.nocturno #botonVerMasMisGifos:hover {
+body.nocturno #botonVerMas:hover, body.nocturno #botonVerMasFavoritos:hover, body.nocturno #botonVerMasMisGifos:hover {
   background-color: #ffffff;
 }
 
-body.nocturno #botonVerMasFavoritos:hover p, body.nocturno #botonVerMasMisGifos:hover p {
+body.nocturno #botonVerMas:hover p, body.nocturno #botonVerMasFavoritos:hover p, body.nocturno #botonVerMasMisGifos:hover p {
   color: #000000;
 }
 
