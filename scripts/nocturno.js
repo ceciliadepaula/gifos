@@ -12,6 +12,7 @@ const Noche = () => {
     lupaAzulNocturna.addEventListener("click", SacarInfo);
     lupaAzulNocturna.style.display ="block";
     lupaAzul.style.display="none"
+    modoDisenio.innerHTML = "Modo diurno";
     
 }
 
@@ -20,6 +21,7 @@ const Dia = () => {
     localStorage.setItem("darkMode", null);
     lupaAzulNocturna.style.display ="none";
     lupaAzul.style.display="block";
+    modoDisenio.innerHTML = "Modo nocturno";
 }
 
 if (darkMode === "enabled") {

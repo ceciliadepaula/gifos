@@ -567,7 +567,7 @@ main #presentacion #resultadoBusquedaPersonal {
           flex-direction: column;
 }
 
-main #presentacion #resultadoBusquedaPersonal #lineaGris {
+main #presentacion #resultadoBusquedaPersonal #lineaGris2 {
   height: 1px;
   width: 157px;
   background-color: #9CAFC3;
