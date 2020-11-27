@@ -1124,7 +1124,8 @@ main #trending .scroll .imagenSimulada {
 footer {
   position: relative;
   top: 100px;
-  padding: 47px 0 0 0;
+  padding: 47px 0 20px 0;
+  /* margin-bottom: 120px; */
 }
 
 footer .grillaFooter div .textosSecundarios {
@@ -1375,6 +1376,7 @@ footer .lineaAzul {
   footer {
     position: relative;
     top: 120px;
+    padding: 47px 0 0px 0;
   }
   footer .grillaFooter {
     display: -ms-grid;
