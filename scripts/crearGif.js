@@ -28,19 +28,20 @@ let dateStarted;
 // Pedir permisos para acceder
 botonComenzar.addEventListener("click", PantallaPermisos);
 
-function PantallaPermisos() {
+async function PantallaPermisos() {
     tituloPermisos.innerHTML = "¿Nos das acceso <br> a tu cámara?";
     textoPermisos.innerHTML = "El acceso a tu camara será válido sólo <br> por el tiempo en el que estés creando el GIFO.";
     uno.style.backgroundColor = "#572EE5";
     uno.style.color = "#ffffff";
     botonComenzar.style.display = "none";
     dos.addEventListener("click", AbrirCamara);
+    resultado = await getStreamAndRecord();
 }
 
 
 // Abrir la cámara y mostrar en tiempo real
 
-async function AbrirCamara() {
+function AbrirCamara() {
     dos.style.backgroundColor = "#572EE5";
     dos.style.color = "#ffffff";
     tituloPermisos.style.display = "none";
@@ -50,7 +51,7 @@ async function AbrirCamara() {
     botonGrabar.style.display = "inherit";
     video.style.display = "inherit";
     gifAzul.style.display = "block";
-    resultado = await getStreamAndRecord();
+    /* resultado = await getStreamAndRecord(); */
     botonGrabar.addEventListener("click", GrabarVideo);
 }
 
